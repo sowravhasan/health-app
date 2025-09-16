@@ -5,7 +5,7 @@ Website: https://sowravhasan.vercel.app
 Location: Global
 
 /* SITE */
-Last update: 2025/01/27
+Last update: 2025/09/17
 Language: English
 Doctype: HTML5
 IDE: Visual Studio Code
@@ -14,8 +14,8 @@ Technologies: HTML5, CSS3, JavaScript ES6, Tailwind CSS
 /* PROJECT */
 Name: Health Calculator Pro
 Description: Complete health calculator suite with BMI, ideal weight, and calorie calculators
-Version: 3.0
-Launch Date: 2025/01/01
+Version: 4.0
+Launch Date: 2025/09/17
 Features: BMI Calculation, Ideal Weight Calculator, Calorie Calculator, Health Blog, Unit Conversion, Mobile Responsive
 
 /* THANKS */
@@ -35,7 +35,7 @@ Performance: Optimized for speed
 Theme: Light mode only for clean, consistent experience
 
 /* CONTACT */
-Website: https://free-bmi-calculator.netlify.app/
+Website: https://healthcalcpro.netlify.app/
 Issues: Report bugs and suggestions welcome
 License: MIT License
 Copyright: 2025 - Health Calculator Pro

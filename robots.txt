@@ -2,7 +2,7 @@ User-agent: *
 Allow: /
 
 # Main sitemap - contains key health calculator and blog content
-Sitemap: https://free-bmi-calculator.netlify.app/sitemap.xml
+Sitemap: https://healthcalcpro.netlify.app/sitemap.xml
 
 # Block sensitive/system files
 Disallow: /_headers

@@ -164,7 +164,7 @@ class BMICalculator {
     if (!errorContainer) {
       errorContainer = document.createElement("div");
       errorContainer.className =
-        "error-container hidden bg-red-100 dark:bg-red-900/20 border border-red-300 dark:border-red-800 text-red-700 dark:text-red-300 px-4 py-3 rounded-lg mb-4";
+        "error-container hidden bg-red-100 border border-red-300 text-red-700 px-4 py-3 rounded-lg mb-4";
       this.form.insertBefore(errorContainer, this.form.firstChild);
     }
     this.errorContainer = errorContainer;
@@ -381,11 +381,11 @@ class BMICalculator {
     const display = document.getElementById("idealWeightDisplay");
     display.innerHTML = `
       <div class="text-center">
-        <div class="text-lg font-semibold text-green-600 dark:text-green-400">${idealWeight.toFixed(
+        <div class="text-lg font-semibold text-green-600">${idealWeight.toFixed(
           1
         )} kg</div>
-        <div class="text-sm text-gray-600 dark:text-gray-400">Ideal weight</div>
-        <div class="text-xs text-gray-500 dark:text-gray-500 mt-2">
+        <div class="text-sm text-gray-600">Ideal weight</div>
+        <div class="text-xs text-gray-500 mt-2">
           Healthy range: ${minWeight.toFixed(1)} - ${maxWeight.toFixed(1)} kg
         </div>
       </div>
@@ -807,19 +807,19 @@ class BMICalculator {
 
     if (history.length === 0) {
       container.innerHTML =
-        '<div class="text-sm text-gray-600 dark:text-gray-400">No BMI records saved yet</div>';
+        '<div class="text-sm text-gray-600 BMI records saved yet</div>';
       return;
     }
 
     container.innerHTML = history
       .map(
         (entry) => `
-      <div class="flex justify-between items-center p-2 bg-gray-50 dark:bg-gray-700 rounded text-sm">
+      <div class="flex justify-between items-center p-2 bg-gray-50 rounded text-sm">
         <div>
           <div class="font-medium">${entry.bmi} - ${entry.category}</div>
           <div class="text-xs text-gray-500">${entry.date}</div>
         </div>
-        <div class="text-xs text-gray-600 dark:text-gray-400">
+        <div class="text-xs text-gray-600
           ${entry.weight}kg • ${entry.height}cm
         </div>
       </div>
@@ -863,9 +863,9 @@ class BMICalculator {
     document.getElementById("heightConversion").textContent = "";
     document.getElementById("weightConversion").textContent = "";
     document.getElementById("idealWeightDisplay").innerHTML =
-      '<div class="text-sm text-gray-600 dark:text-gray-400">Enter your details to calculate</div>';
+      '<div class="text-sm text-gray-600 your details to calculate</div>';
     document.getElementById("calorieDisplay").innerHTML =
-      '<div class="text-sm text-gray-600 dark:text-gray-400">Calculate BMI to see calorie needs</div>';
+      '<div class="text-sm text-gray-600 BMI to see calorie needs</div>';
 
     // Reset gender buttons
     document

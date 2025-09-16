@@ -1047,27 +1047,27 @@ class BMICalculator {
     modal.className =
       "fixed inset-0 bg-black bg-opacity-50 flex items-center justify-center z-50";
     modal.innerHTML = `
-            <div class="bg-white dark:bg-gray-800 rounded-lg p-6 max-w-sm mx-4">
+            <div class="bg-white rounded-lg p-6 max-w-sm mx-4">
                 <h3 class="text-lg font-semibold mb-4">Share Your Result</h3>
                 <div class="space-y-3">
                     <a href="https://twitter.com/intent/tweet?text=${encodeURIComponent(
                       text
                     )}&url=${encodeURIComponent(url)}" 
                        target="_blank" 
-                       class="flex items-center space-x-3 p-3 bg-blue-100 dark:bg-blue-900/30 rounded-lg hover:bg-blue-200 dark:hover:bg-blue-900/50 transition-colors">
-                        <span class="text-blue-600 dark:text-blue-400">🐦</span>
+                       class="flex items-center space-x-3 p-3 bg-blue-100 rounded-lg hover:bg-blue-200 transition-colors">
+                        <span class="text-blue-600
                         <span>Share on Twitter</span>
                     </a>
                     <a href="https://wa.me/?text=${encodeURIComponent(
                       text + " " + url
                     )}" 
                        target="_blank"
-                       class="flex items-center space-x-3 p-3 bg-green-100 dark:bg-green-900/30 rounded-lg hover:bg-green-200 dark:hover:bg-green-900/50 transition-colors">
+                       class="flex items-center space-x-3 p-3 bg-green-100 rounded-lg hover:bg-green-200 transition-colors">
                         <span class="text-green-600 ">📱</span>
                         <span>Share on WhatsApp</span>
                     </a>
                     <button onclick="this.parentElement.parentElement.parentElement.remove()" 
-                            class="w-full p-3 bg-gray-100  rounded-lg hover:bg-gray-200 dark:hover:bg-gray-600 transition-colors">
+                            class="w-full p-3 bg-gray-100  rounded-lg hover:bg-gray-200 transition-colors">
                         Cancel
                     </button>
                 </div>
@@ -1836,3 +1836,4 @@ document.addEventListener("DOMContentLoaded", () => {
 if (typeof module !== "undefined" && module.exports) {
   module.exports = { BMICalculator, FormPersistence, UnitConverter };
 }
+

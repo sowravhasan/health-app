@@ -5,155 +5,161 @@
 
   <!-- Main Health Calculator Pro Application Page -->
   <url>
-    <loc>https://free-bmi-calculator.netlify.app/</loc>
-    <lastmod>2025-01-27</lastmod>
+    <loc>https://healthcalcpro.netlify.app/</loc>
+    <lastmod>2025-09-17</lastmod>
     <changefreq>weekly</changefreq>
     <priority>1.0</priority>
   </url>
 
   <!-- Health Blog Section -->
   <url>
-    <loc>https://free-bmi-calculator.netlify.app/blog/</loc>
-    <lastmod>2025-01-27</lastmod>
+    <loc>https://healthcalcpro.netlify.app/blog/</loc>
+    <lastmod>2025-09-17</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.9</priority>
   </url>
 
   <!-- Health Tools Section -->
   <url>
-    <loc>https://free-bmi-calculator.netlify.app/tools/</loc>
-    <lastmod>2025-01-27</lastmod>
+    <loc>https://healthcalcpro.netlify.app/tools/</loc>
+    <lastmod>2025-09-17</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.9</priority>
   </url>
 
   <!-- Blog Articles -->
   <url>
-    <loc>https://free-bmi-calculator.netlify.app/blog/understanding-bmi-body-composition-guide.html</loc>
-    <lastmod>2025-01-27</lastmod>
+    <loc>https://healthcalcpro.netlify.app/blog/understanding-bmi-body-composition-guide.html</loc>
+    <lastmod>2025-09-17</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
 
   <url>
-    <loc>https://free-bmi-calculator.netlify.app/blog/safe-weight-loss-strategies.html</loc>
-    <lastmod>2025-01-27</lastmod>
+    <loc>https://healthcalcpro.netlify.app/blog/safe-weight-loss-strategies.html</loc>
+    <lastmod>2025-09-17</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
 
   <url>
-    <loc>https://free-bmi-calculator.netlify.app/blog/healthy-diet-plans-bmi-categories.html</loc>
-    <lastmod>2025-01-27</lastmod>
+    <loc>https://healthcalcpro.netlify.app/blog/healthy-diet-plans-bmi-categories.html</loc>
+    <lastmod>2025-09-17</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
 
   <url>
-    <loc>https://free-bmi-calculator.netlify.app/blog/bmi-calculator-guide-beginners.html</loc>
-    <lastmod>2025-01-27</lastmod>
+    <loc>https://healthcalcpro.netlify.app/blog/bmi-calculator-guide-beginners.html</loc>
+    <lastmod>2025-09-17</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
 
   <url>
-    <loc>https://free-bmi-calculator.netlify.app/blog/ideal-weight-vs-bmi-comprehensive-comparison.html</loc>
-    <lastmod>2025-01-27</lastmod>
+    <loc>https://healthcalcpro.netlify.app/blog/ideal-weight-vs-bmi-comprehensive-comparison.html</loc>
+    <lastmod>2025-09-17</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+
+  <url>
+    <loc>https://healthcalcpro.netlify.app/blog/bmi-accuracy-limitations-health-assessment.html</loc>
+    <lastmod>2025-09-17</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+
+  <url>
+    <loc>https://healthcalcpro.netlify.app/blog/bmi-fitness-exercise-effects-body-mass-index.html</loc>
+    <lastmod>2025-09-17</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
 
   <!-- Health Calculator Tools -->
   <url>
-    <loc>https://free-bmi-calculator.netlify.app/tools/ideal-weight-calculator.html</loc>
-    <lastmod>2025-01-27</lastmod>
+    <loc>https://healthcalcpro.netlify.app/tools/ideal-weight-calculator.html</loc>
+    <lastmod>2025-09-17</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
 
   <url>
-    <loc>https://free-bmi-calculator.netlify.app/tools/calorie-calculator.html</loc>
-    <lastmod>2025-01-27</lastmod>
+    <loc>https://healthcalcpro.netlify.app/tools/calorie-calculator.html</loc>
+    <lastmod>2025-09-17</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
 
   <!-- Health Calculator Pro Home - Main Tool -->
   <url>
-    <loc>https://free-bmi-calculator.netlify.app/#bmiForm</loc>
-    <lastmod>2025-01-27</lastmod>
+    <loc>https://healthcalcpro.netlify.app/#bmiForm</loc>
+    <lastmod>2025-09-17</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.9</priority>
   </url>
 
-  <!-- FAQ Section - Rich Content for Search -->
-  <url>
-    <loc>https://free-bmi-calculator.netlify.app/#frequently-asked-questions</loc>
-    <lastmod>2025-01-27</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.8</priority>
-  </url>
-
   <!-- Unit Conversion Tools - High-Value Feature -->
   <url>
-    <loc>https://free-bmi-calculator.netlify.app/#unit-conversion-tools</loc>
-    <lastmod>2025-01-27</lastmod>
+    <loc>https://healthcalcpro.netlify.app/#unit-conversion-tools</loc>
+    <lastmod>2025-09-17</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
   </url>
 
   <!-- Understanding BMI Guide - Educational Content -->
   <url>
-    <loc>https://free-bmi-calculator.netlify.app/#understanding-bmi-complete-guide</loc>
-    <lastmod>2025-01-27</lastmod>
+    <loc>https://healthcalcpro.netlify.app/#understanding-bmi-complete-guide</loc>
+    <lastmod>2025-09-17</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
 
   <!-- BMI Results Section - Interactive Feature -->
   <url>
-    <loc>https://free-bmi-calculator.netlify.app/#resultsCard</loc>
-    <lastmod>2025-01-27</lastmod>
+    <loc>https://healthcalcpro.netlify.app/#resultsCard</loc>
+    <lastmod>2025-09-17</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.7</priority>
   </url>
 
   <!-- RSS Feed for Content Updates -->
   <url>
-    <loc>https://free-bmi-calculator.netlify.app/rss.xml</loc>
-    <lastmod>2025-01-27</lastmod>
+    <loc>https://healthcalcpro.netlify.app/rss.xml</loc>
+    <lastmod>2025-09-17</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.5</priority>
   </url>
 
   <!-- Progressive Web App Manifest -->
   <url>
-    <loc>https://free-bmi-calculator.netlify.app/manifest.json</loc>
-    <lastmod>2025-01-27</lastmod>
+    <loc>https://healthcalcpro.netlify.app/manifest.json</loc>
+    <lastmod>2025-09-17</lastmod>
     <changefreq>rarely</changefreq>
     <priority>0.3</priority>
   </url>
 
   <!-- Human-readable Information -->
   <url>
-    <loc>https://free-bmi-calculator.netlify.app/humans.txt</loc>
-    <lastmod>2025-01-27</lastmod>
+    <loc>https://healthcalcpro.netlify.app/humans.txt</loc>
+    <lastmod>2025-09-17</lastmod>
     <changefreq>rarely</changefreq>
     <priority>0.2</priority>
   </url>
 
   <!-- Google Site Verification File -->
   <url>
-    <loc>https://free-bmi-calculator.netlify.app/google6cf348dae9b116c4.html</loc>
-    <lastmod>2025-01-27</lastmod>
+    <loc>https://healthcalcpro.netlify.app/google6cf348dae9b116c4.html</loc>
+    <lastmod>2025-09-17</lastmod>
     <changefreq>never</changefreq>
     <priority>0.1</priority>
   </url>
 
   <!-- Ads Configuration -->
   <url>
-    <loc>https://free-bmi-calculator.netlify.app/Ads.txt</loc>
-    <lastmod>2025-01-27</lastmod>
+    <loc>https://healthcalcpro.netlify.app/Ads.txt</loc>
+    <lastmod>2025-09-17</lastmod>
     <changefreq>rarely</changefreq>
     <priority>0.1</priority>
   </url>
