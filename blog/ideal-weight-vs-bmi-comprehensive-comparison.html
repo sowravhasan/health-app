@@ -1,0 +1,691 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description"
+        content="Comprehensive comparison between ideal weight and BMI calculations. Learn which metric is better for your health goals and how to use both effectively.">
+    <meta name="keywords"
+        content="ideal weight vs BMI, body mass index, weight calculator, health metrics, weight assessment, body composition, health goals, weight management">
+    <meta name="author" content="Health Calculator Pro">
+
+    <!-- Open Graph Tags -->
+    <meta property="og:title" content="Ideal Weight vs BMI: A Comprehensive Comparison for Better Health">
+    <meta property="og:description"
+        content="Understand the differences between ideal weight and BMI calculations to make better health decisions.">
+    <meta property="og:image" content="../assets/images/og-image.jpg">
+    <meta property="og:url" content="https://yoursite.com/blog/ideal-weight-vs-bmi-comprehensive-comparison.html">
+    <meta property="og:type" content="article">
+
+    <!-- Twitter Cards -->
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="Ideal Weight vs BMI: A Comprehensive Comparison">
+    <meta name="twitter:description"
+        content="Learn the differences between ideal weight and BMI for better health decisions">
+    <meta name="twitter:image" content="../assets/images/og-image.jpg">
+
+    <title>Ideal Weight vs BMI: A Comprehensive Comparison for Better Health</title>
+
+    <!-- Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+
+    <!-- Lucide Icons -->
+    <script src="https://unpkg.com/lucide@latest/dist/umd/lucide.js"></script>
+
+    <!-- Custom Styles -->
+    <style>
+        .hero-gradient {
+            background: linear-gradient(135deg, #0d9488 0%, #06b6d4 100%);
+        }
+
+        .blog-content h2 {
+            color: #1f2937;
+            font-size: 1.5rem;
+            font-weight: 700;
+            margin-top: 2rem;
+            margin-bottom: 1rem;
+        }
+
+        .blog-content h3 {
+            color: #374151;
+            font-size: 1.25rem;
+            font-weight: 600;
+            margin-top: 1.5rem;
+            margin-bottom: 0.75rem;
+        }
+
+        .blog-content p {
+            margin-bottom: 1rem;
+            line-height: 1.7;
+        }
+
+        .blog-content ul,
+        .blog-content ol {
+            margin-bottom: 1rem;
+            padding-left: 1.5rem;
+        }
+
+        .blog-content li {
+            margin-bottom: 0.5rem;
+            line-height: 1.6;
+        }
+
+        .comparison-card {
+            background: linear-gradient(135deg, #f3f4f6 0%, #e5e7eb 100%);
+            border-left: 4px solid #059669;
+        }
+
+        .info-box {
+            background: linear-gradient(135deg, #dbeafe 0%, #bfdbfe 100%);
+            border-left: 4px solid #3b82f6;
+        }
+
+        .warning-box {
+            background: linear-gradient(135deg, #fef3c7 0%, #fde68a 100%);
+            border-left: 4px solid #f59e0b;
+        }
+    </style>
+</head>
+
+<body class="bg-gray-50">
+    <!-- Navigation -->
+    <nav class="bg-white shadow-lg sticky top-0 z-50">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex justify-between h-16">
+                <div class="flex items-center">
+                    <a href="../index.html" class="flex-shrink-0 flex items-center">
+                        <i data-lucide="activity" class="h-8 w-8 text-blue-600 mr-2"></i>
+                        <span class="font-bold text-xl text-gray-900">Health Calculator Pro</span>
+                    </a>
+                </div>
+
+                <!-- Desktop Navigation -->
+                <div class="hidden md:flex items-center space-x-8">
+                    <a href="../index.html"
+                        class="text-gray-700 hover:text-blue-600 px-3 py-2 rounded-md text-sm font-medium transition-colors">
+                        Home
+                    </a>
+                    <a href="../tools/index.html"
+                        class="text-gray-700 hover:text-blue-600 px-3 py-2 rounded-md text-sm font-medium transition-colors">
+                        Tools
+                    </a>
+                    <a href="index.html"
+                        class="text-blue-600 px-3 py-2 rounded-md text-sm font-medium border-b-2 border-blue-600">
+                        Blog
+                    </a>
+
+                    <!-- External Calculators Dropdown -->
+                    <div class="relative group">
+                        <button
+                            class="text-gray-700 hover:text-blue-600 px-3 py-2 rounded-md text-sm font-medium transition-colors flex items-center">
+                            More Tools
+                            <i data-lucide="chevron-down" class="h-4 w-4 ml-1"></i>
+                        </button>
+                        <div
+                            class="absolute right-0 mt-2 w-48 bg-white rounded-md shadow-lg opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-200">
+                            <div class="py-1">
+                                <a href="https://bdbillcalculator.netlify.app/" target="_blank"
+                                    class="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100">
+                                    Bill Calculator
+                                </a>
+                                <a href="https://bdcgpacalculator.netlify.app/" target="_blank"
+                                    class="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100">
+                                    CGPA Calculator
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Mobile menu button -->
+                <div class="md:hidden flex items-center">
+                    <button id="mobile-menu-button"
+                        class="text-gray-700 hover:text-blue-600 focus:outline-none focus:text-blue-600">
+                        <i data-lucide="menu" class="h-6 w-6"></i>
+                    </button>
+                </div>
+            </div>
+        </div>
+
+        <!-- Mobile Navigation -->
+        <div id="mobile-menu" class="md:hidden hidden bg-white border-t border-gray-200">
+            <div class="px-2 pt-2 pb-3 space-y-1">
+                <a href="../index.html"
+                    class="text-gray-700 hover:text-blue-600 block px-3 py-2 rounded-md text-base font-medium">
+                    Home
+                </a>
+                <a href="../tools/index.html"
+                    class="text-gray-700 hover:text-blue-600 block px-3 py-2 rounded-md text-base font-medium">
+                    Tools
+                </a>
+                <a href="index.html" class="text-blue-600 block px-3 py-2 rounded-md text-base font-medium bg-blue-50">
+                    Blog
+                </a>
+
+                <!-- External Tools -->
+                <div class="border-t border-gray-200 pt-2">
+                    <p class="px-3 py-2 text-sm font-medium text-gray-500">External Tools</p>
+                    <a href="https://bdbillcalculator.netlify.app/" target="_blank"
+                        class="text-gray-700 hover:text-blue-600 block px-3 py-2 rounded-md text-base font-medium">
+                        Bill Calculator
+                    </a>
+                    <a href="https://bdcgpacalculator.netlify.app/" target="_blank"
+                        class="text-gray-700 hover:text-blue-600 block px-3 py-2 rounded-md text-base font-medium">
+                        CGPA Calculator
+                    </a>
+                </div>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section class="hero-gradient text-white py-20">
+        <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+            <h1 class="text-4xl md:text-5xl font-bold mb-6">
+                Ideal Weight vs BMI: A Comprehensive Comparison
+            </h1>
+            <p class="text-xl md:text-2xl text-teal-100 mb-8">
+                Understanding the Differences for Better Health Decisions
+            </p>
+            <div class="flex items-center justify-center text-teal-200">
+                <i data-lucide="calendar" class="h-5 w-5 mr-2"></i>
+                <time datetime="2025-09-08">September 8, 2025</time>
+                <span class="mx-3">•</span>
+                <i data-lucide="clock" class="h-5 w-5 mr-2"></i>
+                <span>9 min read</span>
+            </div>
+        </div>
+    </section>
+
+    <!-- Article Content -->
+    <article class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
+        <!-- Featured Visual -->
+        <div
+            class="mb-8 rounded-lg overflow-hidden shadow-lg bg-gradient-to-br from-teal-500 to-cyan-500 p-8 text-center">
+            <i data-lucide="heart-pulse" class="h-24 w-24 text-white mx-auto mb-4"></i>
+            <h2 class="text-2xl font-bold text-white mb-2">Health Metrics Comparison</h2>
+            <p class="text-teal-100">Ideal Weight vs BMI - Which is right for you?</p>
+        </div>
+
+        <div class="blog-content prose max-w-none">
+            <p class="text-lg text-gray-600 mb-8 leading-relaxed">
+                When it comes to assessing your health and weight status, two metrics often come into play: ideal weight
+                calculations and Body Mass Index (BMI). While both serve similar purposes, they use different approaches
+                and can yield different insights about your health. Understanding these differences is crucial for
+                making informed decisions about your wellness journey.
+            </p>
+
+            <h2>Understanding BMI: The Global Standard</h2>
+            <p>
+                Body Mass Index (BMI) is a widely used screening tool that calculates the ratio of your weight to your
+                height squared. Developed in the 19th century by Belgian statistician Adolphe Quetelet, BMI has become
+                the international standard for categorizing weight status.
+            </p>
+
+            <div class="info-box p-6 rounded-lg mb-6">
+                <h3 class="text-blue-800 mt-0 mb-3 flex items-center">
+                    <i data-lucide="info" class="h-5 w-5 mr-2"></i>
+                    BMI Formula
+                </h3>
+                <p class="text-blue-700 mb-0">
+                    <strong>BMI = Weight (kg) ÷ Height (m)²</strong><br>
+                    For imperial units: BMI = (Weight in pounds × 703) ÷ (Height in inches)²
+                </p>
+            </div>
+
+            <h3>BMI Categories</h3>
+            <ul>
+                <li><strong>Underweight:</strong> BMI less than 18.5</li>
+                <li><strong>Normal weight:</strong> BMI 18.5-24.9</li>
+                <li><strong>Overweight:</strong> BMI 25-29.9</li>
+                <li><strong>Obese Class I:</strong> BMI 30-34.9</li>
+                <li><strong>Obese Class II:</strong> BMI 35-39.9</li>
+                <li><strong>Obese Class III:</strong> BMI 40 and above</li>
+            </ul>
+
+            <h2>Ideal Weight: A More Personalized Approach</h2>
+            <p>
+                Ideal weight calculations, also known as ideal body weight (IBW), attempt to determine the optimal
+                weight range for an individual based on various factors including height, gender, age, and sometimes
+                body frame size. Unlike BMI's one-size-fits-all approach, ideal weight formulas aim to provide more
+                personalized recommendations.
+            </p>
+
+            <h3>Common Ideal Weight Formulas</h3>
+
+            <h4>1. Devine Formula (1974)</h4>
+            <ul>
+                <li><strong>Men:</strong> 50 kg + 2.3 kg for each inch over 5 feet</li>
+                <li><strong>Women:</strong> 45.5 kg + 2.3 kg for each inch over 5 feet</li>
+            </ul>
+
+            <h4>2. Robinson Formula (1983)</h4>
+            <ul>
+                <li><strong>Men:</strong> 52 kg + 1.9 kg for each inch over 5 feet</li>
+                <li><strong>Women:</strong> 49 kg + 1.7 kg for each inch over 5 feet</li>
+            </ul>
+
+            <h4>3. Miller Formula (1983)</h4>
+            <ul>
+                <li><strong>Men:</strong> 56.2 kg + 1.41 kg for each inch over 5 feet</li>
+                <li><strong>Women:</strong> 53.1 kg + 1.36 kg for each inch over 5 feet</li>
+            </ul>
+
+            <h2>Key Differences Between BMI and Ideal Weight</h2>
+
+            <div class="comparison-card p-6 rounded-lg mb-6">
+                <h3 class="text-green-800 mt-0 mb-4 flex items-center">
+                    <i data-lucide="scale" class="h-5 w-5 mr-2"></i>
+                    Side-by-Side Comparison
+                </h3>
+
+                <div class="grid md:grid-cols-2 gap-6">
+                    <div>
+                        <h4 class="text-green-700 font-semibold mb-2">BMI Characteristics</h4>
+                        <ul class="text-green-600 space-y-1">
+                            <li>• Uses height and weight only</li>
+                            <li>• Gender-neutral calculation</li>
+                            <li>• Standardized global categories</li>
+                            <li>• Population-based screening tool</li>
+                            <li>• Doesn't consider body composition</li>
+                        </ul>
+                    </div>
+                    <div>
+                        <h4 class="text-green-700 font-semibold mb-2">Ideal Weight Characteristics</h4>
+                        <ul class="text-green-600 space-y-1">
+                            <li>• Considers gender differences</li>
+                            <li>• Some formulas include age/frame</li>
+                            <li>• Multiple calculation methods</li>
+                            <li>• Individual-focused approach</li>
+                            <li>• Provides target weight ranges</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+
+            <h2>Advantages and Limitations</h2>
+
+            <h3>BMI Advantages</h3>
+            <ul>
+                <li><strong>Simplicity:</strong> Easy to calculate and understand</li>
+                <li><strong>Standardization:</strong> Universally recognized and used</li>
+                <li><strong>Research backing:</strong> Extensive epidemiological data</li>
+                <li><strong>Population screening:</strong> Effective for large-scale health assessments</li>
+                <li><strong>Risk correlation:</strong> Strong association with disease risk at population level</li>
+            </ul>
+
+            <h3>BMI Limitations</h3>
+            <ul>
+                <li><strong>Body composition blind:</strong> Cannot distinguish muscle from fat</li>
+                <li><strong>Age insensitive:</strong> Doesn't account for age-related changes</li>
+                <li><strong>Ethnic variations:</strong> May not apply equally across different populations</li>
+                <li><strong>Distribution ignorance:</strong> Doesn't consider where fat is located</li>
+            </ul>
+
+            <h3>Ideal Weight Advantages</h3>
+            <ul>
+                <li><strong>Gender consideration:</strong> Accounts for physiological differences</li>
+                <li><strong>Target setting:</strong> Provides specific weight goals</li>
+                <li><strong>Medical applications:</strong> Used in clinical settings for dosing</li>
+                <li><strong>Flexibility:</strong> Multiple formulas for different needs</li>
+            </ul>
+
+            <h3>Ideal Weight Limitations</h3>
+            <ul>
+                <li><strong>Formula variations:</strong> Different methods can give different results</li>
+                <li><strong>Limited validation:</strong> Less research compared to BMI</li>
+                <li><strong>Simplistic approach:</strong> Still doesn't consider body composition</li>
+                <li><strong>Range uncertainty:</strong> Unclear what constitutes "ideal" for individuals</li>
+            </ul>
+
+            <h2>Which Metric Should You Use?</h2>
+
+            <h3>Use BMI When:</h3>
+            <ul>
+                <li>Conducting initial health screenings</li>
+                <li>Comparing with established research data</li>
+                <li>Assessing disease risk at population level</li>
+                <li>Working with standard medical protocols</li>
+                <li>Tracking long-term weight trends</li>
+            </ul>
+
+            <h3>Use Ideal Weight When:</h3>
+            <ul>
+                <li>Setting specific weight loss/gain goals</li>
+                <li>Considering gender-specific factors</li>
+                <li>Working with medical dosing calculations</li>
+                <li>Seeking more personalized targets</li>
+                <li>Dealing with athletic or muscular builds</li>
+            </ul>
+
+            <div class="warning-box p-6 rounded-lg mb-6">
+                <h3 class="text-amber-800 mt-0 mb-3 flex items-center">
+                    <i data-lucide="alert-triangle" class="h-5 w-5 mr-2"></i>
+                    Important Considerations
+                </h3>
+                <p class="text-amber-700 mb-0">
+                    Neither BMI nor ideal weight calculations account for body composition, bone density, muscle mass,
+                    or fat distribution. They should be used as starting points, not definitive health assessments.
+                </p>
+            </div>
+
+            <h2>Real-World Application Examples</h2>
+
+            <h3>Example 1: Athletic Individual</h3>
+            <p>
+                <strong>Profile:</strong> 30-year-old male, 6'0" (183 cm), 200 lbs (91 kg), muscular build
+            </p>
+            <ul>
+                <li><strong>BMI:</strong> 27.1 (categorized as overweight)</li>
+                <li><strong>Ideal Weight (Devine):</strong> 178 lbs (81 kg)</li>
+                <li><strong>Reality:</strong> Low body fat, high muscle mass - both metrics may overestimate health risk
+                </li>
+            </ul>
+
+            <h3>Example 2: Sedentary Individual</h3>
+            <p>
+                <strong>Profile:</strong> 45-year-old female, 5'4" (163 cm), 130 lbs (59 kg), minimal exercise
+            </p>
+            <ul>
+                <li><strong>BMI:</strong> 22.3 (normal weight)</li>
+                <li><strong>Ideal Weight (Devine):</strong> 123 lbs (56 kg)</li>
+                <li><strong>Reality:</strong> May have higher body fat percentage despite normal metrics</li>
+            </ul>
+
+            <h2>Beyond BMI and Ideal Weight: Additional Metrics</h2>
+
+            <h3>Waist-to-Hip Ratio</h3>
+            <p>
+                Measures fat distribution by comparing waist and hip circumferences. Values above 0.85 for women and
+                0.90 for men indicate increased health risk.
+            </p>
+
+            <h3>Waist Circumference</h3>
+            <p>
+                Simple measure of abdominal fat. Health risks increase with waist measurements above 35 inches (89 cm)
+                for women and 40 inches (102 cm) for men.
+            </p>
+
+            <h3>Body Fat Percentage</h3>
+            <p>
+                Directly measures the proportion of fat in your body. Healthy ranges vary by age and gender but
+                generally:
+            </p>
+            <ul>
+                <li><strong>Men:</strong> 10-20% (depending on age)</li>
+                <li><strong>Women:</strong> 16-30% (depending on age)</li>
+            </ul>
+
+            <h2>Making the Right Choice for Your Health</h2>
+
+            <h3>Step 1: Use Both Metrics</h3>
+            <p>
+                Calculate both your BMI and ideal weight range to get a broader perspective on your weight status. Look
+                for patterns and consistencies between the two.
+            </p>
+
+            <h3>Step 2: Consider Your Individual Factors</h3>
+            <ul>
+                <li>Age and life stage</li>
+                <li>Activity level and muscle mass</li>
+                <li>Health history and family genetics</li>
+                <li>Personal health goals</li>
+            </ul>
+
+            <h3>Step 3: Incorporate Additional Measurements</h3>
+            <p>
+                Add waist circumference, body fat percentage, or other relevant metrics to create a more complete health
+                picture.
+            </p>
+
+            <h3>Step 4: Consult Healthcare Professionals</h3>
+            <p>
+                Use these calculations as starting points for discussions with healthcare providers who can provide
+                personalized guidance based on your complete health profile.
+            </p>
+
+            <h2>Practical Tips for Using Both Metrics</h2>
+
+            <h3>For Weight Loss Goals</h3>
+            <ul>
+                <li>Use ideal weight to set target goals</li>
+                <li>Use BMI to track progress and assess health risk reduction</li>
+                <li>Monitor both metrics monthly, not daily</li>
+                <li>Focus on sustainable changes rather than quick fixes</li>
+            </ul>
+
+            <h3>For Health Monitoring</h3>
+            <ul>
+                <li>Track trends over time rather than single measurements</li>
+                <li>Consider seasonal and life stage variations</li>
+                <li>Combine with other health indicators (blood pressure, cholesterol, etc.)</li>
+                <li>Adjust expectations based on personal circumstances</li>
+            </ul>
+
+            <h2>The Future of Weight Assessment</h2>
+            <p>
+                As our understanding of health and body composition advances, new metrics and technologies are emerging.
+                These include:
+            </p>
+            <ul>
+                <li><strong>3D body scanning:</strong> Precise body composition analysis</li>
+                <li><strong>Bioelectrical impedance:</strong> Quick body fat percentage measurements</li>
+                <li><strong>AI-powered assessments:</strong> Personalized health risk calculations</li>
+                <li><strong>Continuous monitoring:</strong> Wearable devices for ongoing health tracking</li>
+            </ul>
+
+            <h2>Conclusion</h2>
+            <p>
+                Both BMI and ideal weight calculations have their place in health assessment, but neither tells the
+                complete story. BMI excels as a standardized screening tool with strong research backing, while ideal
+                weight calculations offer more personalized targets that consider gender differences.
+            </p>
+
+            <p>
+                The key is understanding that these are tools, not absolute measures of health. Use them together,
+                supplement with additional metrics when possible, and always consider your individual circumstances.
+                Most importantly, focus on overall health patterns rather than fixating on specific numbers.
+            </p>
+
+            <p>
+                Ready to calculate both metrics? Try our <a href="../index.html"
+                    class="text-teal-600 hover:text-teal-800 underline">BMI calculator</a> and <a
+                    href="../tools/ideal-weight-calculator.html"
+                    class="text-teal-600 hover:text-teal-800 underline">ideal weight calculator</a> to get started on
+                your personalized health assessment.
+            </p>
+        </div>
+
+        <!-- Article Actions -->
+        <div class="border-t border-gray-200 pt-8 mt-12">
+            <div class="flex flex-col sm:flex-row justify-between items-center">
+                <div class="mb-4 sm:mb-0">
+                    <p class="text-gray-600">Found this helpful? Share it:</p>
+                    <div class="flex space-x-4 mt-2">
+                        <a href="#" class="text-blue-600 hover:text-blue-800">
+                            <i data-lucide="facebook" class="h-5 w-5"></i>
+                        </a>
+                        <a href="#" class="text-blue-400 hover:text-blue-600">
+                            <i data-lucide="twitter" class="h-5 w-5"></i>
+                        </a>
+                        <a href="#" class="text-blue-700 hover:text-blue-900">
+                            <i data-lucide="linkedin" class="h-5 w-5"></i>
+                        </a>
+                    </div>
+                </div>
+                <a href="index.html" class="inline-flex items-center text-teal-600 hover:text-teal-800 font-medium">
+                    <i data-lucide="arrow-left" class="h-4 w-4 mr-2"></i>
+                    Back to Blog
+                </a>
+            </div>
+        </div>
+    </article>
+
+    <!-- Related Articles -->
+    <section class="bg-gray-100 py-16">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <h2 class="text-3xl font-bold text-gray-900 mb-8 text-center">Related Articles</h2>
+            <div class="grid md:grid-cols-3 gap-8">
+
+                <article class="bg-white rounded-lg shadow-md overflow-hidden">
+                    <div class="h-48 bg-gradient-to-br from-blue-500 to-blue-600"></div>
+                    <div class="p-6">
+                        <h3 class="text-lg font-bold text-gray-900 mb-2">
+                            <a href="understanding-bmi-body-composition-guide.html" class="hover:text-blue-600">
+                                Complete Guide to Understanding BMI and Body Composition
+                            </a>
+                        </h3>
+                        <p class="text-gray-600 text-sm">
+                            Learn everything about BMI, body composition, and how to interpret your results.
+                        </p>
+                    </div>
+                </article>
+
+                <article class="bg-white rounded-lg shadow-md overflow-hidden">
+                    <div class="h-48 bg-gradient-to-br from-orange-500 to-orange-600"></div>
+                    <div class="p-6">
+                        <h3 class="text-lg font-bold text-gray-900 mb-2">
+                            <a href="bmi-calculator-guide-beginners.html" class="hover:text-orange-600">
+                                BMI Calculator Guide for Beginners: Everything You Need to Know
+                            </a>
+                        </h3>
+                        <p class="text-gray-600 text-sm">
+                            A comprehensive beginner's guide to using BMI calculators effectively.
+                        </p>
+                    </div>
+                </article>
+
+                <article class="bg-white rounded-lg shadow-md overflow-hidden">
+                    <div class="h-48 bg-gradient-to-br from-green-500 to-green-600"></div>
+                    <div class="p-6">
+                        <h3 class="text-lg font-bold text-gray-900 mb-2">
+                            <a href="safe-weight-loss-strategies.html" class="hover:text-green-600">
+                                How to Lose Weight Safely: Evidence-Based Strategies
+                            </a>
+                        </h3>
+                        <p class="text-gray-600 text-sm">
+                            Discover scientifically proven methods for sustainable weight loss.
+                        </p>
+                    </div>
+                </article>
+
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="bg-gray-900 text-white py-12">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="grid md:grid-cols-4 gap-8">
+
+                <div>
+                    <div class="flex items-center mb-4">
+                        <i data-lucide="activity" class="h-8 w-8 text-blue-400 mr-2"></i>
+                        <span class="font-bold text-xl">Health Calculator Pro</span>
+                    </div>
+                    <p class="text-gray-300 leading-relaxed">
+                        Your trusted source for accurate health calculations and wellness guidance.
+                    </p>
+                </div>
+
+                <div>
+                    <h4 class="font-semibold text-lg mb-4">Quick Links</h4>
+                    <ul class="space-y-2">
+                        <li><a href="../index.html" class="text-gray-300 hover:text-white transition-colors">BMI
+                                Calculator</a></li>
+                        <li><a href="../tools/ideal-weight-calculator.html"
+                                class="text-gray-300 hover:text-white transition-colors">Ideal Weight</a></li>
+                        <li><a href="../tools/calorie-calculator.html"
+                                class="text-gray-300 hover:text-white transition-colors">Calorie Calculator</a></li>
+                        <li><a href="index.html" class="text-gray-300 hover:text-white transition-colors">Health
+                                Blog</a></li>
+                    </ul>
+                </div>
+
+                <div>
+                    <h4 class="font-semibold text-lg mb-4">External Tools</h4>
+                    <ul class="space-y-2">
+                        <li><a href="https://bdbillcalculator.netlify.app/" target="_blank"
+                                class="text-gray-300 hover:text-white transition-colors">Bill Calculator</a></li>
+                        <li><a href="https://bdcgpacalculator.netlify.app/" target="_blank"
+                                class="text-gray-300 hover:text-white transition-colors">CGPA Calculator</a></li>
+                    </ul>
+                </div>
+
+                <div>
+                    <h4 class="font-semibold text-lg mb-4">Connect</h4>
+                    <div class="flex space-x-4">
+                        <a href="#" class="text-gray-300 hover:text-white transition-colors">
+                            <i data-lucide="facebook" class="h-6 w-6"></i>
+                        </a>
+                        <a href="#" class="text-gray-300 hover:text-white transition-colors">
+                            <i data-lucide="twitter" class="h-6 w-6"></i>
+                        </a>
+                        <a href="#" class="text-gray-300 hover:text-white transition-colors">
+                            <i data-lucide="linkedin" class="h-6 w-6"></i>
+                        </a>
+                    </div>
+                </div>
+
+            </div>
+
+            <div class="border-t border-gray-700 mt-8 pt-8 text-center">
+                <p class="text-gray-300">
+                    © 2025 Health Calculator Pro. All rights reserved. |
+                    <a href="#" class="hover:text-white">Privacy Policy</a> |
+                    <a href="#" class="hover:text-white">Terms of Service</a>
+                </p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- JavaScript -->
+    <script>
+        // Initialize Lucide icons
+        lucide.createIcons();
+
+        // Mobile menu functionality
+        const mobileMenuButton = document.getElementById('mobile-menu-button');
+        const mobileMenu = document.getElementById('mobile-menu');
+
+        mobileMenuButton.addEventListener('click', () => {
+            mobileMenu.classList.toggle('hidden');
+        });
+
+        // Smooth scrolling for anchor links
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                const target = document.querySelector(this.getAttribute('href'));
+                if (target) {
+                    target.scrollIntoView({
+                        behavior: 'smooth',
+                        block: 'start'
+                    });
+                }
+            });
+        });
+
+        // Reading progress indicator
+        const progressBar = document.createElement('div');
+        progressBar.style.cssText = `
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 0%;
+            height: 3px;
+            background: linear-gradient(90deg, #0d9488, #06b6d4);
+            z-index: 9999;
+            transition: width 0.1s ease;
+        `;
+        document.body.appendChild(progressBar);
+
+        window.addEventListener('scroll', () => {
+            const scrolled = (window.scrollY / (document.documentElement.scrollHeight - window.innerHeight)) * 100;
+            progressBar.style.width = scrolled + '%';
+        });
+    </script>
+</body>
+
+</html>

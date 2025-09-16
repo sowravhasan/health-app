@@ -1,0 +1,73 @@
+User-agent: *
+Allow: /
+
+# Main sitemap - contains key health calculator and blog content
+Sitemap: https://free-bmi-calculator.netlify.app/sitemap.xml
+
+# Block sensitive/system files
+Disallow: /_headers
+Disallow: /_redirects
+Disallow: /netlify.toml
+Disallow: /*.env
+Disallow: /node_modules/
+Disallow: /.*
+Disallow: /tmp/
+Disallow: /temp/
+Disallow: /*.tmp$
+Disallow: /*.log$
+
+# Allow important SEO/public files (matching sitemap.xml entries)
+Allow: /humans.txt
+Allow: /robots.txt
+Allow: /sitemap.xml
+Allow: /rss.xml
+Allow: /manifest.json
+Allow: /Ads.txt
+Allow: /google6cf348dae9b116c4.html
+Allow: /.well-known/
+Allow: /assets/
+
+# Explicitly allow main content sections
+# Health Calculator Pro Home
+Allow: /
+# Health Blog Section
+Allow: /blog/
+# Health Tools Section  
+Allow: /tools/
+# Calculator tools
+Allow: /tools/ideal-weight-calculator.html
+Allow: /tools/calorie-calculator.html
+
+# Fragment URLs for main page sections
+Allow: /#bmiForm
+Allow: /#frequently-asked-questions
+Allow: /#unit-conversion-tools
+Allow: /#understanding-bmi-complete-guide
+Allow: /#resultsCard
+
+# Performance optimization - crawl delay for heavy bots
+User-agent: *
+Crawl-delay: 1
+
+# Specific bot instructions
+User-agent: Googlebot
+Allow: /
+
+User-agent: Bingbot
+Allow: /
+
+User-agent: facebookexternalhit
+Allow: /
+
+User-agent: Twitterbot
+Allow: /
+
+# Block problematic bots
+User-agent: SemrushBot
+Disallow: /
+
+User-agent: AhrefsBot
+Disallow: /
+
+User-agent: MJ12bot
+Disallow: /

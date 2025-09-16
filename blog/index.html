@@ -1,0 +1,518 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <!-- SEO Meta Tags -->
+    <title>Health & Fitness Blog | Health Calculator Pro - Expert Health Advice & Tips</title>
+    <meta name="description"
+        content="Expert health and fitness advice from Health Calculator Pro. Learn about weight management, nutrition, exercise, and healthy living with science-backed articles and tips.">
+    <meta name="keywords"
+        content="health blog, fitness tips, weight management, nutrition advice, BMI tips, healthy living, diet plans, exercise routines, wellness articles, health calculator pro">
+    <meta name="author" content="Health Calculator Pro Team">
+    <meta name="robots" content="index, follow">
+
+    <!-- Open Graph Tags -->
+    <meta property="og:title" content="Health & Fitness Blog | Expert Advice & Tips">
+    <meta property="og:description"
+        content="Expert health and fitness advice. Learn about weight management, nutrition, exercise, and healthy living with science-backed articles.">
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://free-bmi-calculator.netlify.app/blog/">
+    <meta property="og:image" content="https://free-bmi-calculator.netlify.app/assets/images/og-image.jpg">
+
+    <!-- Canonical URL -->
+    <link rel="canonical" href="https://free-bmi-calculator.netlify.app/blog/">
+
+    <!-- Favicon -->
+    <link rel="icon" type="image/png" href="../assets/icons/favicon.png">
+
+    <!-- Structured Data -->
+    <script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@type": "Blog",
+        "name": "Health Calculator Pro Health Blog",
+        "description": "Expert health and fitness advice covering weight management, nutrition, exercise, and healthy living",
+        "url": "https://free-bmi-calculator.netlify.app/blog/",
+        "publisher": {
+            "@type": "Organization",
+            "name": "Health Calculator Pro",
+            "url": "https://free-bmi-calculator.netlify.app/"
+        },
+        "blogPost": [
+            {
+                "@type": "BlogPosting",
+                "headline": "Complete Guide to Understanding BMI and Body Composition",
+                "url": "https://free-bmi-calculator.netlify.app/blog/understanding-bmi-body-composition-guide.html"
+            },
+            {
+                "@type": "BlogPosting", 
+                "headline": "How to Lose Weight Safely: Evidence-Based Strategies That Work",
+                "url": "https://free-bmi-calculator.netlify.app/blog/safe-weight-loss-strategies.html"
+            },
+            {
+                "@type": "BlogPosting",
+                "headline": "Healthy Diet Plans for Every BMI Category",
+                "url": "https://free-bmi-calculator.netlify.app/blog/healthy-diet-plans-bmi-categories.html"
+            }
+        ]
+    }
+    </script>
+
+    <!-- External CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script src="https://unpkg.com/lucide@latest/dist/umd/lucide.js"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+
+    <!-- Custom Styles -->
+    <style>
+        body {
+            font-family: 'Inter', sans-serif;
+        }
+
+        .blog-card {
+            transition: transform 0.2s ease, box-shadow 0.2s ease;
+        }
+
+        .blog-card:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+        }
+    </style>
+</head>
+
+<body class="bg-gray-50 min-h-screen">
+    <!-- Navigation -->
+    <nav class="bg-white shadow-lg sticky top-0 z-50">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex justify-between h-16">
+                <div class="flex items-center">
+                    <a href="../index.html" class="flex-shrink-0 flex items-center">
+                        <i data-lucide="activity" class="h-8 w-8 text-green-600 mr-2"></i>
+                        <span class="font-bold text-xl text-gray-900">Health Calculator Pro</span>
+                    </a>
+                </div>
+
+                <!-- Desktop Navigation -->
+                <div class="hidden md:flex items-center space-x-8">
+                    <a href="../index.html"
+                        class="text-gray-700 hover:text-green-600 px-3 py-2 rounded-md text-sm font-medium transition-colors">
+                        Home
+                    </a>
+                    <a href="../tools/index.html"
+                        class="text-gray-700 hover:text-green-600 px-3 py-2 rounded-md text-sm font-medium transition-colors">
+                        Health Tools
+                    </a>
+                    <a href="index.html"
+                        class="text-green-600 px-3 py-2 rounded-md text-sm font-medium border-b-2 border-green-600">
+                        Health Blog
+                    </a>
+
+                    <!-- External Calculators Dropdown -->
+                    <div class="relative group">
+                        <button
+                            class="text-gray-700 hover:text-green-600 px-3 py-2 rounded-md text-sm font-medium transition-colors flex items-center">
+                            More Tools
+                            <i data-lucide="chevron-down" class="h-4 w-4 ml-1"></i>
+                        </button>
+                        <div
+                            class="absolute right-0 mt-2 w-48 bg-white rounded-md shadow-lg opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-200">
+                            <div class="py-1">
+                                <a href="https://bdbillcalculator.netlify.app/" target="_blank"
+                                    class="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100">
+                                    Bill Calculator
+                                </a>
+                                <a href="https://bdcgpacalculator.netlify.app/" target="_blank"
+                                    class="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100">
+                                    CGPA Calculator
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Mobile menu button -->
+                <div class="md:hidden flex items-center">
+                    <button id="mobile-menu-button"
+                        class="text-gray-700 hover:text-green-600 focus:outline-none focus:text-green-600">
+                        <i data-lucide="menu" class="h-6 w-6"></i>
+                    </button>
+                </div>
+            </div>
+        </div>
+
+        <!-- Mobile Navigation -->
+        <div id="mobile-menu" class="md:hidden hidden bg-white border-t border-gray-200">
+            <div class="px-2 pt-2 pb-3 space-y-1">
+                <a href="../index.html"
+                    class="text-gray-700 hover:text-green-600 block px-3 py-2 rounded-md text-base font-medium">
+                    Home
+                </a>
+                <a href="../tools/index.html"
+                    class="text-gray-700 hover:text-green-600 block px-3 py-2 rounded-md text-base font-medium">
+                    Health Tools
+                </a>
+                <a href="index.html"
+                    class="text-green-600 block px-3 py-2 rounded-md text-base font-medium bg-green-50">
+                    Health Blog
+                </a>
+
+                <!-- External Tools -->
+                <div class="border-t border-gray-200 pt-2">
+                    <p class="px-3 py-2 text-sm font-medium text-gray-500">External Tools</p>
+                    <a href="https://bdbillcalculator.netlify.app/" target="_blank"
+                        class="text-gray-700 hover:text-green-600 block px-3 py-2 rounded-md text-base font-medium">
+                        Bill Calculator
+                    </a>
+                    <a href="https://bdcgpacalculator.netlify.app/" target="_blank"
+                        class="text-gray-700 hover:text-green-600 block px-3 py-2 rounded-md text-base font-medium">
+                        CGPA Calculator
+                    </a>
+                </div>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Main Content -->
+    <main class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
+        <!-- Hero Section -->
+        <section class="text-center mb-12">
+            <h1 class="text-4xl md:text-5xl font-bold text-gray-900 mb-4">
+                Health & Fitness Blog
+            </h1>
+            <p class="text-xl text-gray-600 max-w-3xl mx-auto leading-relaxed">
+                Expert advice on weight management, nutrition, exercise, and healthy living.
+                Evidence-based articles to help you achieve your health goals.
+            </p>
+        </section>
+
+        <!-- Featured Articles -->
+        <section class="mb-16">
+            <h2 class="text-2xl font-bold text-gray-900 mb-8">Featured Articles</h2>
+            <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+
+                <!-- Article 1 -->
+                <article class="blog-card bg-white rounded-lg shadow-md overflow-hidden">
+                    <div class="h-48 relative overflow-hidden">
+                        <img src="../assets/images/blog-images/health-image1.jpg"
+                            alt="Understanding BMI and Body Composition"
+                            class="w-full h-full object-cover transition-transform duration-300 hover:scale-105">
+                        <div class="absolute inset-0 bg-gradient-to-t from-black/20 to-transparent"></div>
+                    </div>
+                    <div class="p-6">
+                        <div class="flex items-center text-sm text-gray-500 mb-2">
+                            <i data-lucide="calendar" class="h-4 w-4 mr-1"></i>
+                            <time datetime="2025-09-16">September 16, 2025</time>
+                            <span class="mx-2">•</span>
+                            <span>8 min read</span>
+                        </div>
+                        <h3 class="text-xl font-bold text-gray-900 mb-3">
+                            <a href="understanding-bmi-body-composition-guide.html"
+                                class="hover:text-blue-600 transition-colors">
+                                Complete Guide to Understanding BMI and Body Composition
+                            </a>
+                        </h3>
+                        <p class="text-gray-600 leading-relaxed mb-4">
+                            Learn everything about BMI, body composition, and how to interpret your results for better
+                            health decisions.
+                        </p>
+                        <a href="understanding-bmi-body-composition-guide.html"
+                            class="inline-flex items-center text-blue-600 hover:text-blue-700 font-medium">
+                            Read More
+                            <i data-lucide="arrow-right" class="h-4 w-4 ml-1"></i>
+                        </a>
+                    </div>
+                </article>
+
+                <!-- Article 2 -->
+                <article class="blog-card bg-white rounded-lg shadow-md overflow-hidden">
+                    <div class="h-48 relative overflow-hidden">
+                        <img src="../assets/images/blog-images/health-image5.jpg" alt="Safe Weight Loss Strategies"
+                            class="w-full h-full object-cover transition-transform duration-300 hover:scale-105">
+                        <div class="absolute inset-0 bg-gradient-to-t from-black/20 to-transparent"></div>
+                    </div>
+                    <div class="p-6">
+                        <div class="flex items-center text-sm text-gray-500 mb-2">
+                            <i data-lucide="calendar" class="h-4 w-4 mr-1"></i>
+                            <time datetime="2025-09-14">September 14, 2025</time>
+                            <span class="mx-2">•</span>
+                            <span>10 min read</span>
+                        </div>
+                        <h3 class="text-xl font-bold text-gray-900 mb-3">
+                            <a href="safe-weight-loss-strategies.html" class="hover:text-green-600 transition-colors">
+                                How to Lose Weight Safely: Evidence-Based Strategies
+                            </a>
+                        </h3>
+                        <p class="text-gray-600 leading-relaxed mb-4">
+                            Discover scientifically proven methods for sustainable weight loss without compromising your
+                            health.
+                        </p>
+                        <a href="safe-weight-loss-strategies.html"
+                            class="inline-flex items-center text-green-600 hover:text-green-700 font-medium">
+                            Read More
+                            <i data-lucide="arrow-right" class="h-4 w-4 ml-1"></i>
+                        </a>
+                    </div>
+                </article>
+
+                <!-- Article 3 -->
+                <article class="blog-card bg-white rounded-lg shadow-md overflow-hidden">
+                    <div class="h-48 relative overflow-hidden">
+                        <img src="../assets/images/blog-images/health-image6.jpg" alt="Healthy Diet Plans"
+                            class="w-full h-full object-cover transition-transform duration-300 hover:scale-105">
+                        <div class="absolute inset-0 bg-gradient-to-t from-black/20 to-transparent"></div>
+                    </div>
+                    <div class="p-6">
+                        <div class="flex items-center text-sm text-gray-500 mb-2">
+                            <i data-lucide="calendar" class="h-4 w-4 mr-1"></i>
+                            <time datetime="2025-09-12">September 12, 2025</time>
+                            <span class="mx-2">•</span>
+                            <span>12 min read</span>
+                        </div>
+                        <h3 class="text-xl font-bold text-gray-900 mb-3">
+                            <a href="healthy-diet-plans-bmi-categories.html"
+                                class="hover:text-purple-600 transition-colors">
+                                Healthy Diet Plans for Every BMI Category
+                            </a>
+                        </h3>
+                        <p class="text-gray-600 leading-relaxed mb-4">
+                            Customized nutrition strategies based on your BMI category to achieve optimal health
+                            outcomes.
+                        </p>
+                        <a href="healthy-diet-plans-bmi-categories.html"
+                            class="inline-flex items-center text-purple-600 hover:text-purple-700 font-medium">
+                            Read More
+                            <i data-lucide="arrow-right" class="h-4 w-4 ml-1"></i>
+                        </a>
+                    </div>
+                </article>
+
+                <!-- Article 4 -->
+                <article class="blog-card bg-white rounded-lg shadow-md overflow-hidden">
+                    <div class="h-48 relative overflow-hidden">
+                        <img src="../assets/images/blog-images/health-image7.jpg"
+                            alt="BMI Calculator Guide for Beginners"
+                            class="w-full h-full object-cover transition-transform duration-300 hover:scale-105">
+                        <div class="absolute inset-0 bg-gradient-to-t from-black/20 to-transparent"></div>
+                    </div>
+                    <div class="p-6">
+                        <div class="flex items-center text-sm text-gray-500 mb-2">
+                            <i data-lucide="calendar" class="h-4 w-4 mr-1"></i>
+                            <time datetime="2025-09-10">September 10, 2025</time>
+                            <span class="mx-2">•</span>
+                            <span>6 min read</span>
+                        </div>
+                        <h3 class="text-xl font-bold text-gray-900 mb-3">
+                            <a href="bmi-calculator-guide-beginners.html"
+                                class="hover:text-orange-600 transition-colors">
+                                BMI Calculator Guide for Beginners: Everything You Need to Know
+                            </a>
+                        </h3>
+                        <p class="text-gray-600 leading-relaxed mb-4">
+                            A comprehensive beginner's guide to using BMI calculators effectively and understanding your
+                            results.
+                        </p>
+                        <a href="bmi-calculator-guide-beginners.html"
+                            class="inline-flex items-center text-orange-600 hover:text-orange-700 font-medium">
+                            Read More
+                            <i data-lucide="arrow-right" class="h-4 w-4 ml-1"></i>
+                        </a>
+                    </div>
+                </article>
+
+                <!-- Article 5 -->
+                <article class="blog-card bg-white rounded-lg shadow-md overflow-hidden">
+                    <div class="h-48 relative overflow-hidden">
+                        <img src="../assets/images/blog-images/health-image8.jpg" alt="Ideal Weight vs BMI Comparison"
+                            class="w-full h-full object-cover transition-transform duration-300 hover:scale-105">
+                        <div class="absolute inset-0 bg-gradient-to-t from-black/20 to-transparent"></div>
+                        <div class="absolute inset-0 flex items-center justify-center">
+                            <div class="bg-white/90 backdrop-blur-sm rounded-lg px-4 py-2">
+                                <i data-lucide="heart-pulse" class="h-8 w-8 text-teal-600 mx-auto"></i>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="p-6">
+                        <div class="flex items-center text-sm text-gray-500 mb-2">
+                            <i data-lucide="calendar" class="h-4 w-4 mr-1"></i>
+                            <time datetime="2025-09-08">September 8, 2025</time>
+                            <span class="mx-2">•</span>
+                            <span>9 min read</span>
+                        </div>
+                        <h3 class="text-xl font-bold text-gray-900 mb-3">
+                            <a href="ideal-weight-vs-bmi-comprehensive-comparison.html"
+                                class="hover:text-teal-600 transition-colors">
+                                Ideal Weight vs BMI: A Comprehensive Comparison for Better Health
+                            </a>
+                        </h3>
+                        <p class="text-gray-600 leading-relaxed mb-4">
+                            Understand the differences between ideal weight and BMI calculations to make better health
+                            decisions.
+                        </p>
+                        <a href="ideal-weight-vs-bmi-comprehensive-comparison.html"
+                            class="inline-flex items-center text-teal-600 hover:text-teal-700 font-medium">
+                            Read More
+                            <i data-lucide="arrow-right" class="h-4 w-4 ml-1"></i>
+                        </a>
+                    </div>
+                </article>
+
+            </div>
+        </section>
+
+        <!-- Categories -->
+        <section class="mb-16">
+            <h2 class="text-2xl font-bold text-gray-900 mb-8">Browse by Category</h2>
+            <div class="grid md:grid-cols-2 lg:grid-cols-4 gap-6">
+
+                <div class="bg-white rounded-lg shadow-md p-6 text-center hover:shadow-lg transition-shadow">
+                    <div class="w-12 h-12 bg-blue-100 rounded-lg flex items-center justify-center mx-auto mb-4">
+                        <i data-lucide="heart" class="h-6 w-6 text-blue-600"></i>
+                    </div>
+                    <h3 class="font-semibold text-gray-900 mb-2">Weight Management</h3>
+                    <p class="text-sm text-gray-600">Tips for healthy weight loss and maintenance</p>
+                </div>
+
+                <div class="bg-white rounded-lg shadow-md p-6 text-center hover:shadow-lg transition-shadow">
+                    <div class="w-12 h-12 bg-green-100 rounded-lg flex items-center justify-center mx-auto mb-4">
+                        <i data-lucide="apple" class="h-6 w-6 text-green-600"></i>
+                    </div>
+                    <h3 class="font-semibold text-gray-900 mb-2">Nutrition</h3>
+                    <p class="text-sm text-gray-600">Evidence-based nutrition and diet advice</p>
+                </div>
+
+                <div class="bg-white rounded-lg shadow-md p-6 text-center hover:shadow-lg transition-shadow">
+                    <div class="w-12 h-12 bg-purple-100 rounded-lg flex items-center justify-center mx-auto mb-4">
+                        <i data-lucide="dumbbell" class="h-6 w-6 text-purple-600"></i>
+                    </div>
+                    <h3 class="font-semibold text-gray-900 mb-2">Exercise</h3>
+                    <p class="text-sm text-gray-600">Workout plans and fitness strategies</p>
+                </div>
+
+                <div class="bg-white rounded-lg shadow-md p-6 text-center hover:shadow-lg transition-shadow">
+                    <div class="w-12 h-12 bg-orange-100 rounded-lg flex items-center justify-center mx-auto mb-4">
+                        <i data-lucide="brain" class="h-6 w-6 text-orange-600"></i>
+                    </div>
+                    <h3 class="font-semibold text-gray-900 mb-2">Mental Health</h3>
+                    <p class="text-sm text-gray-600">Wellness and mental health tips</p>
+                </div>
+
+            </div>
+        </section>
+
+        <!-- Newsletter Signup -->
+        <section class="bg-gradient-to-r from-blue-600 to-purple-600 rounded-2xl p-8 text-center text-white">
+            <h2 class="text-2xl font-bold mb-4">Stay Updated with Health Tips</h2>
+            <p class="text-blue-100 mb-6 max-w-2xl mx-auto">
+                Get the latest evidence-based health and fitness advice delivered to your inbox.
+                No spam, just valuable content to help you reach your health goals.
+            </p>
+            <div class="max-w-md mx-auto flex flex-col sm:flex-row gap-4">
+                <input type="email" placeholder="Enter your email"
+                    class="flex-1 px-4 py-3 rounded-lg text-gray-900 focus:outline-none focus:ring-2 focus:ring-white">
+                <button
+                    class="bg-white text-blue-600 px-6 py-3 rounded-lg font-medium hover:bg-gray-100 transition-colors">
+                    Subscribe
+                </button>
+            </div>
+        </section>
+
+    </main>
+
+    <!-- Footer -->
+    <footer class="bg-white border-t mt-16">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
+            <div class="grid md:grid-cols-4 gap-8">
+
+                <div class="col-span-2">
+                    <div class="flex items-center space-x-2 mb-4">
+                        <i data-lucide="activity" class="h-6 w-6 text-green-600"></i>
+                        <span class="text-xl font-bold text-gray-900">BMI Calculator</span>
+                    </div>
+                    <p class="text-gray-600 leading-relaxed mb-4">
+                        Your trusted source for BMI calculations and health guidance.
+                        Evidence-based advice to help you achieve optimal health and wellness.
+                    </p>
+                    <div class="flex space-x-4">
+                        <a href="#" class="text-gray-400 hover:text-green-600 transition-colors">
+                            <i data-lucide="facebook" class="h-5 w-5"></i>
+                        </a>
+                        <a href="#" class="text-gray-400 hover:text-green-600 transition-colors">
+                            <i data-lucide="twitter" class="h-5 w-5"></i>
+                        </a>
+                        <a href="#" class="text-gray-400 hover:text-green-600 transition-colors">
+                            <i data-lucide="instagram" class="h-5 w-5"></i>
+                        </a>
+                    </div>
+                </div>
+
+                <div>
+                    <h3 class="font-semibold text-gray-900 mb-4">Health Tools</h3>
+                    <ul class="space-y-2 text-gray-600">
+                        <li><a href="../" class="hover:text-green-600 transition-colors">BMI Calculator</a></li>
+                        <li><a href="../tools/ideal-weight-calculator.html"
+                                class="hover:text-green-600 transition-colors">Ideal Weight Calculator</a></li>
+                        <li><a href="../tools/calorie-calculator.html"
+                                class="hover:text-green-600 transition-colors">Calorie Calculator</a></li>
+                        <li><a href="../tools/" class="hover:text-green-600 transition-colors">All Health Tools</a></li>
+                    </ul>
+                </div>
+
+                <div>
+                    <h3 class="font-semibold text-gray-900 mb-4">More Calculators</h3>
+                    <ul class="space-y-2 text-gray-600">
+                        <li>
+                            <a href="https://bdbillcalculator.netlify.app/" target="_blank" rel="noopener"
+                                class="flex items-center hover:text-blue-600 transition-colors">
+                                <span>Bill Calculator</span>
+                                <i data-lucide="external-link" class="h-3 w-3 ml-1"></i>
+                            </a>
+                        </li>
+                        <li>
+                            <a href="https://bdcgpacalculator.netlify.app/" target="_blank" rel="noopener"
+                                class="flex items-center hover:text-purple-600 transition-colors">
+                                <span>CGPA Calculator</span>
+                                <i data-lucide="external-link" class="h-3 w-3 ml-1"></i>
+                            </a>
+                        </li>
+                        <li><a href="../#frequently-asked-questions"
+                                class="hover:text-green-600 transition-colors">FAQ</a></li>
+                        <li><a href="../#understanding-bmi-complete-guide"
+                                class="hover:text-green-600 transition-colors">BMI Guide</a></li>
+                    </ul>
+                </div>
+
+            </div>
+
+            <div class="border-t border-gray-200 mt-8 pt-8 flex flex-col md:flex-row justify-between items-center">
+                <p class="text-gray-600 mb-4 md:mb-0">© 2025 BMI Calculator. All rights reserved.</p>
+                <div class="flex space-x-6 text-sm text-gray-600">
+                    <a href="#" class="hover:text-green-600 transition-colors">Privacy Policy</a>
+                    <a href="#" class="hover:text-green-600 transition-colors">Terms of Service</a>
+                    <a href="#" class="hover:text-green-600 transition-colors">Contact</a>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Initialize Lucide Icons -->
+    <script>
+        lucide.createIcons();
+
+        // Mobile Menu JavaScript for Blog
+        document.addEventListener('DOMContentLoaded', function () {
+            const mobileMenuBtn = document.getElementById('mobileMenuBtn');
+            const mobileMenu = document.getElementById('mobileMenu');
+
+            if (mobileMenuBtn && mobileMenu) {
+                mobileMenuBtn.addEventListener('click', function () {
+                    mobileMenu.classList.toggle('hidden');
+                });
+            }
+        });
+    </script>
+</body>
+
+</html>

@@ -1,0 +1,630 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <!-- SEO Meta Tags -->
+    <title>Free Health Calculators & Tools | BMI, Calorie, I <!-- Waist to Hip Ratio -->
+        <div class="tool-card bg-white rounded-lg shadow-md overflow-hidden border border-gray-200">
+            <div class="h-32 bg-gradient-to-br from-teal-500 to-cyan-500"></div>
+            <div class="p-6">
+                <div class="flex items-center mb-3">
+                    <i data-lucide="ruler" class="h-6 w-6 text-teal-600 mr-2"></i>
+                    <h3 class="text-xl font-bold text-gray-900">Waist-to-Hip Ratio</h3>
+                </div>
+                <p class="text-gray-600 mb-4">
+                    Calculate your waist-to-hip ratio to assess body fat distribution and health risks associated with
+                    central obesity.
+                </p>
+                <div class="mb-4">
+                    <span
+                        class="inline-block bg-green-100 text-green-800 px-2 py-1 rounded text-xs font-medium mr-2">Free</span>
+                    <span
+                        class="inline-block bg-blue-100 text-blue-800 px-2 py-1 rounded text-xs font-medium mr-2">Health
+                        Assessment</span>
+                    <span class="inline-block bg-teal-100 text-teal-800 px-2 py-1 rounded text-xs font-medium">Risk
+                        Analysis</span>
+                </div>
+                <a href="#waist-hip-ratio"
+                    class="inline-flex items-center bg-teal-600 text-white px-4 py-2 rounded-lg hover:bg-teal-700 transition-colors font-medium">
+                    Use Calculator
+                    <i data-lucide="arrow-right" class="h-4 w-4 ml-2"></i>
+                </a>
+            </div>
+        </div>t Calculator
+    </title>
+    <meta name="description"
+        content="Free online health calculators and tools. Calculate BMI, ideal weight, daily calories, body fat percentage, and more. Accurate, fast, and mobile-friendly health assessment tools.">
+    <meta name="keywords"
+        content="health calculators, BMI calculator, calorie calculator, ideal weight calculator, body fat calculator, health tools, weight management tools, fitness calculators">
+    <meta name="author" content="BMI Calculator Health Team">
+    <meta name="robots" content="index, follow">
+
+    <!-- Open Graph Tags -->
+    <meta property="og:title" content="Free Health Calculators & Tools">
+    <meta property="og:description"
+        content="Free online health calculators including BMI, calorie, ideal weight, and body fat calculators.">
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://free-bmi-calculator.netlify.app/tools/">
+    <meta property="og:image" content="https://free-bmi-calculator.netlify.app/assets/images/og-image.jpg">
+
+    <!-- Canonical URL -->
+    <link rel="canonical" href="https://free-bmi-calculator.netlify.app/tools/">
+
+    <!-- Favicon -->
+    <link rel="icon" type="image/png" href="../assets/icons/favicon.png">
+
+    <!-- Structured Data -->
+    <script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@type": "CollectionPage",
+        "name": "Health Calculators & Tools",
+        "description": "Collection of free health and fitness calculators for weight management and health assessment",
+        "url": "https://free-bmi-calculator.netlify.app/tools/",
+        "publisher": {
+            "@type": "Organization",
+            "name": "Free BMI Calculator",
+            "url": "https://free-bmi-calculator.netlify.app/"
+        },
+        "hasPart": [
+            {
+                "@type": "WebApplication",
+                "name": "BMI Calculator",
+                "url": "https://free-bmi-calculator.netlify.app/"
+            },
+            {
+                "@type": "WebApplication",
+                "name": "Ideal Weight Calculator",
+                "url": "https://free-bmi-calculator.netlify.app/tools/ideal-weight-calculator.html"
+            },
+            {
+                "@type": "WebApplication",
+                "name": "Calorie Calculator",
+                "url": "https://free-bmi-calculator.netlify.app/tools/calorie-calculator.html"
+            }
+        ]
+    }
+    </script>
+
+    <!-- External CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script src="https://unpkg.com/lucide@latest/dist/umd/lucide.js"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+
+    <!-- Custom Styles -->
+    <style>
+        body {
+            font-family: 'Inter', sans-serif;
+        }
+
+        .tool-card {
+            transition: all 0.3s ease;
+        }
+
+        .tool-card:hover {
+            transform: translateY(-4px);
+            box-shadow: 0 10px 25px rgba(0, 0, 0, 0.1);
+        }
+    </style>
+</head>
+
+<body class="bg-gray-50 min-h-screen">
+    <!-- Header -->
+    <header class="bg-white shadow-sm border-b sticky top-0 z-40">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex justify-between items-center py-4">
+                <div class="flex items-center space-x-3">
+                    <a href="../" class="flex items-center space-x-2">
+                        <i data-lucide="activity" class="h-8 w-8 text-green-600"></i>
+                        <span class="text-xl font-bold text-gray-900">Health Calculator Pro</span>
+                    </a>
+                </div>
+
+                <!-- Desktop Navigation -->
+                <nav class="hidden lg:flex items-center space-x-1">
+                    <a href="../blog/"
+                        class="px-3 py-2 rounded-lg text-gray-600 hover:text-green-600 hover:bg-green-50 transition-all duration-200 font-medium">Health
+                        Blog</a>
+                    <a href="./" class="px-3 py-2 rounded-lg text-green-600 bg-green-50 font-medium">Health Tools</a>
+
+                    <!-- More Tools Dropdown -->
+                    <div class="relative group">
+                        <button
+                            class="flex items-center px-3 py-2 rounded-lg text-gray-600 hover:text-green-600 hover:bg-green-50 transition-all duration-200 font-medium">
+                            More Tools
+                            <i data-lucide="chevron-down" class="h-4 w-4 ml-1"></i>
+                        </button>
+                        <div
+                            class="absolute top-full left-0 mt-1 w-48 bg-white rounded-lg shadow-lg border border-gray-200 opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-200 z-50">
+                            <a href="https://bdbillcalculator.netlify.app/" target="_blank" rel="noopener"
+                                class="flex items-center px-4 py-3 text-gray-700 hover:bg-green-50 hover:text-green-600 transition-colors">
+                                <i data-lucide="calculator" class="h-4 w-4 mr-3 text-blue-600"></i>
+                                <span>Bill Calculator</span>
+                                <i data-lucide="external-link" class="h-3 w-3 ml-auto text-gray-400"></i>
+                            </a>
+                            <a href="https://bdcgpacalculator.netlify.app/" target="_blank" rel="noopener"
+                                class="flex items-center px-4 py-3 text-gray-700 hover:bg-green-50 hover:text-green-600 transition-colors">
+                                <i data-lucide="graduation-cap" class="h-4 w-4 mr-3 text-purple-600"></i>
+                                <span>CGPA Calculator</span>
+                                <i data-lucide="external-link" class="h-3 w-3 ml-auto text-gray-400"></i>
+                            </a>
+                        </div>
+                    </div>
+                </nav>
+
+                <!-- Mobile Menu Button -->
+                <button id="mobileMenuBtn" class="lg:hidden p-2 rounded-lg hover:bg-gray-100 transition-colors">
+                    <i data-lucide="menu" class="h-6 w-6 text-gray-600"></i>
+                </button>
+            </div>
+
+            <!-- Mobile Menu -->
+            <div id="mobileMenu" class="hidden lg:hidden border-t border-gray-200 py-4">
+                <nav class="space-y-2">
+                    <a href="../blog/"
+                        class="block py-2 px-4 text-gray-700 hover:bg-green-50 hover:text-green-600 rounded-lg transition-colors">Health
+                        Blog</a>
+                    <a href="./" class="block py-2 px-4 text-green-600 bg-green-50 font-medium rounded-lg">Health
+                        Tools</a>
+                    <div class="border-t border-gray-200 my-2 pt-2">
+                        <p class="px-4 text-xs font-semibold text-gray-500 uppercase tracking-wider mb-2">External Tools
+                        </p>
+                        <a href="https://bdbillcalculator.netlify.app/" target="_blank" rel="noopener"
+                            class="flex items-center py-2 px-4 text-gray-700 hover:bg-blue-50 hover:text-blue-600 rounded-lg transition-colors">
+                            <i data-lucide="calculator" class="h-4 w-4 mr-3 text-blue-600"></i>
+                            <span>Bill Calculator</span>
+                            <i data-lucide="external-link" class="h-3 w-3 ml-auto text-gray-400"></i>
+                        </a>
+                        <a href="https://bdcgpacalculator.netlify.app/" target="_blank" rel="noopener"
+                            class="flex items-center py-2 px-4 text-gray-700 hover:bg-purple-50 hover:text-purple-600 rounded-lg transition-colors">
+                            <i data-lucide="graduation-cap" class="h-4 w-4 mr-3 text-purple-600"></i>
+                            <span>CGPA Calculator</span>
+                            <i data-lucide="external-link" class="h-3 w-3 ml-auto text-gray-400"></i>
+                        </a>
+                    </div>
+                </nav>
+            </div>
+        </div>
+    </header>
+    </div>
+    </div>
+    </header>
+
+    <!-- Main Content -->
+    <main class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
+        <!-- Hero Section -->
+        <section class="text-center mb-12">
+            <h1 class="text-4xl md:text-5xl font-bold text-gray-900 mb-4">
+                Free Health Calculators & Tools
+            </h1>
+            <p class="text-xl text-gray-600 max-w-3xl mx-auto leading-relaxed">
+                Comprehensive collection of health and fitness calculators to help you track your wellness journey.
+                All tools are free, accurate, and mobile-friendly.
+            </p>
+        </section>
+
+        <!-- Main Tools Grid -->
+        <section class="mb-16">
+            <h2 class="text-2xl font-bold text-gray-900 mb-8">Popular Health Calculators</h2>
+            <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+
+                <!-- BMI Calculator -->
+                <div class="tool-card bg-white rounded-lg shadow-md overflow-hidden border border-gray-200">
+                    <div class="h-32 relative overflow-hidden">
+                        <img src="../assets/images/tools-images/tools1.jpg" alt="BMI Calculator Tool"
+                            class="w-full h-full object-cover">
+                        <div class="absolute inset-0 bg-gradient-to-t from-black/20 to-transparent"></div>
+                    </div>
+                    <div class="p-6">
+                        <div class="flex items-center mb-3">
+                            <i data-lucide="activity" class="h-6 w-6 text-green-600 mr-2"></i>
+                            <h3 class="text-xl font-bold text-gray-900">BMI Calculator</h3>
+                        </div>
+                        <p class="text-gray-600 mb-4">
+                            Calculate your Body Mass Index instantly with our accurate BMI calculator. Get health
+                            recommendations and category assessment.
+                        </p>
+                        <div class="mb-4">
+                            <span
+                                class="inline-block bg-green-100 text-green-800 px-2 py-1 rounded text-xs font-medium mr-2">Free</span>
+                            <span
+                                class="inline-block bg-blue-100 text-blue-800 px-2 py-1 rounded text-xs font-medium mr-2">Instant
+                                Results</span>
+                            <span
+                                class="inline-block bg-purple-100 text-purple-800 px-2 py-1 rounded text-xs font-medium">Mobile
+                                Friendly</span>
+                        </div>
+                        <a href="../"
+                            class="inline-flex items-center bg-green-600 text-white px-4 py-2 rounded-lg hover:bg-green-700 transition-colors font-medium">
+                            Use Calculator
+                            <i data-lucide="arrow-right" class="h-4 w-4 ml-2"></i>
+                        </a>
+                    </div>
+                </div>
+
+                <!-- Ideal Weight Calculator -->
+                <div class="tool-card bg-white rounded-lg shadow-md overflow-hidden border border-gray-200">
+                    <div class="h-32 relative overflow-hidden">
+                        <img src="../assets/images/tools-images/tools2.jpg" alt="Ideal Weight Calculator Tool"
+                            class="w-full h-full object-cover">
+                        <div class="absolute inset-0 bg-gradient-to-t from-black/20 to-transparent"></div>
+                    </div>
+                    <div class="p-6">
+                        <div class="flex items-center mb-3">
+                            <i data-lucide="target" class="h-6 w-6 text-blue-600 mr-2"></i>
+                            <h3 class="text-xl font-bold text-gray-900">Ideal Weight Calculator</h3>
+                        </div>
+                        <p class="text-gray-600 mb-4">
+                            Find your ideal weight range based on height, age, gender, and body frame. Multiple
+                            calculation methods available.
+                        </p>
+                        <div class="mb-4">
+                            <span
+                                class="inline-block bg-green-100 text-green-800 px-2 py-1 rounded text-xs font-medium mr-2">Free</span>
+                            <span
+                                class="inline-block bg-blue-100 text-blue-800 px-2 py-1 rounded text-xs font-medium mr-2">Multiple
+                                Methods</span>
+                            <span
+                                class="inline-block bg-purple-100 text-purple-800 px-2 py-1 rounded text-xs font-medium">Detailed
+                                Results</span>
+                        </div>
+                        <a href="ideal-weight-calculator.html"
+                            class="inline-flex items-center bg-blue-600 text-white px-4 py-2 rounded-lg hover:bg-blue-700 transition-colors font-medium">
+                            Use Calculator
+                            <i data-lucide="arrow-right" class="h-4 w-4 ml-2"></i>
+                        </a>
+                    </div>
+                </div>
+
+                <!-- Calorie Calculator -->
+                <div class="tool-card bg-white rounded-lg shadow-md overflow-hidden border border-gray-200">
+                    <div class="h-32 relative overflow-hidden">
+                        <img src="../assets/images/tools-images/tools3.jpg" alt="Calorie Calculator Tool"
+                            class="w-full h-full object-cover">
+                        <div class="absolute inset-0 bg-gradient-to-t from-black/20 to-transparent"></div>
+                    </div>
+                    <div class="p-6">
+                        <div class="flex items-center mb-3">
+                            <i data-lucide="zap" class="h-6 w-6 text-orange-600 mr-2"></i>
+                            <h3 class="text-xl font-bold text-gray-900">Calorie Calculator</h3>
+                        </div>
+                        <p class="text-gray-600 mb-4">
+                            Calculate your daily calorie needs for weight loss, maintenance, or gain. Includes activity
+                            level adjustments.
+                        </p>
+                        <div class="mb-4">
+                            <span
+                                class="inline-block bg-green-100 text-green-800 px-2 py-1 rounded text-xs font-medium mr-2">Free</span>
+                            <span
+                                class="inline-block bg-blue-100 text-blue-800 px-2 py-1 rounded text-xs font-medium mr-2">Personalized</span>
+                            <span
+                                class="inline-block bg-purple-100 text-purple-800 px-2 py-1 rounded text-xs font-medium">Goal-Based</span>
+                        </div>
+                        <a href="calorie-calculator.html"
+                            class="inline-flex items-center bg-orange-600 text-white px-4 py-2 rounded-lg hover:bg-orange-700 transition-colors font-medium">
+                            Use Calculator
+                            <i data-lucide="arrow-right" class="h-4 w-4 ml-2"></i>
+                        </a>
+                    </div>
+                </div>
+
+                <!-- Body Fat Calculator -->
+                <div class="tool-card bg-white rounded-lg shadow-md overflow-hidden border border-gray-200">
+                    <div class="h-32 relative overflow-hidden">
+                        <img src="../assets/images/tools-images/tools4.jpg" alt="Body Fat Calculator Tool"
+                            class="w-full h-full object-cover">
+                        <div class="absolute inset-0 bg-gradient-to-t from-black/20 to-transparent"></div>
+                    </div>
+                    <div class="p-6">
+                        <div class="flex items-center mb-3">
+                            <i data-lucide="user" class="h-6 w-6 text-purple-600 mr-2"></i>
+                            <h3 class="text-xl font-bold text-gray-900">Body Fat Calculator</h3>
+                        </div>
+                        <p class="text-gray-600 mb-4">
+                            Estimate your body fat percentage using measurements. More accurate than BMI for body
+                            composition assessment.
+                        </p>
+                        <div class="mb-4">
+                            <span
+                                class="inline-block bg-green-100 text-green-800 px-2 py-1 rounded text-xs font-medium mr-2">Free</span>
+                            <span
+                                class="inline-block bg-blue-100 text-blue-800 px-2 py-1 rounded text-xs font-medium mr-2">Accurate</span>
+                            <span
+                                class="inline-block bg-purple-100 text-purple-800 px-2 py-1 rounded text-xs font-medium">Body
+                                Composition</span>
+                        </div>
+                        <a href="#body-fat-calculator"
+                            class="inline-flex items-center bg-purple-600 text-white px-4 py-2 rounded-lg hover:bg-purple-700 transition-colors font-medium">
+                            Use Calculator
+                            <i data-lucide="arrow-right" class="h-4 w-4 ml-2"></i>
+                        </a>
+                    </div>
+                </div>
+
+                <!-- Waist to Hip Ratio -->
+                <div class="tool-card bg-white rounded-lg shadow-md overflow-hidden border border-gray-200">
+                    <div class="h-32 relative overflow-hidden">
+                        <img src="../assets/images/tools-images/tools5.jpg" alt="Water Intake Calculator Tool"
+                            class="w-full h-full object-cover">
+                        <div class="absolute inset-0 bg-gradient-to-t from-black/20 to-transparent"></div>
+                    </div>
+                    <div class="p-6">
+                        <div class="flex items-center mb-3">
+                            <i data-lucide="ruler" class="h-6 w-6 text-teal-600 mr-2"></i>
+                            <h3 class="text-xl font-bold text-gray-900">Waist-to-Hip Ratio</h3>
+                        </div>
+                        <p class="text-gray-600 mb-4">
+                            Calculate your waist-to-hip ratio to assess body fat distribution and health risks.
+                        </p>
+                        <div class="mb-4">
+                            <span
+                                class="inline-block bg-green-100 text-green-800 px-2 py-1 rounded text-xs font-medium mr-2">Free</span>
+                            <span
+                                class="inline-block bg-blue-100 text-blue-800 px-2 py-1 rounded text-xs font-medium mr-2">Health
+                                Risk</span>
+                            <span
+                                class="inline-block bg-teal-100 text-teal-800 px-2 py-1 rounded text-xs font-medium">Body
+                                Assessment</span>
+                        </div>
+                        <a href="#waist-hip-calculator"
+                            class="inline-flex items-center bg-teal-600 text-white px-4 py-2 rounded-lg hover:bg-teal-700 transition-colors font-medium">
+                            Use Calculator
+                            <i data-lucide="arrow-right" class="h-4 w-4 ml-2"></i>
+                        </a>
+                    </div>
+                </div>
+
+                <!-- Macro Calculator -->
+                <div class="tool-card bg-white rounded-lg shadow-md overflow-hidden border border-gray-200">
+                    <div class="h-32 relative overflow-hidden">
+                        <img src="../assets/images/tools-images/tools6.jpg" alt="Macro Calculator Tool"
+                            class="w-full h-full object-cover">
+                        <div class="absolute inset-0 bg-gradient-to-t from-black/20 to-transparent"></div>
+                    </div>
+                    <div class="p-6">
+                        <div class="flex items-center mb-3">
+                            <i data-lucide="pie-chart" class="h-6 w-6 text-indigo-600 mr-2"></i>
+                            <h3 class="text-xl font-bold text-gray-900">Macro Calculator</h3>
+                        </div>
+                        <p class="text-gray-600 mb-4">
+                            Calculate your ideal macronutrient ratios (protein, carbs, fats) based on your fitness
+                            goals.
+                        </p>
+                        <div class="mb-4">
+                            <span
+                                class="inline-block bg-green-100 text-green-800 px-2 py-1 rounded text-xs font-medium mr-2">Free</span>
+                            <span
+                                class="inline-block bg-blue-100 text-blue-800 px-2 py-1 rounded text-xs font-medium mr-2">Nutrition</span>
+                            <span
+                                class="inline-block bg-purple-100 text-purple-800 px-2 py-1 rounded text-xs font-medium">Macronutrients</span>
+                        </div>
+                        <a href="#macro-calculator"
+                            class="inline-flex items-center bg-indigo-600 text-white px-4 py-2 rounded-lg hover:bg-indigo-700 transition-colors font-medium">
+                            Use Calculator
+                            <i data-lucide="arrow-right" class="h-4 w-4 ml-2"></i>
+                        </a>
+                    </div>
+                </div>
+
+            </div>
+        </section>
+
+        <!-- Unit Converters Section -->
+        <section class="mb-16">
+            <h2 class="text-2xl font-bold text-gray-900 mb-8">Unit Converters</h2>
+            <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
+
+                <div class="bg-white rounded-lg shadow-md p-6 border border-gray-200">
+                    <div class="flex items-center mb-3">
+                        <i data-lucide="move-vertical" class="h-5 w-5 text-blue-600 mr-2"></i>
+                        <h3 class="text-lg font-semibold text-gray-900">Height Converter</h3>
+                    </div>
+                    <p class="text-gray-600 text-sm mb-4">Convert between feet/inches, centimeters, meters, and more.
+                    </p>
+                    <a href="../#unit-conversion-tools" class="text-blue-600 hover:text-blue-700 font-medium text-sm">
+                        Use Converter →
+                    </a>
+                </div>
+
+                <div class="bg-white rounded-lg shadow-md p-6 border border-gray-200">
+                    <div class="flex items-center mb-3">
+                        <i data-lucide="scale" class="h-5 w-5 text-green-600 mr-2"></i>
+                        <h3 class="text-lg font-semibold text-gray-900">Weight Converter</h3>
+                    </div>
+                    <p class="text-gray-600 text-sm mb-4">Convert between kg, pounds, stones, ounces, and grams.</p>
+                    <a href="../#unit-conversion-tools" class="text-green-600 hover:text-green-700 font-medium text-sm">
+                        Use Converter →
+                    </a>
+                </div>
+
+                <div class="bg-white rounded-lg shadow-md p-6 border border-gray-200">
+                    <div class="flex items-center mb-3">
+                        <i data-lucide="thermometer" class="h-5 w-5 text-orange-600 mr-2"></i>
+                        <h3 class="text-lg font-semibold text-gray-900">Temperature Converter</h3>
+                    </div>
+                    <p class="text-gray-600 text-sm mb-4">Convert between Celsius, Fahrenheit, and Kelvin.</p>
+                    <a href="../#unit-conversion-tools"
+                        class="text-purple-600 hover:text-purple-700 font-medium text-sm">
+                        Use Converter →
+                    </a>
+                </div>
+
+            </div>
+        </section>
+
+        <!-- Why Use Our Tools -->
+        <section class="bg-gradient-to-r from-green-50 to-blue-50 rounded-xl p-8 mb-16">
+            <div class="text-center mb-8">
+                <h2 class="text-2xl font-bold text-gray-900 mb-4">Why Choose Our Health Calculators?</h2>
+                <p class="text-gray-600 max-w-2xl mx-auto">
+                    Our tools are designed with accuracy, ease of use, and your privacy in mind.
+                    All calculations are performed locally in your browser.
+                </p>
+            </div>
+
+            <div class="grid md:grid-cols-2 lg:grid-cols-4 gap-6">
+                <div class="text-center">
+                    <div class="w-12 h-12 bg-green-100 rounded-full flex items-center justify-center mx-auto mb-3">
+                        <i data-lucide="check-circle" class="h-6 w-6 text-green-600"></i>
+                    </div>
+                    <h3 class="font-semibold text-gray-900 mb-2">100% Free</h3>
+                    <p class="text-gray-600 text-sm">No registration, no hidden fees, completely free to use</p>
+                </div>
+
+                <div class="text-center">
+                    <div class="w-12 h-12 bg-blue-100 rounded-full flex items-center justify-center mx-auto mb-3">
+                        <i data-lucide="shield" class="h-6 w-6 text-blue-600"></i>
+                    </div>
+                    <h3 class="font-semibold text-gray-900 mb-2">Private & Secure</h3>
+                    <p class="text-gray-600 text-sm">Your data never leaves your device, completely private</p>
+                </div>
+
+                <div class="text-center">
+                    <div class="w-12 h-12 bg-purple-100 rounded-full flex items-center justify-center mx-auto mb-3">
+                        <i data-lucide="smartphone" class="h-6 w-6 text-purple-600"></i>
+                    </div>
+                    <h3 class="font-semibold text-gray-900 mb-2">Mobile Friendly</h3>
+                    <p class="text-gray-600 text-sm">Works perfectly on all devices and screen sizes</p>
+                </div>
+
+                <div class="text-center">
+                    <div class="w-12 h-12 bg-orange-100 rounded-full flex items-center justify-center mx-auto mb-3">
+                        <i data-lucide="zap" class="h-6 w-6 text-orange-600"></i>
+                    </div>
+                    <h3 class="font-semibold text-gray-900 mb-2">Instant Results</h3>
+                    <p class="text-gray-600 text-sm">Get accurate calculations and results immediately</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- Health Resources -->
+        <section>
+            <h2 class="text-2xl font-bold text-gray-900 mb-8">Health Resources & Guides</h2>
+            <div class="grid md:grid-cols-3 gap-6">
+
+                <div class="bg-white rounded-lg shadow-md overflow-hidden">
+                    <div class="h-32 relative overflow-hidden">
+                        <img src="../assets/images/blog-images/health-image1.jpg" alt="Understanding BMI Guide"
+                            class="w-full h-full object-cover">
+                        <div class="absolute inset-0 bg-gradient-to-t from-black/20 to-transparent"></div>
+                    </div>
+                    <div class="p-6">
+                        <h3 class="font-bold text-gray-900 mb-2">Understanding BMI</h3>
+                        <p class="text-gray-600 text-sm mb-4">Complete guide to Body Mass Index, its uses and
+                            limitations</p>
+                        <a href="../blog/understanding-bmi-body-composition-guide.html"
+                            class="text-green-600 hover:text-green-700 font-medium text-sm">
+                            Read Guide →
+                        </a>
+                    </div>
+                </div>
+
+                <div class="bg-white rounded-lg shadow-md overflow-hidden">
+                    <div class="h-32 relative overflow-hidden">
+                        <img src="../assets/images/blog-images/health-image2.jpg" alt="Safe Weight Loss Guide"
+                            class="w-full h-full object-cover">
+                        <div class="absolute inset-0 bg-gradient-to-t from-black/20 to-transparent"></div>
+                    </div>
+                    <div class="p-6">
+                        <h3 class="font-bold text-gray-900 mb-2">Safe Weight Loss</h3>
+                        <p class="text-gray-600 text-sm mb-4">Evidence-based strategies for healthy, sustainable weight
+                            loss</p>
+                        <a href="../blog/safe-weight-loss-strategies.html"
+                            class="text-blue-600 hover:text-blue-700 font-medium text-sm">
+                            Read Guide →
+                        </a>
+                    </div>
+                </div>
+
+                <div class="bg-white rounded-lg shadow-md overflow-hidden">
+                    <div class="h-32 relative overflow-hidden">
+                        <img src="../assets/images/blog-images/health-image9.jpg" alt="Diet Plans by BMI Guide"
+                            class="w-full h-full object-cover">
+                        <div class="absolute inset-0 bg-gradient-to-t from-black/20 to-transparent"></div>
+                    </div>
+                    <div class="p-6">
+                        <h3 class="font-bold text-gray-900 mb-2">Diet Plans by BMI</h3>
+                        <p class="text-gray-600 text-sm mb-4">Personalized nutrition strategies for your BMI category
+                        </p>
+                        <a href="../blog/healthy-diet-plans-bmi-categories.html"
+                            class="text-purple-600 hover:text-purple-700 font-medium text-sm">
+                            Read Guide →
+                        </a>
+                    </div>
+                </div>
+
+            </div>
+        </section>
+
+    </main>
+
+    <!-- Footer -->
+    <footer class="bg-white border-t mt-16">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
+            <div class="grid md:grid-cols-4 gap-8">
+
+                <div class="col-span-2">
+                    <div class="flex items-center space-x-2 mb-4">
+                        <i data-lucide="activity" class="h-6 w-6 text-green-600"></i>
+                        <span class="text-xl font-bold text-gray-900">BMI Calculator</span>
+                    </div>
+                    <p class="text-gray-600 leading-relaxed">
+                        Your trusted source for free health calculators and tools.
+                        Evidence-based calculations to help you achieve optimal health.
+                    </p>
+                </div>
+
+                <div>
+                    <h3 class="font-semibold text-gray-900 mb-4">Quick Links</h3>
+                    <ul class="space-y-2 text-gray-600">
+                        <li><a href="../" class="hover:text-green-600 transition-colors">BMI Calculator</a></li>
+                        <li><a href="ideal-weight-calculator.html" class="hover:text-green-600 transition-colors">Ideal
+                                Weight</a></li>
+                        <li><a href="calorie-calculator.html" class="hover:text-green-600 transition-colors">Calorie
+                                Calculator</a></li>
+                        <li><a href="../blog/" class="hover:text-green-600 transition-colors">Health Blog</a></li>
+                    </ul>
+                </div>
+
+                <div>
+                    <h3 class="font-semibold text-gray-900 mb-4">Resources</h3>
+                    <ul class="space-y-2 text-gray-600">
+                        <li><a href="../#frequently-asked-questions"
+                                class="hover:text-green-600 transition-colors">FAQ</a></li>
+                        <li><a href="../#understanding-bmi-complete-guide"
+                                class="hover:text-green-600 transition-colors">BMI Guide</a></li>
+                        <li><a href="../#unit-conversion-tools" class="hover:text-green-600 transition-colors">Unit
+                                Converter</a></li>
+                    </ul>
+                </div>
+
+            </div>
+
+            <div class="border-t border-gray-200 mt-8 pt-8 text-center">
+                <p class="text-gray-600">© 2025 BMI Calculator. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Initialize Lucide Icons -->
+    <script>
+        lucide.createIcons();
+
+        // Mobile Menu JavaScript for Tools
+        document.addEventListener('DOMContentLoaded', function () {
+            const mobileMenuBtn = document.getElementById('mobileMenuBtn');
+            const mobileMenu = document.getElementById('mobileMenu');
+
+            if (mobileMenuBtn && mobileMenu) {
+                mobileMenuBtn.addEventListener('click', function () {
+                    mobileMenu.classList.toggle('hidden');
+                });
+            }
+        });
+    </script>
+</body>
+
+</html>
