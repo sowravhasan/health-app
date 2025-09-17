@@ -1,0 +1,775 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <!-- SEO Meta Tags -->
+    <title>Health Calculator Pro | Body Fat Calculator - Accurate Body Composition Analysis</title>
+    <meta name="description"
+        content="Health Calculator Pro Body Fat Calculator - Estimate your body fat percentage using multiple proven methods including Navy, circumference, and skinfold measurements. Get accurate body composition analysis with health recommendations.">
+    <meta name="keywords"
+        content="health calculator pro, body fat calculator, body composition, body fat percentage, Navy method, circumference measurements, skinfold calculator, fitness assessment, health tools">
+    <meta name="author" content="Health Calculator Pro Team">
+    <meta name="robots" content="index, follow">
+
+    <!-- Open Graph Tags -->
+    <meta property="og:title" content="Health Calculator Pro | Body Fat Calculator - Accurate Body Composition">
+    <meta property="og:description"
+        content="Health Calculator Pro Body Fat Calculator - Estimate body fat percentage with multiple proven methods. Get accurate body composition analysis and health recommendations.">
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://healthcalcpro.netlify.app/tools/body-fat-calculator.html">
+    <meta property="og:image" content="https://healthcalcpro.netlify.app/assets/images/og-image.jpg">
+
+    <!-- Canonical URL -->
+    <link rel="canonical" href="https://healthcalcpro.netlify.app/tools/body-fat-calculator.html">
+
+    <!-- Favicon -->
+    <link rel="icon" type="image/png" href="../assets/icons/favicon.png">
+
+    <!-- Structured Data -->
+    <script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@type": "WebApplication",
+        "name": "Health Calculator Pro - Body Fat Calculator",
+        "description": "Calculate body fat percentage using multiple proven methods with Health Calculator Pro suite",
+        "url": "https://healthcalcpro.netlify.app/tools/body-fat-calculator.html",
+        "applicationCategory": "HealthApplication",
+        "operatingSystem": "All",
+        "offers": {
+            "@type": "Offer",
+            "price": "0",
+            "priceCurrency": "USD"
+        },
+        "publisher": {
+            "@type": "Organization",
+            "name": "Health Calculator Pro",
+            "url": "https://healthcalcpro.netlify.app/"
+        }
+    }
+    </script>
+
+    <!-- Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+
+    <!-- Lucide Icons -->
+    <script src="https://unpkg.com/lucide@latest/dist/umd/lucide.js"></script>
+
+    <!-- Custom Styles -->
+    <style>
+        body {
+            font-family: 'Inter', sans-serif;
+        }
+
+        .calculator-card {
+            background: linear-gradient(135deg, #f0f9ff 0%, #e0f2fe 100%);
+        }
+
+        .result-card {
+            transition: all 0.3s ease;
+        }
+
+        .result-card.show {
+            transform: scale(1.02);
+            box-shadow: 0 10px 25px rgba(0, 0, 0, 0.1);
+        }
+
+        .method-btn {
+            transition: all 0.2s ease;
+        }
+
+        .method-btn.selected {
+            background: linear-gradient(135deg, #0ea5e9, #0284c7);
+            color: white;
+        }
+
+        .body-fat-very-low {
+            background-color: #3b82f6;
+        }
+
+        .body-fat-low {
+            background-color: #10b981;
+        }
+
+        .body-fat-normal {
+            background-color: #10b981;
+        }
+
+        .body-fat-high {
+            background-color: #f59e0b;
+        }
+
+        .body-fat-very-high {
+            background-color: #ef4444;
+        }
+    </style>
+</head>
+
+<body class="bg-gray-50 min-h-screen">
+    <!-- Header -->
+    <header class="bg-white shadow-sm border-b">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex justify-between items-center py-4">
+                <div class="flex items-center space-x-3">
+                    <a href="../" class="flex items-center space-x-2">
+                        <i data-lucide="activity" class="h-8 w-8 text-green-600"></i>
+                        <span class="text-xl font-bold text-gray-900">Health Calculator Pro</span>
+                    </a>
+                </div>
+                <nav class="hidden md:flex space-x-6">
+                    <a href="../blog/" class="text-gray-600 hover:text-green-600 transition-colors">Health Blog</a>
+                    <a href="./" class="text-green-600 font-medium">Health Tools</a>
+                </nav>
+            </div>
+        </div>
+    </header>
+
+    <!-- Breadcrumb -->
+    <nav class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-4">
+        <ol class="flex items-center space-x-2 text-sm text-gray-500">
+            <li><a href="../" class="hover:text-green-600">Home</a></li>
+            <li><i data-lucide="chevron-right" class="h-4 w-4"></i></li>
+            <li><a href="./" class="hover:text-green-600">Health Tools</a></li>
+            <li><i data-lucide="chevron-right" class="h-4 w-4"></i></li>
+            <li class="text-gray-900">Body Fat Calculator</li>
+        </ol>
+    </nav>
+
+    <!-- Main Content -->
+    <main class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-8">
+
+        <!-- Hero Section -->
+        <section class="text-center mb-12">
+            <h1 class="text-4xl md:text-5xl font-bold text-gray-900 mb-4">
+                Health Calculator Pro - Body Fat Calculator
+            </h1>
+            <p class="text-xl text-gray-600 max-w-3xl mx-auto leading-relaxed">
+                Estimate your body fat percentage using multiple proven measurement methods. More accurate than BMI for
+                body composition assessment with professional health guidance and recommendations.
+            </p>
+        </section>
+
+        <div class="grid lg:grid-cols-3 gap-8">
+
+            <!-- Calculator Form -->
+            <div class="lg:col-span-2">
+                <div class="calculator-card rounded-xl shadow-lg p-6 border border-blue-200">
+                    <div class="flex items-center space-x-3 mb-6">
+                        <i data-lucide="users" class="h-6 w-6 text-blue-600"></i>
+                        <h2 class="text-2xl font-semibold text-gray-900">Calculate Your Body Fat Percentage</h2>
+                    </div>
+
+                    <!-- Method Selection -->
+                    <div class="mb-6">
+                        <label class="block text-sm font-medium text-gray-700 mb-3">Calculation Method</label>
+                        <div class="grid grid-cols-1 md:grid-cols-3 gap-3">
+                            <button type="button" id="navyBtn" data-method="navy"
+                                class="method-btn selected p-3 rounded-lg border-2 border-blue-300 cursor-pointer hover:border-blue-500 transition-all duration-200">
+                                <div class="text-center">
+                                    <div class="font-medium">Navy Method</div>
+                                    <div class="text-xs text-gray-600">Most Popular</div>
+                                </div>
+                            </button>
+                            <button type="button" id="circumferenceBtn" data-method="circumference"
+                                class="method-btn p-3 rounded-lg border-2 border-blue-300 cursor-pointer hover:border-blue-500 transition-all duration-200">
+                                <div class="text-center">
+                                    <div class="font-medium">Circumference</div>
+                                    <div class="text-xs text-gray-600">Multiple Sites</div>
+                                </div>
+                            </button>
+                            <button type="button" id="skinfoldBtn" data-method="skinfold"
+                                class="method-btn p-3 rounded-lg border-2 border-blue-300 cursor-pointer hover:border-blue-500 transition-all duration-200">
+                                <div class="text-center">
+                                    <div class="font-medium">Skinfold</div>
+                                    <div class="text-xs text-gray-600">3-Site Method</div>
+                                </div>
+                            </button>
+                        </div>
+                    </div>
+
+                    <form id="bodyFatForm" class="space-y-6">
+
+                        <!-- Basic Info -->
+                        <div class="grid md:grid-cols-3 gap-4">
+                            <!-- Age -->
+                            <div>
+                                <label for="age" class="block text-sm font-medium text-gray-700 mb-2">
+                                    Age (years)
+                                </label>
+                                <input type="number" id="age" min="18" max="120"
+                                    class="w-full px-3 py-2 rounded-lg border border-gray-300 focus:ring-2 focus:ring-blue-500 focus:border-transparent"
+                                    placeholder="25" required>
+                            </div>
+
+                            <!-- Gender -->
+                            <div>
+                                <label class="block text-sm font-medium text-gray-700 mb-2">Gender</label>
+                                <div class="grid grid-cols-2 gap-2">
+                                    <button type="button" id="genderMaleBtn" data-gender="male"
+                                        class="gender-btn p-2 rounded-lg border-2 border-blue-300 cursor-pointer hover:border-blue-500 transition-all duration-200">
+                                        <div class="flex items-center justify-center space-x-2">
+                                            <i data-lucide="user" class="h-4 w-4"></i>
+                                            <span class="font-medium">Male</span>
+                                        </div>
+                                    </button>
+                                    <button type="button" id="genderFemaleBtn" data-gender="female"
+                                        class="gender-btn p-2 rounded-lg border-2 border-blue-300 cursor-pointer hover:border-blue-500 transition-all duration-200">
+                                        <div class="flex items-center justify-center space-x-2">
+                                            <i data-lucide="user" class="h-4 w-4"></i>
+                                            <span class="font-medium">Female</span>
+                                        </div>
+                                    </button>
+                                    <input type="hidden" id="genderInput" name="gender" value="" required>
+                                </div>
+                            </div>
+
+                            <!-- Height -->
+                            <div>
+                                <label for="height" class="block text-sm font-medium text-gray-700 mb-2">
+                                    Height (cm)
+                                </label>
+                                <input type="number" id="height" step="0.1" min="100" max="250"
+                                    class="w-full px-3 py-2 rounded-lg border border-gray-300 focus:ring-2 focus:ring-blue-500 focus:border-transparent"
+                                    placeholder="170" required>
+                            </div>
+                        </div>
+
+                        <!-- Navy Method Measurements -->
+                        <div id="navyMeasurements" class="measurement-section">
+                            <h3 class="text-lg font-semibold text-blue-700 mb-4">Navy Method Measurements</h3>
+                            <div class="grid md:grid-cols-2 gap-4">
+                                <div>
+                                    <label for="navyWaist" class="block text-sm font-medium text-gray-700 mb-2">
+                                        Waist Circumference (cm)
+                                    </label>
+                                    <input type="number" id="navyWaist" step="0.1" min="50" max="200"
+                                        class="w-full px-3 py-2 rounded-lg border border-gray-300 focus:ring-2 focus:ring-blue-500 focus:border-transparent"
+                                        placeholder="80">
+                                </div>
+                                <div>
+                                    <label for="navyNeck" class="block text-sm font-medium text-gray-700 mb-2">
+                                        Neck Circumference (cm)
+                                    </label>
+                                    <input type="number" id="navyNeck" step="0.1" min="25" max="60"
+                                        class="w-full px-3 py-2 rounded-lg border border-gray-300 focus:ring-2 focus:ring-blue-500 focus:border-transparent"
+                                        placeholder="35">
+                                </div>
+                                <div id="navyHipContainer" class="hidden">
+                                    <label for="navyHip" class="block text-sm font-medium text-gray-700 mb-2">
+                                        Hip Circumference (cm) - For Women
+                                    </label>
+                                    <input type="number" id="navyHip" step="0.1" min="60" max="200"
+                                        class="w-full px-3 py-2 rounded-lg border border-gray-300 focus:ring-2 focus:ring-blue-500 focus:border-transparent"
+                                        placeholder="95">
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Circumference Method Measurements -->
+                        <div id="circumferenceMeasurements" class="measurement-section hidden">
+                            <h3 class="text-lg font-semibold text-blue-700 mb-4">Circumference Measurements</h3>
+                            <div class="grid md:grid-cols-2 gap-4">
+                                <div>
+                                    <label for="circWaist" class="block text-sm font-medium text-gray-700 mb-2">
+                                        Waist (cm)
+                                    </label>
+                                    <input type="number" id="circWaist" step="0.1" min="50" max="200"
+                                        class="w-full px-3 py-2 rounded-lg border border-gray-300 focus:ring-2 focus:ring-blue-500 focus:border-transparent"
+                                        placeholder="80">
+                                </div>
+                                <div>
+                                    <label for="circNeck" class="block text-sm font-medium text-gray-700 mb-2">
+                                        Neck (cm)
+                                    </label>
+                                    <input type="number" id="circNeck" step="0.1" min="25" max="60"
+                                        class="w-full px-3 py-2 rounded-lg border border-gray-300 focus:ring-2 focus:ring-blue-500 focus:border-transparent"
+                                        placeholder="35">
+                                </div>
+                                <div>
+                                    <label for="circHip" class="block text-sm font-medium text-gray-700 mb-2">
+                                        Hip (cm)
+                                    </label>
+                                    <input type="number" id="circHip" step="0.1" min="60" max="200"
+                                        class="w-full px-3 py-2 rounded-lg border border-gray-300 focus:ring-2 focus:ring-blue-500 focus:border-transparent"
+                                        placeholder="95">
+                                </div>
+                                <div>
+                                    <label for="circArm" class="block text-sm font-medium text-gray-700 mb-2">
+                                        Upper Arm (cm)
+                                    </label>
+                                    <input type="number" id="circArm" step="0.1" min="20" max="60"
+                                        class="w-full px-3 py-2 rounded-lg border border-gray-300 focus:ring-2 focus:ring-blue-500 focus:border-transparent"
+                                        placeholder="30">
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Skinfold Method Measurements -->
+                        <div id="skinfoldMeasurements" class="measurement-section hidden">
+                            <h3 class="text-lg font-semibold text-blue-700 mb-4">Skinfold Measurements (mm)</h3>
+                            <div class="grid md:grid-cols-3 gap-4">
+                                <div>
+                                    <label for="skinfoldChest" class="block text-sm font-medium text-gray-700 mb-2">
+                                        Chest/Pectoral (mm)
+                                    </label>
+                                    <input type="number" id="skinfoldChest" step="0.1" min="2" max="50"
+                                        class="w-full px-3 py-2 rounded-lg border border-gray-300 focus:ring-2 focus:ring-blue-500 focus:border-transparent"
+                                        placeholder="10">
+                                </div>
+                                <div>
+                                    <label for="skinfoldAbdominal" class="block text-sm font-medium text-gray-700 mb-2">
+                                        Abdominal (mm)
+                                    </label>
+                                    <input type="number" id="skinfoldAbdominal" step="0.1" min="2" max="50"
+                                        class="w-full px-3 py-2 rounded-lg border border-gray-300 focus:ring-2 focus:ring-blue-500 focus:border-transparent"
+                                        placeholder="15">
+                                </div>
+                                <div>
+                                    <label for="skinfoldThigh" class="block text-sm font-medium text-gray-700 mb-2">
+                                        Thigh (mm)
+                                    </label>
+                                    <input type="number" id="skinfoldThigh" step="0.1" min="2" max="50"
+                                        class="w-full px-3 py-2 rounded-lg border border-gray-300 focus:ring-2 focus:ring-blue-500 focus:border-transparent"
+                                        placeholder="12">
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Buttons -->
+                        <div class="flex flex-col sm:flex-row space-y-2 sm:space-y-0 sm:space-x-3">
+                            <button type="submit" id="calculateBtn"
+                                class="flex-1 bg-gradient-to-r from-blue-600 to-cyan-600 text-white font-semibold py-3 px-6 rounded-lg hover:shadow-lg transform hover:-translate-y-0.5 transition-all duration-200">
+                                Calculate Body Fat
+                            </button>
+                            <button type="button" id="resetBtn"
+                                class="px-6 py-3 border border-blue-300 text-blue-700 font-semibold rounded-lg hover:bg-blue-50 transition-all duration-200">
+                                Reset
+                            </button>
+                        </div>
+                    </form>
+                </div>
+            </div>
+
+            <!-- Results & Info Sidebar -->
+            <div class="space-y-6">
+                <!-- Results Card -->
+                <div id="resultsCard" class="bg-white rounded-xl shadow-lg p-6 border border-blue-200 hidden">
+                    <div class="flex items-center space-x-2 mb-4">
+                        <i data-lucide="pie-chart" class="h-5 w-5 text-blue-600"></i>
+                        <h3 class="text-lg font-semibold">Your Body Fat Results</h3>
+                    </div>
+
+                    <!-- Body Fat Percentage Display -->
+                    <div class="text-center mb-4">
+                        <div class="text-3xl font-bold mb-2" id="bodyFatScore">0.0%</div>
+                        <div class="text-sm font-semibold mb-3" id="bodyFatCategory">Category</div>
+
+                        <!-- Body Fat Progress Bar -->
+                        <div class="w-full bg-gray-200 rounded-full h-3 mb-3">
+                            <div id="bodyFatProgress" class="h-3 rounded-full transition-all duration-500"
+                                style="width: 0%"></div>
+                        </div>
+
+                        <!-- Body Fat Range Labels -->
+                        <div class="grid grid-cols-4 text-xs text-gray-600 gap-1">
+                            <span>Essential</span>
+                            <span>Athletic</span>
+                            <span>Average</span>
+                            <span>High</span>
+                        </div>
+                    </div>
+
+                    <!-- Health Assessment -->
+                    <div class="bg-blue-50 rounded-lg p-3 mb-4">
+                        <div class="flex items-center space-x-2 mb-2">
+                            <i data-lucide="heart" class="h-4 w-4 text-blue-600"></i>
+                            <h4 class="font-medium text-blue-900 text-sm">Health Assessment</h4>
+                        </div>
+                        <p id="healthAssessment" class="text-blue-800 text-sm leading-relaxed"></p>
+                    </div>
+
+                    <!-- Action Buttons -->
+                    <div class="grid grid-cols-2 gap-2">
+                        <button id="copyResultBtn"
+                            class="flex items-center justify-center space-x-1 bg-gray-100 hover:bg-gray-200 text-gray-700 font-medium py-2 px-2 rounded-lg transition-all duration-200 text-xs">
+                            <i data-lucide="copy" class="h-3 w-3"></i>
+                            <span>Copy</span>
+                        </button>
+                        <button id="shareResultBtn"
+                            class="flex items-center justify-center space-x-1 bg-blue-100 hover:bg-blue-200 text-blue-700 font-medium py-2 px-2 rounded-lg transition-all duration-200 text-xs">
+                            <i data-lucide="share-2" class="h-3 w-3"></i>
+                            <span>Share</span>
+                        </button>
+                    </div>
+                </div>
+
+                <!-- Body Fat Chart Reference -->
+                <div class="bg-white rounded-xl shadow-lg p-6 border border-blue-200">
+                    <div class="flex items-center space-x-2 mb-4">
+                        <i data-lucide="bar-chart-3" class="h-5 w-5 text-blue-600"></i>
+                        <h3 class="text-lg font-semibold">Body Fat Chart</h3>
+                    </div>
+
+                    <div class="space-y-2 text-sm">
+                        <div class="flex justify-between items-center p-2 bg-blue-50 rounded">
+                            <span class="font-medium text-blue-900">Essential Fat</span>
+                            <span class="text-blue-700">2-5% (M), 10-13% (F)</span>
+                        </div>
+                        <div class="flex justify-between items-center p-2 bg-green-50 rounded">
+                            <span class="font-medium text-green-900">Athletic</span>
+                            <span class="text-green-700">6-13% (M), 14-20% (F)</span>
+                        </div>
+                        <div class="flex justify-between items-center p-2 bg-yellow-50 rounded">
+                            <span class="font-medium text-yellow-900">Average</span>
+                            <span class="text-yellow-700">14-24% (M), 21-31% (F)</span>
+                        </div>
+                        <div class="flex justify-between items-center p-2 bg-red-50 rounded">
+                            <span class="font-medium text-red-900">Above Average</span>
+                            <span class="text-red-700">25%+ (M), 32%+ (F)</span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Measurement Tips -->
+                <div class="bg-white rounded-xl shadow-lg p-6 border border-blue-200">
+                    <div class="flex items-center space-x-2 mb-4">
+                        <i data-lucide="ruler" class="h-5 w-5 text-blue-600"></i>
+                        <h3 class="text-lg font-semibold">Measurement Tips</h3>
+                    </div>
+
+                    <div class="text-sm space-y-2">
+                        <div class="p-2 bg-gray-50 rounded">
+                            <p><strong>Navy Method:</strong> Measure waist at narrowest point, neck just below Adam's
+                                apple, hips at widest point (women).</p>
+                        </div>
+                        <div class="p-2 bg-gray-50 rounded">
+                            <p><strong>Accuracy:</strong> Take measurements in the morning, before eating, and use a
+                                flexible tape measure.</p>
+                        </div>
+                        <div class="p-2 bg-gray-50 rounded">
+                            <p><strong>Consistency:</strong> Measure at the same time of day and under similar
+                                conditions for best results.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <!-- Footer -->
+    <footer class="bg-white border-t border-gray-200 mt-12">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-8">
+            <div class="text-center">
+                <div class="flex items-center justify-center space-x-2 mb-4">
+                    <i data-lucide="activity" class="h-6 w-6 text-green-600"></i>
+                    <span class="text-xl font-bold text-gray-900">Health Calculator Pro</span>
+                </div>
+                <p class="text-gray-600 text-sm max-w-md mx-auto">
+                    Professional health calculator suite for comprehensive wellness assessment.
+                </p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- JavaScript -->
+    <script>
+        // Body Fat Calculator JavaScript
+        document.addEventListener('DOMContentLoaded', function () {
+            // Initialize Lucide icons
+            if (typeof lucide !== 'undefined') {
+                lucide.createIcons();
+            }
+
+            // Form elements
+            const form = document.getElementById('bodyFatForm');
+            const calculateBtn = document.getElementById('calculateBtn');
+            const resetBtn = document.getElementById('resetBtn');
+            const resultsCard = document.getElementById('resultsCard');
+
+            // Method buttons
+            const navyBtn = document.getElementById('navyBtn');
+            const circumferenceBtn = document.getElementById('circumferenceBtn');
+            const skinfoldBtn = document.getElementById('skinfoldBtn');
+
+            // Measurement sections
+            const navyMeasurements = document.getElementById('navyMeasurements');
+            const circumferenceMeasurements = document.getElementById('circumferenceMeasurements');
+            const skinfoldMeasurements = document.getElementById('skinfoldMeasurements');
+
+            // Gender buttons
+            const genderMaleBtn = document.getElementById('genderMaleBtn');
+            const genderFemaleBtn = document.getElementById('genderFemaleBtn');
+            const genderInput = document.getElementById('genderInput');
+            const navyHipContainer = document.getElementById('navyHipContainer');
+
+            let currentMethod = 'navy';
+            let currentGender = '';
+
+            // Method selection
+            function selectMethod(method) {
+                currentMethod = method;
+
+                // Update button styles
+                document.querySelectorAll('.method-btn').forEach(btn => {
+                    btn.classList.remove('selected');
+                });
+                document.querySelector(`[data-method="${method}"]`).classList.add('selected');
+
+                // Show/hide measurement sections
+                document.querySelectorAll('.measurement-section').forEach(section => {
+                    section.classList.add('hidden');
+                });
+
+                if (method === 'navy') {
+                    navyMeasurements.classList.remove('hidden');
+                } else if (method === 'circumference') {
+                    circumferenceMeasurements.classList.remove('hidden');
+                } else if (method === 'skinfold') {
+                    skinfoldMeasurements.classList.remove('hidden');
+                }
+            }
+
+            // Gender selection
+            function selectGender(gender) {
+                currentGender = gender;
+                genderInput.value = gender;
+
+                // Update button styles
+                document.querySelectorAll('.gender-btn').forEach(btn => {
+                    btn.classList.remove('selected');
+                    btn.style.backgroundColor = '';
+                    btn.style.color = '';
+                });
+
+                const selectedBtn = document.querySelector(`[data-gender="${gender}"]`);
+                selectedBtn.classList.add('selected');
+                selectedBtn.style.backgroundColor = '#0ea5e9';
+                selectedBtn.style.color = 'white';
+
+                // Show/hide hip measurement for Navy method
+                if (currentMethod === 'navy') {
+                    if (gender === 'female') {
+                        navyHipContainer.classList.remove('hidden');
+                    } else {
+                        navyHipContainer.classList.add('hidden');
+                    }
+                }
+            }
+
+            // Event listeners
+            navyBtn.addEventListener('click', () => selectMethod('navy'));
+            circumferenceBtn.addEventListener('click', () => selectMethod('circumference'));
+            skinfoldBtn.addEventListener('click', () => selectMethod('skinfold'));
+
+            genderMaleBtn.addEventListener('click', () => selectGender('male'));
+            genderFemaleBtn.addEventListener('click', () => selectGender('female'));
+
+            // Body Fat Calculations
+            function calculateNavyBodyFat(height, waist, neck, hip, gender) {
+                let bodyFat;
+
+                if (gender === 'male') {
+                    bodyFat = 495 / (1.0324 - 0.19077 * Math.log10(waist - neck) + 0.15456 * Math.log10(height)) - 450;
+                } else {
+                    bodyFat = 495 / (1.29579 - 0.35004 * Math.log10(waist + hip - neck) + 0.22100 * Math.log10(height)) - 450;
+                }
+
+                return Math.max(0, bodyFat);
+            }
+
+            function calculateCircumferenceBodyFat(waist, neck, hip, arm, gender) {
+                let bodyFat;
+
+                if (gender === 'male') {
+                    bodyFat = (waist * 1.2) + (neck * -0.8) + (arm * 0.3) - 10;
+                } else {
+                    bodyFat = (waist * 1.48) + (hip * 0.78) + (neck * -0.87) - 32;
+                }
+
+                return Math.max(0, bodyFat);
+            }
+
+            function calculateSkinfoldBodyFat(chest, abdominal, thigh, age, gender) {
+                const sumOfSkinfolds = chest + abdominal + thigh;
+                let bodyDensity;
+
+                if (gender === 'male') {
+                    bodyDensity = 1.10938 - (0.0008267 * sumOfSkinfolds) + (0.0000016 * Math.pow(sumOfSkinfolds, 2)) - (0.0002574 * age);
+                } else {
+                    bodyDensity = 1.0994921 - (0.0009929 * sumOfSkinfolds) + (0.0000023 * Math.pow(sumOfSkinfolds, 2)) - (0.0001392 * age);
+                }
+
+                const bodyFat = (495 / bodyDensity) - 450;
+                return Math.max(0, bodyFat);
+            }
+
+            function getBodyFatCategory(bodyFat, gender) {
+                if (gender === 'male') {
+                    if (bodyFat < 6) return { category: 'Essential Fat', class: 'body-fat-very-low' };
+                    if (bodyFat <= 13) return { category: 'Athletic', class: 'body-fat-low' };
+                    if (bodyFat <= 24) return { category: 'Average', class: 'body-fat-normal' };
+                    return { category: 'Above Average', class: 'body-fat-high' };
+                } else {
+                    if (bodyFat < 14) return { category: 'Essential Fat', class: 'body-fat-very-low' };
+                    if (bodyFat <= 20) return { category: 'Athletic', class: 'body-fat-low' };
+                    if (bodyFat <= 31) return { category: 'Average', class: 'body-fat-normal' };
+                    return { category: 'Above Average', class: 'body-fat-high' };
+                }
+            }
+
+            function getHealthAssessment(bodyFat, gender) {
+                const category = getBodyFatCategory(bodyFat, gender);
+
+                switch (category.category) {
+                    case 'Essential Fat':
+                        return 'This is essential fat required for basic physical and physiological health. Going below this level can be dangerous.';
+                    case 'Athletic':
+                        return 'This range is typical for athletes and very fit individuals. Excellent health and fitness level.';
+                    case 'Average':
+                        return 'This is the average range for healthy adults. Good overall health and fitness level.';
+                    case 'Above Average':
+                        return 'Consider incorporating more exercise and healthy eating habits to reduce body fat percentage.';
+                    default:
+                        return 'Body fat percentage calculated successfully.';
+                }
+            }
+
+            // Form submission
+            form.addEventListener('submit', function (e) {
+                e.preventDefault();
+
+                if (!currentGender) {
+                    alert('Please select your gender.');
+                    return;
+                }
+
+                const age = parseFloat(document.getElementById('age').value);
+                const height = parseFloat(document.getElementById('height').value);
+
+                let bodyFat = 0;
+
+                try {
+                    if (currentMethod === 'navy') {
+                        const waist = parseFloat(document.getElementById('navyWaist').value);
+                        const neck = parseFloat(document.getElementById('navyNeck').value);
+                        const hip = currentGender === 'female' ? parseFloat(document.getElementById('navyHip').value) : 0;
+
+                        if (!waist || !neck || (currentGender === 'female' && !hip)) {
+                            alert('Please fill in all required measurements.');
+                            return;
+                        }
+
+                        bodyFat = calculateNavyBodyFat(height, waist, neck, hip, currentGender);
+                    } else if (currentMethod === 'circumference') {
+                        const waist = parseFloat(document.getElementById('circWaist').value);
+                        const neck = parseFloat(document.getElementById('circNeck').value);
+                        const hip = parseFloat(document.getElementById('circHip').value);
+                        const arm = parseFloat(document.getElementById('circArm').value);
+
+                        if (!waist || !neck || !hip || !arm) {
+                            alert('Please fill in all measurements.');
+                            return;
+                        }
+
+                        bodyFat = calculateCircumferenceBodyFat(waist, neck, hip, arm, currentGender);
+                    } else if (currentMethod === 'skinfold') {
+                        const chest = parseFloat(document.getElementById('skinfoldChest').value);
+                        const abdominal = parseFloat(document.getElementById('skinfoldAbdominal').value);
+                        const thigh = parseFloat(document.getElementById('skinfoldThigh').value);
+
+                        if (!chest || !abdominal || !thigh) {
+                            alert('Please fill in all skinfold measurements.');
+                            return;
+                        }
+
+                        bodyFat = calculateSkinfoldBodyFat(chest, abdominal, thigh, age, currentGender);
+                    }
+
+                    // Display results
+                    const category = getBodyFatCategory(bodyFat, currentGender);
+                    const assessment = getHealthAssessment(bodyFat, currentGender);
+
+                    document.getElementById('bodyFatScore').textContent = bodyFat.toFixed(1) + '%';
+                    document.getElementById('bodyFatCategory').textContent = category.category;
+                    document.getElementById('healthAssessment').textContent = assessment;
+
+                    // Update progress bar
+                    const progressBar = document.getElementById('bodyFatProgress');
+                    const maxBodyFat = currentGender === 'male' ? 40 : 45;
+                    const progressPercent = Math.min((bodyFat / maxBodyFat) * 100, 100);
+
+                    progressBar.style.width = progressPercent + '%';
+                    progressBar.className = 'h-3 rounded-full transition-all duration-500 ' + category.class;
+
+                    // Show results
+                    resultsCard.classList.remove('hidden');
+                    resultsCard.classList.add('show');
+                    resultsCard.scrollIntoView({ behavior: 'smooth', block: 'nearest' });
+
+                } catch (error) {
+                    alert('Error calculating body fat. Please check your inputs.');
+                    console.error(error);
+                }
+            });
+
+            // Reset form
+            resetBtn.addEventListener('click', function () {
+                form.reset();
+                resultsCard.classList.add('hidden');
+                resultsCard.classList.remove('show');
+                genderInput.value = '';
+                currentGender = '';
+
+                // Reset gender buttons
+                document.querySelectorAll('.gender-btn').forEach(btn => {
+                    btn.classList.remove('selected');
+                    btn.style.backgroundColor = '';
+                    btn.style.color = '';
+                });
+
+                // Reset to Navy method
+                selectMethod('navy');
+            });
+
+            // Copy and share functionality
+            document.getElementById('copyResultBtn').addEventListener('click', function () {
+                const bodyFat = document.getElementById('bodyFatScore').textContent;
+                const category = document.getElementById('bodyFatCategory').textContent;
+                const text = `My body fat percentage: ${bodyFat} (${category}) - Calculated with Health Calculator Pro`;
+
+                navigator.clipboard.writeText(text).then(() => {
+                    this.innerHTML = '<i data-lucide="check" class="h-3 w-3"></i><span>Copied!</span>';
+                    setTimeout(() => {
+                        this.innerHTML = '<i data-lucide="copy" class="h-3 w-3"></i><span>Copy</span>';
+                        lucide.createIcons();
+                    }, 2000);
+                });
+            });
+
+            document.getElementById('shareResultBtn').addEventListener('click', function () {
+                const bodyFat = document.getElementById('bodyFatScore').textContent;
+                const category = document.getElementById('bodyFatCategory').textContent;
+                const url = window.location.href;
+
+                if (navigator.share) {
+                    navigator.share({
+                        title: 'Health Calculator Pro - Body Fat Results',
+                        text: `My body fat percentage: ${bodyFat} (${category})`,
+                        url: url
+                    });
+                } else {
+                    const text = `My body fat percentage: ${bodyFat} (${category}) - Check yours at ${url}`;
+                    navigator.clipboard.writeText(text);
+                    alert('Results copied to clipboard!');
+                }
+            });
+
+            // Initialize
+            selectMethod('navy');
+        });
+    </script>
+</body>
+
+</html>

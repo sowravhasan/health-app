@@ -1,0 +1,934 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <!-- SEO Meta Tags -->
+    <title>Health Calculator Pro | Macro Calculator - TDEE & Macronutrient Calculator</title>
+    <meta name="description"
+        content="Health Calculator Pro Macro Calculator - Calculate your daily macronutrient needs with TDEE integration. Get personalized protein, carbs, and fat targets based on your fitness goals with professional nutrition guidance.">
+    <meta name="keywords"
+        content="health calculator pro, macro calculator, macronutrient calculator, TDEE calculator, protein calculator, carbs calculator, fat calculator, nutrition calculator, fitness goals, diet planning, bodybuilding macros">
+    <meta name="author" content="Health Calculator Pro Team">
+    <meta name="robots" content="index, follow">
+
+    <!-- Open Graph Tags -->
+    <meta property="og:title" content="Health Calculator Pro | Macro Calculator - TDEE & Macronutrient Calculator">
+    <meta property="og:description"
+        content="Health Calculator Pro Macro Calculator - Calculate daily macronutrient needs with TDEE integration. Get personalized nutrition targets for your fitness goals.">
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://healthcalcpro.netlify.app/tools/macro-calculator.html">
+    <meta property="og:image" content="https://healthcalcpro.netlify.app/assets/images/og-image.jpg">
+
+    <!-- Canonical URL -->
+    <link rel="canonical" href="https://healthcalcpro.netlify.app/tools/macro-calculator.html">
+
+    <!-- Favicon -->
+    <link rel="icon" type="image/png" href="../assets/icons/favicon.png">
+
+    <!-- Structured Data -->
+    <script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@type": "WebApplication",
+        "name": "Health Calculator Pro - Macro Calculator",
+        "description": "Calculate daily macronutrient needs with TDEE integration using Health Calculator Pro",
+        "url": "https://healthcalcpro.netlify.app/tools/macro-calculator.html",
+        "applicationCategory": "HealthApplication",
+        "operatingSystem": "All",
+        "offers": {
+            "@type": "Offer",
+            "price": "0",
+            "priceCurrency": "USD"
+        },
+        "publisher": {
+            "@type": "Organization",
+            "name": "Health Calculator Pro",
+            "url": "https://healthcalcpro.netlify.app/"
+        }
+    }
+    </script>
+
+    <!-- Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+
+    <!-- Lucide Icons -->
+    <script src="https://unpkg.com/lucide@latest/dist/umd/lucide.js"></script>
+
+    <!-- Custom Styles -->
+    <style>
+        body {
+            font-family: 'Inter', sans-serif;
+        }
+
+        .calculator-card {
+            background: linear-gradient(135deg, #f0f9ff 0%, #e0f2fe 100%);
+        }
+
+        .result-card {
+            transition: all 0.3s ease;
+        }
+
+        .result-card.show {
+            transform: scale(1.02);
+            box-shadow: 0 10px 25px rgba(0, 0, 0, 0.1);
+        }
+
+        .goal-btn {
+            transition: all 0.2s ease;
+        }
+
+        .goal-btn.selected {
+            background: linear-gradient(135deg, #0ea5e9, #0284c7);
+            color: white;
+        }
+
+        .gender-btn {
+            transition: all 0.2s ease;
+        }
+
+        .gender-btn.selected {
+            background: linear-gradient(135deg, #0ea5e9, #0284c7);
+            color: white;
+        }
+
+        .macro-chart {
+            background: conic-gradient(from 0deg,
+                    #ef4444 0deg 140deg,
+                    #f59e0b 140deg 200deg,
+                    #10b981 200deg 360deg);
+            border-radius: 50%;
+            width: 120px;
+            height: 120px;
+            position: relative;
+        }
+
+        .macro-chart::after {
+            content: '';
+            position: absolute;
+            top: 20px;
+            left: 20px;
+            right: 20px;
+            bottom: 20px;
+            background: white;
+            border-radius: 50%;
+        }
+
+        .progress-bar {
+            height: 8px;
+            border-radius: 4px;
+            overflow: hidden;
+        }
+    </style>
+</head>
+
+<body class="bg-gray-50 min-h-screen">
+    <!-- Header -->
+    <header class="bg-white shadow-sm border-b">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex justify-between items-center py-4">
+                <div class="flex items-center space-x-3">
+                    <a href="../" class="flex items-center space-x-2">
+                        <i data-lucide="activity" class="h-8 w-8 text-green-600"></i>
+                        <span class="text-xl font-bold text-gray-900">Health Calculator Pro</span>
+                    </a>
+                </div>
+                <nav class="hidden md:flex space-x-6">
+                    <a href="../blog/" class="text-gray-600 hover:text-green-600 transition-colors">Health Blog</a>
+                    <a href="./" class="text-green-600 font-medium">Health Tools</a>
+                </nav>
+            </div>
+        </div>
+    </header>
+
+    <!-- Breadcrumb -->
+    <nav class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-4">
+        <ol class="flex items-center space-x-2 text-sm text-gray-500">
+            <li><a href="../" class="hover:text-green-600">Home</a></li>
+            <li><i data-lucide="chevron-right" class="h-4 w-4"></i></li>
+            <li><a href="./" class="hover:text-green-600">Health Tools</a></li>
+            <li><i data-lucide="chevron-right" class="h-4 w-4"></i></li>
+            <li class="text-gray-900">Macro Calculator</li>
+        </ol>
+    </nav>
+
+    <!-- Main Content -->
+    <main class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-8">
+
+        <!-- Hero Section -->
+        <section class="text-center mb-12">
+            <h1 class="text-4xl md:text-5xl font-bold text-gray-900 mb-4">
+                Health Calculator Pro - Macro Calculator
+            </h1>
+            <p class="text-xl text-gray-600 max-w-3xl mx-auto leading-relaxed">
+                Calculate your daily macronutrient needs with integrated TDEE calculation. Get personalized protein,
+                carbohydrate,
+                and fat targets based on your fitness goals for optimal nutrition and body composition.
+            </p>
+        </section>
+
+        <div class="grid lg:grid-cols-3 gap-8">
+
+            <!-- Calculator Form -->
+            <div class="lg:col-span-2">
+                <div class="calculator-card rounded-xl shadow-lg p-6 border border-blue-200">
+                    <div class="flex items-center space-x-3 mb-6">
+                        <i data-lucide="pie-chart" class="h-6 w-6 text-blue-600"></i>
+                        <h2 class="text-2xl font-semibold text-gray-900">Calculate Your Macro Needs</h2>
+                    </div>
+
+                    <form id="macroForm" class="space-y-6">
+
+                        <!-- Basic Information -->
+                        <div class="grid md:grid-cols-3 gap-4">
+                            <!-- Age -->
+                            <div>
+                                <label for="age" class="block text-sm font-medium text-gray-700 mb-2">
+                                    Age (years)
+                                </label>
+                                <input type="number" id="age" min="18" max="120"
+                                    class="w-full px-3 py-2 rounded-lg border border-gray-300 focus:ring-2 focus:ring-blue-500 focus:border-transparent"
+                                    placeholder="25" required>
+                            </div>
+
+                            <!-- Gender -->
+                            <div>
+                                <label class="block text-sm font-medium text-gray-700 mb-2">Gender</label>
+                                <div class="grid grid-cols-2 gap-2">
+                                    <button type="button" id="genderMaleBtn" data-gender="male"
+                                        class="gender-btn p-2 rounded-lg border-2 border-blue-300 cursor-pointer hover:border-blue-500 transition-all duration-200">
+                                        <div class="flex items-center justify-center space-x-1">
+                                            <i data-lucide="user" class="h-4 w-4"></i>
+                                            <span class="font-medium text-sm">Male</span>
+                                        </div>
+                                    </button>
+                                    <button type="button" id="genderFemaleBtn" data-gender="female"
+                                        class="gender-btn p-2 rounded-lg border-2 border-blue-300 cursor-pointer hover:border-blue-500 transition-all duration-200">
+                                        <div class="flex items-center justify-center space-x-1">
+                                            <i data-lucide="user" class="h-4 w-4"></i>
+                                            <span class="font-medium text-sm">Female</span>
+                                        </div>
+                                    </button>
+                                    <input type="hidden" id="genderInput" name="gender" value="" required>
+                                </div>
+                            </div>
+
+                            <!-- Weight -->
+                            <div>
+                                <label for="weight" class="block text-sm font-medium text-gray-700 mb-2">
+                                    Weight
+                                </label>
+                                <div class="relative">
+                                    <input type="number" id="weight" step="0.1" min="30" max="300"
+                                        class="w-full px-3 py-2 rounded-lg border border-gray-300 focus:ring-2 focus:ring-blue-500 focus:border-transparent pr-12"
+                                        placeholder="70" required>
+                                    <select id="weightUnit"
+                                        class="absolute right-1 top-1 bottom-1 px-1 bg-gray-100 rounded border-0 text-sm">
+                                        <option value="kg">kg</option>
+                                        <option value="lbs">lbs</option>
+                                    </select>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Height -->
+                        <div>
+                            <label for="height" class="block text-sm font-medium text-gray-700 mb-2">
+                                Height
+                            </label>
+                            <div class="relative">
+                                <input type="number" id="height" step="0.1" min="120" max="250"
+                                    class="w-full px-3 py-2 rounded-lg border border-gray-300 focus:ring-2 focus:ring-blue-500 focus:border-transparent pr-12"
+                                    placeholder="170" required>
+                                <select id="heightUnit"
+                                    class="absolute right-1 top-1 bottom-1 px-1 bg-gray-100 rounded border-0 text-sm">
+                                    <option value="cm">cm</option>
+                                    <option value="ft">ft</option>
+                                </select>
+                            </div>
+                        </div>
+
+                        <!-- Activity Level -->
+                        <div>
+                            <label class="block text-sm font-medium text-gray-700 mb-3">Activity Level</label>
+                            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-3">
+                                <div class="activity-option p-3 border border-gray-300 rounded-lg cursor-pointer hover:border-blue-500 transition-all duration-200"
+                                    data-multiplier="1.2">
+                                    <input type="radio" name="activity" value="1.2" id="sedentary" class="sr-only">
+                                    <label for="sedentary" class="cursor-pointer">
+                                        <div class="font-medium text-gray-900">Sedentary</div>
+                                        <div class="text-sm text-gray-600">Little or no exercise</div>
+                                    </label>
+                                </div>
+                                <div class="activity-option p-3 border border-gray-300 rounded-lg cursor-pointer hover:border-blue-500 transition-all duration-200"
+                                    data-multiplier="1.375">
+                                    <input type="radio" name="activity" value="1.375" id="light" class="sr-only">
+                                    <label for="light" class="cursor-pointer">
+                                        <div class="font-medium text-gray-900">Light</div>
+                                        <div class="text-sm text-gray-600">1-3 days/week</div>
+                                    </label>
+                                </div>
+                                <div class="activity-option p-3 border border-gray-300 rounded-lg cursor-pointer hover:border-blue-500 transition-all duration-200"
+                                    data-multiplier="1.55">
+                                    <input type="radio" name="activity" value="1.55" id="moderate" class="sr-only">
+                                    <label for="moderate" class="cursor-pointer">
+                                        <div class="font-medium text-gray-900">Moderate</div>
+                                        <div class="text-sm text-gray-600">3-5 days/week</div>
+                                    </label>
+                                </div>
+                                <div class="activity-option p-3 border border-gray-300 rounded-lg cursor-pointer hover:border-blue-500 transition-all duration-200"
+                                    data-multiplier="1.725">
+                                    <input type="radio" name="activity" value="1.725" id="active" class="sr-only">
+                                    <label for="active" class="cursor-pointer">
+                                        <div class="font-medium text-gray-900">Active</div>
+                                        <div class="text-sm text-gray-600">6-7 days/week</div>
+                                    </label>
+                                </div>
+                                <div class="activity-option p-3 border border-gray-300 rounded-lg cursor-pointer hover:border-blue-500 transition-all duration-200"
+                                    data-multiplier="1.9">
+                                    <input type="radio" name="activity" value="1.9" id="very-active" class="sr-only">
+                                    <label for="very-active" class="cursor-pointer">
+                                        <div class="font-medium text-gray-900">Very Active</div>
+                                        <div class="text-sm text-gray-600">2x/day, intense</div>
+                                    </label>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Fitness Goals -->
+                        <div>
+                            <label class="block text-sm font-medium text-gray-700 mb-3">Fitness Goal</label>
+                            <div class="grid grid-cols-1 md:grid-cols-3 gap-3">
+                                <button type="button" id="weightLossBtn" data-goal="weight-loss"
+                                    class="goal-btn p-4 rounded-lg border-2 border-blue-300 cursor-pointer hover:border-blue-500 transition-all duration-200">
+                                    <div class="text-center">
+                                        <i data-lucide="trending-down" class="h-6 w-6 mx-auto mb-2"></i>
+                                        <div class="font-medium">Weight Loss</div>
+                                        <div class="text-xs text-gray-600">Caloric deficit</div>
+                                    </div>
+                                </button>
+                                <button type="button" id="maintenanceBtn" data-goal="maintenance"
+                                    class="goal-btn p-4 rounded-lg border-2 border-blue-300 cursor-pointer hover:border-blue-500 transition-all duration-200">
+                                    <div class="text-center">
+                                        <i data-lucide="minus" class="h-6 w-6 mx-auto mb-2"></i>
+                                        <div class="font-medium">Maintenance</div>
+                                        <div class="text-xs text-gray-600">Maintain weight</div>
+                                    </div>
+                                </button>
+                                <button type="button" id="muscleGainBtn" data-goal="muscle-gain"
+                                    class="goal-btn p-4 rounded-lg border-2 border-blue-300 cursor-pointer hover:border-blue-500 transition-all duration-200">
+                                    <div class="text-center">
+                                        <i data-lucide="trending-up" class="h-6 w-6 mx-auto mb-2"></i>
+                                        <div class="font-medium">Muscle Gain</div>
+                                        <div class="text-xs text-gray-600">Caloric surplus</div>
+                                    </div>
+                                </button>
+                                <input type="hidden" id="goalInput" name="goal" value="" required>
+                            </div>
+                        </div>
+
+                        <!-- Body Fat Percentage (Optional) -->
+                        <div>
+                            <label for="bodyFat" class="block text-sm font-medium text-gray-700 mb-2">
+                                Body Fat Percentage (Optional - for more accurate protein calculation)
+                            </label>
+                            <input type="number" id="bodyFat" step="0.1" min="5" max="50"
+                                class="w-full px-3 py-2 rounded-lg border border-gray-300 focus:ring-2 focus:ring-blue-500 focus:border-transparent"
+                                placeholder="15">
+                            <p class="text-xs text-gray-500 mt-1">Leave blank if unknown - we'll use standard
+                                calculations</p>
+                        </div>
+
+                        <!-- Buttons -->
+                        <div class="flex flex-col sm:flex-row space-y-2 sm:space-y-0 sm:space-x-3">
+                            <button type="submit" id="calculateBtn"
+                                class="flex-1 bg-gradient-to-r from-blue-600 to-cyan-600 text-white font-semibold py-3 px-6 rounded-lg hover:shadow-lg transform hover:-translate-y-0.5 transition-all duration-200">
+                                Calculate Macros
+                            </button>
+                            <button type="button" id="resetBtn"
+                                class="px-6 py-3 border border-blue-300 text-blue-700 font-semibold rounded-lg hover:bg-blue-50 transition-all duration-200">
+                                Reset
+                            </button>
+                        </div>
+                    </form>
+                </div>
+            </div>
+
+            <!-- Results & Info Sidebar -->
+            <div class="space-y-6">
+                <!-- Results Card -->
+                <div id="resultsCard" class="bg-white rounded-xl shadow-lg p-6 border border-blue-200 hidden">
+                    <div class="flex items-center space-x-2 mb-4">
+                        <i data-lucide="target" class="h-5 w-5 text-blue-600"></i>
+                        <h3 class="text-lg font-semibold">Your Macro Results</h3>
+                    </div>
+
+                    <!-- TDEE Display -->
+                    <div class="text-center mb-4">
+                        <div class="text-2xl font-bold mb-1" id="tdeeScore">0</div>
+                        <div class="text-sm text-gray-600 mb-2">TDEE (Daily Calories)</div>
+                        <div class="text-lg font-semibold text-blue-600" id="adjustedCalories">0</div>
+                        <div class="text-xs text-gray-600" id="calorieAdjustment">Goal Adjusted</div>
+                    </div>
+
+                    <!-- Macro Breakdown -->
+                    <div class="space-y-3">
+                        <div class="flex justify-between items-center p-3 bg-red-50 rounded-lg">
+                            <div class="flex items-center space-x-2">
+                                <div class="w-4 h-4 bg-red-500 rounded"></div>
+                                <span class="font-medium text-red-900">Protein</span>
+                            </div>
+                            <div class="text-right">
+                                <div class="font-bold text-red-900" id="proteinGrams">0g</div>
+                                <div class="text-xs text-red-700" id="proteinPercent">0%</div>
+                            </div>
+                        </div>
+
+                        <div class="flex justify-between items-center p-3 bg-blue-50 rounded-lg">
+                            <div class="flex items-center space-x-2">
+                                <div class="w-4 h-4 bg-blue-500 rounded"></div>
+                                <span class="font-medium text-blue-900">Carbohydrates</span>
+                            </div>
+                            <div class="text-right">
+                                <div class="font-bold text-blue-900" id="carbsGrams">0g</div>
+                                <div class="text-xs text-blue-700" id="carbsPercent">0%</div>
+                            </div>
+                        </div>
+
+                        <div class="flex justify-between items-center p-3 bg-green-50 rounded-lg">
+                            <div class="flex items-center space-x-2">
+                                <div class="w-4 h-4 bg-green-500 rounded"></div>
+                                <span class="font-medium text-green-900">Fat</span>
+                            </div>
+                            <div class="text-right">
+                                <div class="font-bold text-green-900" id="fatGrams">0g</div>
+                                <div class="text-xs text-green-700" id="fatPercent">0%</div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Goal-specific Advice -->
+                    <div class="bg-blue-50 rounded-lg p-3 mt-4">
+                        <div class="flex items-center space-x-2 mb-2">
+                            <i data-lucide="lightbulb" class="h-4 w-4 text-blue-600"></i>
+                            <h4 class="font-medium text-blue-900 text-sm">Nutrition Advice</h4>
+                        </div>
+                        <p id="nutritionAdvice" class="text-blue-800 text-sm leading-relaxed"></p>
+                    </div>
+
+                    <!-- Action Buttons -->
+                    <div class="grid grid-cols-2 gap-2 mt-4">
+                        <button id="copyResultBtn"
+                            class="flex items-center justify-center space-x-1 bg-gray-100 hover:bg-gray-200 text-gray-700 font-medium py-2 px-2 rounded-lg transition-all duration-200 text-xs">
+                            <i data-lucide="copy" class="h-3 w-3"></i>
+                            <span>Copy</span>
+                        </button>
+                        <button id="shareResultBtn"
+                            class="flex items-center justify-center space-x-1 bg-blue-100 hover:bg-blue-200 text-blue-700 font-medium py-2 px-2 rounded-lg transition-all duration-200 text-xs">
+                            <i data-lucide="share-2" class="h-3 w-3"></i>
+                            <span>Share</span>
+                        </button>
+                    </div>
+                </div>
+
+                <!-- Macro Distribution Guide -->
+                <div class="bg-white rounded-xl shadow-lg p-6 border border-blue-200">
+                    <div class="flex items-center space-x-2 mb-4">
+                        <i data-lucide="pie-chart" class="h-5 w-5 text-blue-600"></i>
+                        <h3 class="text-lg font-semibold">Macro Distribution Guide</h3>
+                    </div>
+
+                    <div class="space-y-3 text-sm">
+                        <div class="p-3 bg-red-50 rounded">
+                            <h4 class="font-medium text-red-900 mb-1">Protein (4 cal/g)</h4>
+                            <p class="text-red-800">Essential for muscle maintenance and growth. Higher protein during
+                                weight loss helps preserve muscle mass.</p>
+                        </div>
+                        <div class="p-3 bg-blue-50 rounded">
+                            <h4 class="font-medium text-blue-900 mb-1">Carbohydrates (4 cal/g)</h4>
+                            <p class="text-blue-800">Primary energy source for workouts and brain function. Adjust based
+                                on activity level and goals.</p>
+                        </div>
+                        <div class="p-3 bg-green-50 rounded">
+                            <h4 class="font-medium text-green-900 mb-1">Fat (9 cal/g)</h4>
+                            <p class="text-green-800">Essential for hormone production and nutrient absorption. Don't go
+                                below 20% of total calories.</p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Goal-specific Recommendations -->
+                <div class="bg-white rounded-xl shadow-lg p-6 border border-blue-200">
+                    <div class="flex items-center space-x-2 mb-4">
+                        <i data-lucide="target" class="h-5 w-5 text-blue-600"></i>
+                        <h3 class="text-lg font-semibold">Goal-Based Ratios</h3>
+                    </div>
+
+                    <div class="space-y-3 text-sm">
+                        <div class="p-2 bg-red-50 rounded">
+                            <div class="font-medium text-red-900">Weight Loss</div>
+                            <div class="text-red-700">High protein (30-35%), Moderate carbs (25-30%), Moderate fat
+                                (35-40%)</div>
+                        </div>
+                        <div class="p-2 bg-blue-50 rounded">
+                            <div class="font-medium text-blue-900">Maintenance</div>
+                            <div class="text-blue-700">Balanced protein (25-30%), Carbs (40-45%), Fat (25-30%)</div>
+                        </div>
+                        <div class="p-2 bg-green-50 rounded">
+                            <div class="font-medium text-green-900">Muscle Gain</div>
+                            <div class="text-green-700">High protein (25-30%), High carbs (45-50%), Moderate fat
+                                (20-25%)</div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Unit Converter -->
+                <div class="bg-white rounded-xl shadow-lg p-6 border border-blue-200">
+                    <div class="flex items-center space-x-2 mb-4">
+                        <i data-lucide="repeat" class="h-5 w-5 text-blue-600"></i>
+                        <h3 class="text-lg font-semibold">Quick Converter</h3>
+                    </div>
+
+                    <div class="space-y-3 text-sm">
+                        <div class="grid grid-cols-2 gap-2">
+                            <input type="number" id="lbsInput" placeholder="lbs"
+                                class="px-2 py-1 border rounded text-xs">
+                            <input type="number" id="kgInput" placeholder="kg" class="px-2 py-1 border rounded text-xs">
+                        </div>
+                        <div class="grid grid-cols-2 gap-2">
+                            <input type="number" id="ftInput" placeholder="ft" class="px-2 py-1 border rounded text-xs">
+                            <input type="number" id="cmInput" placeholder="cm" class="px-2 py-1 border rounded text-xs">
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <!-- Footer -->
+    <footer class="bg-white border-t border-gray-200 mt-12">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-8">
+            <div class="text-center">
+                <div class="flex items-center justify-center space-x-2 mb-4">
+                    <i data-lucide="activity" class="h-6 w-6 text-green-600"></i>
+                    <span class="text-xl font-bold text-gray-900">Health Calculator Pro</span>
+                </div>
+                <p class="text-gray-600 text-sm max-w-md mx-auto">
+                    Professional health calculator suite for comprehensive wellness assessment.
+                </p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- JavaScript -->
+    <script>
+        // Macro Calculator JavaScript
+        document.addEventListener('DOMContentLoaded', function () {
+            // Initialize Lucide icons
+            if (typeof lucide !== 'undefined') {
+                lucide.createIcons();
+            }
+
+            // Form elements
+            const form = document.getElementById('macroForm');
+            const calculateBtn = document.getElementById('calculateBtn');
+            const resetBtn = document.getElementById('resetBtn');
+            const resultsCard = document.getElementById('resultsCard');
+
+            // Gender buttons
+            const genderMaleBtn = document.getElementById('genderMaleBtn');
+            const genderFemaleBtn = document.getElementById('genderFemaleBtn');
+            const genderInput = document.getElementById('genderInput');
+
+            // Goal buttons
+            const weightLossBtn = document.getElementById('weightLossBtn');
+            const maintenanceBtn = document.getElementById('maintenanceBtn');
+            const muscleGainBtn = document.getElementById('muscleGainBtn');
+            const goalInput = document.getElementById('goalInput');
+
+            // Unit converters
+            const lbsInput = document.getElementById('lbsInput');
+            const kgInput = document.getElementById('kgInput');
+            const ftInput = document.getElementById('ftInput');
+            const cmInput = document.getElementById('cmInput');
+
+            let currentGender = '';
+            let currentGoal = '';
+            let selectedActivity = null;
+
+            // Unit conversion functions
+            function lbsToKg(lbs) {
+                return lbs / 2.20462;
+            }
+
+            function kgToLbs(kg) {
+                return kg * 2.20462;
+            }
+
+            function ftToCm(ft) {
+                return ft * 30.48;
+            }
+
+            function cmToFt(cm) {
+                return cm / 30.48;
+            }
+
+            // Unit converter event listeners
+            lbsInput.addEventListener('input', function () {
+                const lbs = parseFloat(this.value);
+                if (!isNaN(lbs)) {
+                    kgInput.value = lbsToKg(lbs).toFixed(1);
+                } else {
+                    kgInput.value = '';
+                }
+            });
+
+            kgInput.addEventListener('input', function () {
+                const kg = parseFloat(this.value);
+                if (!isNaN(kg)) {
+                    lbsInput.value = kgToLbs(kg).toFixed(1);
+                } else {
+                    lbsInput.value = '';
+                }
+            });
+
+            ftInput.addEventListener('input', function () {
+                const ft = parseFloat(this.value);
+                if (!isNaN(ft)) {
+                    cmInput.value = ftToCm(ft).toFixed(1);
+                } else {
+                    cmInput.value = '';
+                }
+            });
+
+            cmInput.addEventListener('input', function () {
+                const cm = parseFloat(this.value);
+                if (!isNaN(cm)) {
+                    ftInput.value = cmToFt(cm).toFixed(1);
+                } else {
+                    ftInput.value = '';
+                }
+            });
+
+            // Gender selection
+            function selectGender(gender) {
+                currentGender = gender;
+                genderInput.value = gender;
+
+                document.querySelectorAll('.gender-btn').forEach(btn => {
+                    btn.classList.remove('selected');
+                    btn.style.backgroundColor = '';
+                    btn.style.color = '';
+                });
+
+                const selectedBtn = document.querySelector(`[data-gender="${gender}"]`);
+                selectedBtn.classList.add('selected');
+                selectedBtn.style.backgroundColor = '#0ea5e9';
+                selectedBtn.style.color = 'white';
+            }
+
+            // Goal selection
+            function selectGoal(goal) {
+                currentGoal = goal;
+                goalInput.value = goal;
+
+                document.querySelectorAll('.goal-btn').forEach(btn => {
+                    btn.classList.remove('selected');
+                    btn.style.backgroundColor = '';
+                    btn.style.color = '';
+                });
+
+                const selectedBtn = document.querySelector(`[data-goal="${goal}"]`);
+                selectedBtn.classList.add('selected');
+                selectedBtn.style.backgroundColor = '#0ea5e9';
+                selectedBtn.style.color = 'white';
+            }
+
+            // Activity level selection
+            function selectActivity(multiplier) {
+                selectedActivity = multiplier;
+
+                document.querySelectorAll('.activity-option').forEach(option => {
+                    option.classList.remove('border-blue-500', 'bg-blue-50');
+                    option.classList.add('border-gray-300');
+                });
+
+                const selectedOption = document.querySelector(`[data-multiplier="${multiplier}"]`);
+                selectedOption.classList.remove('border-gray-300');
+                selectedOption.classList.add('border-blue-500', 'bg-blue-50');
+
+                const radio = selectedOption.querySelector('input[type="radio"]');
+                radio.checked = true;
+            }
+
+            // Event listeners
+            genderMaleBtn.addEventListener('click', () => selectGender('male'));
+            genderFemaleBtn.addEventListener('click', () => selectGender('female'));
+
+            weightLossBtn.addEventListener('click', () => selectGoal('weight-loss'));
+            maintenanceBtn.addEventListener('click', () => selectGoal('maintenance'));
+            muscleGainBtn.addEventListener('click', () => selectGoal('muscle-gain'));
+
+            // Activity level click handlers
+            document.querySelectorAll('.activity-option').forEach(option => {
+                option.addEventListener('click', function () {
+                    const multiplier = this.dataset.multiplier;
+                    selectActivity(multiplier);
+                });
+            });
+
+            // Convert weight to kg
+            function getWeightInKg(weight, unit) {
+                return unit === 'lbs' ? lbsToKg(weight) : weight;
+            }
+
+            // Convert height to cm
+            function getHeightInCm(height, unit) {
+                return unit === 'ft' ? ftToCm(height) : height;
+            }
+
+            // Calculate BMR using Mifflin-St Jeor equation
+            function calculateBMR(weight, height, age, gender) {
+                if (gender === 'male') {
+                    return (10 * weight) + (6.25 * height) - (5 * age) + 5;
+                } else {
+                    return (10 * weight) + (6.25 * height) - (5 * age) - 161;
+                }
+            }
+
+            // Calculate TDEE
+            function calculateTDEE(bmr, activityMultiplier) {
+                return bmr * activityMultiplier;
+            }
+
+            // Adjust calories based on goal
+            function adjustCaloriesForGoal(tdee, goal) {
+                switch (goal) {
+                    case 'weight-loss':
+                        return tdee * 0.8; // 20% deficit
+                    case 'muscle-gain':
+                        return tdee * 1.15; // 15% surplus
+                    default:
+                        return tdee; // maintenance
+                }
+            }
+
+            // Calculate protein needs
+            function calculateProtein(weightKg, goal, bodyFat) {
+                let proteinPerKg;
+
+                if (bodyFat) {
+                    // Use lean body mass if body fat is provided
+                    const leanMass = weightKg * (1 - bodyFat / 100);
+                    switch (goal) {
+                        case 'weight-loss':
+                            proteinPerKg = 2.4; // Higher protein during cut
+                            break;
+                        case 'muscle-gain':
+                            proteinPerKg = 2.2;
+                            break;
+                        default:
+                            proteinPerKg = 2.0;
+                    }
+                    return leanMass * proteinPerKg;
+                } else {
+                    // Use total body weight
+                    switch (goal) {
+                        case 'weight-loss':
+                            proteinPerKg = 2.0;
+                            break;
+                        case 'muscle-gain':
+                            proteinPerKg = 1.8;
+                            break;
+                        default:
+                            proteinPerKg = 1.6;
+                    }
+                    return weightKg * proteinPerKg;
+                }
+            }
+
+            // Calculate macro distribution
+            function calculateMacros(calories, weightKg, goal, bodyFat) {
+                const proteinGrams = calculateProtein(weightKg, goal, bodyFat);
+                const proteinCalories = proteinGrams * 4;
+
+                let fatPercentage, carbPercentage;
+
+                switch (goal) {
+                    case 'weight-loss':
+                        fatPercentage = 0.35;
+                        carbPercentage = 0.30;
+                        break;
+                    case 'muscle-gain':
+                        fatPercentage = 0.25;
+                        carbPercentage = 0.50;
+                        break;
+                    default: // maintenance
+                        fatPercentage = 0.30;
+                        carbPercentage = 0.45;
+                }
+
+                const fatCalories = calories * fatPercentage;
+                const fatGrams = fatCalories / 9;
+
+                const carbCalories = calories * carbPercentage;
+                const carbGrams = carbCalories / 4;
+
+                return {
+                    protein: { grams: proteinGrams, calories: proteinCalories, percentage: (proteinCalories / calories * 100) },
+                    carbs: { grams: carbGrams, calories: carbCalories, percentage: carbPercentage * 100 },
+                    fat: { grams: fatGrams, calories: fatCalories, percentage: fatPercentage * 100 }
+                };
+            }
+
+            // Get nutrition advice based on goal
+            function getNutritionAdvice(goal) {
+                switch (goal) {
+                    case 'weight-loss':
+                        return 'Focus on high protein to preserve muscle mass. Prioritize whole foods, plenty of vegetables, and adequate hydration. Consider meal timing around workouts.';
+                    case 'muscle-gain':
+                        return 'Eat in a slight surplus with emphasis on post-workout nutrition. Include complex carbs around training and spread protein throughout the day.';
+                    default:
+                        return 'Maintain a balanced approach with consistent meal timing. Focus on nutrient-dense foods and stay hydrated for optimal performance.';
+                }
+            }
+
+            // Form submission
+            form.addEventListener('submit', function (e) {
+                e.preventDefault();
+
+                if (!currentGender || !currentGoal || !selectedActivity) {
+                    alert('Please fill in all required fields (gender, goal, and activity level).');
+                    return;
+                }
+
+                const age = parseInt(document.getElementById('age').value);
+                const weightValue = parseFloat(document.getElementById('weight').value);
+                const heightValue = parseFloat(document.getElementById('height').value);
+                const weightUnit = document.getElementById('weightUnit').value;
+                const heightUnit = document.getElementById('heightUnit').value;
+                const bodyFat = parseFloat(document.getElementById('bodyFat').value) || null;
+
+                if (!age || !weightValue || !heightValue) {
+                    alert('Please fill in all basic information.');
+                    return;
+                }
+
+                // Convert to standard units
+                const weightKg = getWeightInKg(weightValue, weightUnit);
+                const heightCm = getHeightInCm(heightValue, heightUnit);
+
+                // Calculate BMR and TDEE
+                const bmr = calculateBMR(weightKg, heightCm, age, currentGender);
+                const tdee = calculateTDEE(bmr, parseFloat(selectedActivity));
+                const adjustedCalories = adjustCaloriesForGoal(tdee, currentGoal);
+
+                // Calculate macros
+                const macros = calculateMacros(adjustedCalories, weightKg, currentGoal, bodyFat);
+
+                // Get nutrition advice
+                const advice = getNutritionAdvice(currentGoal);
+
+                // Display results
+                document.getElementById('tdeeScore').textContent = Math.round(tdee);
+                document.getElementById('adjustedCalories').textContent = Math.round(adjustedCalories);
+
+                const calorieAdjustment = currentGoal === 'weight-loss' ? 'Deficit for Fat Loss' :
+                    currentGoal === 'muscle-gain' ? 'Surplus for Muscle Gain' : 'Maintenance Calories';
+                document.getElementById('calorieAdjustment').textContent = calorieAdjustment;
+
+                document.getElementById('proteinGrams').textContent = Math.round(macros.protein.grams) + 'g';
+                document.getElementById('proteinPercent').textContent = Math.round(macros.protein.percentage) + '%';
+
+                document.getElementById('carbsGrams').textContent = Math.round(macros.carbs.grams) + 'g';
+                document.getElementById('carbsPercent').textContent = Math.round(macros.carbs.percentage) + '%';
+
+                document.getElementById('fatGrams').textContent = Math.round(macros.fat.grams) + 'g';
+                document.getElementById('fatPercent').textContent = Math.round(macros.fat.percentage) + '%';
+
+                document.getElementById('nutritionAdvice').textContent = advice;
+
+                // Show results
+                resultsCard.classList.remove('hidden');
+                resultsCard.classList.add('show');
+                resultsCard.scrollIntoView({ behavior: 'smooth', block: 'nearest' });
+            });
+
+            // Reset form
+            resetBtn.addEventListener('click', function () {
+                form.reset();
+                resultsCard.classList.add('hidden');
+                resultsCard.classList.remove('show');
+
+                currentGender = '';
+                currentGoal = '';
+                selectedActivity = null;
+
+                genderInput.value = '';
+                goalInput.value = '';
+
+                // Reset button styles
+                document.querySelectorAll('.gender-btn, .goal-btn').forEach(btn => {
+                    btn.classList.remove('selected');
+                    btn.style.backgroundColor = '';
+                    btn.style.color = '';
+                });
+
+                // Reset activity options
+                document.querySelectorAll('.activity-option').forEach(option => {
+                    option.classList.remove('border-blue-500', 'bg-blue-50');
+                    option.classList.add('border-gray-300');
+                    const radio = option.querySelector('input[type="radio"]');
+                    radio.checked = false;
+                });
+
+                // Reset unit converters
+                lbsInput.value = '';
+                kgInput.value = '';
+                ftInput.value = '';
+                cmInput.value = '';
+            });
+
+            // Copy and share functionality
+            document.getElementById('copyResultBtn').addEventListener('click', function () {
+                const calories = document.getElementById('adjustedCalories').textContent;
+                const protein = document.getElementById('proteinGrams').textContent;
+                const carbs = document.getElementById('carbsGrams').textContent;
+                const fat = document.getElementById('fatGrams').textContent;
+                const text = `My Daily Macros: ${calories} calories - Protein: ${protein}, Carbs: ${carbs}, Fat: ${fat} - Calculated with Health Calculator Pro`;
+
+                navigator.clipboard.writeText(text).then(() => {
+                    this.innerHTML = '<i data-lucide="check" class="h-3 w-3"></i><span>Copied!</span>';
+                    setTimeout(() => {
+                        this.innerHTML = '<i data-lucide="copy" class="h-3 w-3"></i><span>Copy</span>';
+                        lucide.createIcons();
+                    }, 2000);
+                });
+            });
+
+            document.getElementById('shareResultBtn').addEventListener('click', function () {
+                const calories = document.getElementById('adjustedCalories').textContent;
+                const protein = document.getElementById('proteinGrams').textContent;
+                const carbs = document.getElementById('carbsGrams').textContent;
+                const fat = document.getElementById('fatGrams').textContent;
+                const url = window.location.href;
+
+                if (navigator.share) {
+                    navigator.share({
+                        title: 'Health Calculator Pro - Macro Results',
+                        text: `My Daily Macros: ${calories} calories - P: ${protein}, C: ${carbs}, F: ${fat}`,
+                        url: url
+                    });
+                } else {
+                    const text = `My Daily Macros: ${calories} calories - P: ${protein}, C: ${carbs}, F: ${fat} - Check yours at ${url}`;
+                    navigator.clipboard.writeText(text);
+                    alert('Results copied to clipboard!');
+                }
+            });
+        });
+    </script>
+</body>
+
+</html>

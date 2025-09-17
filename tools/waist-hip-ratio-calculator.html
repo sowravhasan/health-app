@@ -1,0 +1,701 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <!-- SEO Meta Tags -->
+    <title>Health Calculator Pro | Waist-to-Hip Ratio Calculator - Health Risk Assessment</title>
+    <meta name="description"
+        content="Health Calculator Pro Waist-to-Hip Ratio Calculator - Assess your health risks using WHO guidelines. Calculate WHR for cardiovascular disease, diabetes, and metabolic health assessment with professional recommendations.">
+    <meta name="keywords"
+        content="health calculator pro, waist to hip ratio, WHR calculator, health risk assessment, WHO guidelines, cardiovascular health, diabetes risk, metabolic health, body shape, health tools">
+    <meta name="author" content="Health Calculator Pro Team">
+    <meta name="robots" content="index, follow">
+
+    <!-- Open Graph Tags -->
+    <meta property="og:title" content="Health Calculator Pro | Waist-to-Hip Ratio Calculator - Health Risk Assessment">
+    <meta property="og:description"
+        content="Health Calculator Pro WHR Calculator - Assess health risks with WHO guidelines. Calculate waist-to-hip ratio for cardiovascular and metabolic health assessment.">
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://healthcalcpro.netlify.app/tools/waist-hip-ratio-calculator.html">
+    <meta property="og:image" content="https://healthcalcpro.netlify.app/assets/images/og-image.jpg">
+
+    <!-- Canonical URL -->
+    <link rel="canonical" href="https://healthcalcpro.netlify.app/tools/waist-hip-ratio-calculator.html">
+
+    <!-- Favicon -->
+    <link rel="icon" type="image/png" href="../assets/icons/favicon.png">
+
+    <!-- Structured Data -->
+    <script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@type": "WebApplication",
+        "name": "Health Calculator Pro - Waist-to-Hip Ratio Calculator",
+        "description": "Calculate waist-to-hip ratio and assess health risks using WHO guidelines with Health Calculator Pro",
+        "url": "https://healthcalcpro.netlify.app/tools/waist-hip-ratio-calculator.html",
+        "applicationCategory": "HealthApplication",
+        "operatingSystem": "All",
+        "offers": {
+            "@type": "Offer",
+            "price": "0",
+            "priceCurrency": "USD"
+        },
+        "publisher": {
+            "@type": "Organization",
+            "name": "Health Calculator Pro",
+            "url": "https://healthcalcpro.netlify.app/"
+        }
+    }
+    </script>
+
+    <!-- Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+
+    <!-- Lucide Icons -->
+    <script src="https://unpkg.com/lucide@latest/dist/umd/lucide.js"></script>
+
+    <!-- Custom Styles -->
+    <style>
+        body {
+            font-family: 'Inter', sans-serif;
+        }
+
+        .calculator-card {
+            background: linear-gradient(135deg, #f0f9ff 0%, #e0f2fe 100%);
+        }
+
+        .result-card {
+            transition: all 0.3s ease;
+        }
+
+        .result-card.show {
+            transform: scale(1.02);
+            box-shadow: 0 10px 25px rgba(0, 0, 0, 0.1);
+        }
+
+        .gender-btn {
+            transition: all 0.2s ease;
+        }
+
+        .gender-btn.selected {
+            background: linear-gradient(135deg, #0ea5e9, #0284c7);
+            color: white;
+        }
+
+        .risk-low {
+            background-color: #10b981;
+        }
+
+        .risk-moderate {
+            background-color: #f59e0b;
+        }
+
+        .risk-high {
+            background-color: #ef4444;
+        }
+
+        .risk-very-high {
+            background-color: #dc2626;
+        }
+
+        .measurement-guide {
+            background: linear-gradient(135deg, #f3f4f6 0%, #e5e7eb 100%);
+        }
+    </style>
+</head>
+
+<body class="bg-gray-50 min-h-screen">
+    <!-- Header -->
+    <header class="bg-white shadow-sm border-b">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex justify-between items-center py-4">
+                <div class="flex items-center space-x-3">
+                    <a href="../" class="flex items-center space-x-2">
+                        <i data-lucide="activity" class="h-8 w-8 text-green-600"></i>
+                        <span class="text-xl font-bold text-gray-900">Health Calculator Pro</span>
+                    </a>
+                </div>
+                <nav class="hidden md:flex space-x-6">
+                    <a href="../blog/" class="text-gray-600 hover:text-green-600 transition-colors">Health Blog</a>
+                    <a href="./" class="text-green-600 font-medium">Health Tools</a>
+                </nav>
+            </div>
+        </div>
+    </header>
+
+    <!-- Breadcrumb -->
+    <nav class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-4">
+        <ol class="flex items-center space-x-2 text-sm text-gray-500">
+            <li><a href="../" class="hover:text-green-600">Home</a></li>
+            <li><i data-lucide="chevron-right" class="h-4 w-4"></i></li>
+            <li><a href="./" class="hover:text-green-600">Health Tools</a></li>
+            <li><i data-lucide="chevron-right" class="h-4 w-4"></i></li>
+            <li class="text-gray-900">Waist-to-Hip Ratio Calculator</li>
+        </ol>
+    </nav>
+
+    <!-- Main Content -->
+    <main class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-8">
+
+        <!-- Hero Section -->
+        <section class="text-center mb-12">
+            <h1 class="text-4xl md:text-5xl font-bold text-gray-900 mb-4">
+                Health Calculator Pro - Waist-to-Hip Ratio Calculator
+            </h1>
+            <p class="text-xl text-gray-600 max-w-3xl mx-auto leading-relaxed">
+                Assess your health risks with our professional WHR calculator using WHO guidelines. Evaluate
+                cardiovascular
+                disease, diabetes risk, and metabolic health based on your body fat distribution pattern.
+            </p>
+        </section>
+
+        <div class="grid lg:grid-cols-3 gap-8">
+
+            <!-- Calculator Form -->
+            <div class="lg:col-span-2">
+                <div class="calculator-card rounded-xl shadow-lg p-6 border border-blue-200">
+                    <div class="flex items-center space-x-3 mb-6">
+                        <i data-lucide="target" class="h-6 w-6 text-blue-600"></i>
+                        <h2 class="text-2xl font-semibold text-gray-900">Calculate Your Waist-to-Hip Ratio</h2>
+                    </div>
+
+                    <form id="whrForm" class="space-y-6">
+
+                        <!-- Gender Selection -->
+                        <div>
+                            <label class="block text-sm font-medium text-gray-700 mb-3">Gender</label>
+                            <div class="grid grid-cols-2 gap-4">
+                                <button type="button" id="genderMaleBtn" data-gender="male"
+                                    class="gender-btn p-4 rounded-lg border-2 border-blue-300 cursor-pointer hover:border-blue-500 transition-all duration-200">
+                                    <div class="flex items-center justify-center space-x-2">
+                                        <i data-lucide="user" class="h-5 w-5"></i>
+                                        <span class="font-medium">Male</span>
+                                    </div>
+                                </button>
+                                <button type="button" id="genderFemaleBtn" data-gender="female"
+                                    class="gender-btn p-4 rounded-lg border-2 border-blue-300 cursor-pointer hover:border-blue-500 transition-all duration-200">
+                                    <div class="flex items-center justify-center space-x-2">
+                                        <i data-lucide="user" class="h-5 w-5"></i>
+                                        <span class="font-medium">Female</span>
+                                    </div>
+                                </button>
+                                <input type="hidden" id="genderInput" name="gender" value="" required>
+                            </div>
+                        </div>
+
+                        <!-- Measurements -->
+                        <div class="grid md:grid-cols-2 gap-6">
+                            <!-- Waist Measurement -->
+                            <div>
+                                <label for="waist" class="block text-sm font-medium text-gray-700 mb-2">
+                                    Waist Circumference
+                                </label>
+                                <div class="relative">
+                                    <input type="number" id="waist" step="0.1" min="50" max="200"
+                                        class="w-full px-3 py-3 rounded-lg border border-gray-300 focus:ring-2 focus:ring-blue-500 focus:border-transparent pr-12"
+                                        placeholder="80.5" required>
+                                    <select id="waistUnit"
+                                        class="absolute right-1 top-1 bottom-1 px-2 bg-gray-100 rounded border-0 text-sm">
+                                        <option value="cm">cm</option>
+                                        <option value="in">in</option>
+                                    </select>
+                                </div>
+                                <p class="text-xs text-gray-500 mt-1">Measure at the narrowest point, usually just above
+                                    the belly button</p>
+                            </div>
+
+                            <!-- Hip Measurement -->
+                            <div>
+                                <label for="hip" class="block text-sm font-medium text-gray-700 mb-2">
+                                    Hip Circumference
+                                </label>
+                                <div class="relative">
+                                    <input type="number" id="hip" step="0.1" min="60" max="200"
+                                        class="w-full px-3 py-3 rounded-lg border border-gray-300 focus:ring-2 focus:ring-blue-500 focus:border-transparent pr-12"
+                                        placeholder="95.0" required>
+                                    <select id="hipUnit"
+                                        class="absolute right-1 top-1 bottom-1 px-2 bg-gray-100 rounded border-0 text-sm">
+                                        <option value="cm">cm</option>
+                                        <option value="in">in</option>
+                                    </select>
+                                </div>
+                                <p class="text-xs text-gray-500 mt-1">Measure at the widest point of your hips and
+                                    buttocks</p>
+                            </div>
+                        </div>
+
+                        <!-- Measurement Guide -->
+                        <div class="measurement-guide rounded-lg p-4 border border-gray-300">
+                            <div class="flex items-center space-x-2 mb-3">
+                                <i data-lucide="info" class="h-5 w-5 text-blue-600"></i>
+                                <h3 class="text-lg font-semibold text-gray-900">Measurement Guidelines</h3>
+                            </div>
+                            <div class="grid md:grid-cols-2 gap-4 text-sm">
+                                <div>
+                                    <h4 class="font-medium text-gray-900 mb-2">Waist Measurement:</h4>
+                                    <ul class="space-y-1 text-gray-700">
+                                        <li>• Stand upright with feet together</li>
+                                        <li>• Measure at the narrowest point</li>
+                                        <li>• Usually just above the belly button</li>
+                                        <li>• Breathe out normally before measuring</li>
+                                    </ul>
+                                </div>
+                                <div>
+                                    <h4 class="font-medium text-gray-900 mb-2">Hip Measurement:</h4>
+                                    <ul class="space-y-1 text-gray-700">
+                                        <li>• Stand with feet together</li>
+                                        <li>• Measure at the widest point</li>
+                                        <li>• Include buttocks in measurement</li>
+                                        <li>• Keep tape measure parallel to floor</li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Age Input (Optional for better risk assessment) -->
+                        <div>
+                            <label for="age" class="block text-sm font-medium text-gray-700 mb-2">
+                                Age (Optional - for enhanced risk assessment)
+                            </label>
+                            <input type="number" id="age" min="18" max="120"
+                                class="w-full px-3 py-2 rounded-lg border border-gray-300 focus:ring-2 focus:ring-blue-500 focus:border-transparent"
+                                placeholder="25">
+                        </div>
+
+                        <!-- Buttons -->
+                        <div class="flex flex-col sm:flex-row space-y-2 sm:space-y-0 sm:space-x-3">
+                            <button type="submit" id="calculateBtn"
+                                class="flex-1 bg-gradient-to-r from-blue-600 to-cyan-600 text-white font-semibold py-3 px-6 rounded-lg hover:shadow-lg transform hover:-translate-y-0.5 transition-all duration-200">
+                                Calculate WHR
+                            </button>
+                            <button type="button" id="resetBtn"
+                                class="px-6 py-3 border border-blue-300 text-blue-700 font-semibold rounded-lg hover:bg-blue-50 transition-all duration-200">
+                                Reset
+                            </button>
+                        </div>
+                    </form>
+                </div>
+            </div>
+
+            <!-- Results & Info Sidebar -->
+            <div class="space-y-6">
+                <!-- Results Card -->
+                <div id="resultsCard" class="bg-white rounded-xl shadow-lg p-6 border border-blue-200 hidden">
+                    <div class="flex items-center space-x-2 mb-4">
+                        <i data-lucide="pie-chart" class="h-5 w-5 text-blue-600"></i>
+                        <h3 class="text-lg font-semibold">Your WHR Results</h3>
+                    </div>
+
+                    <!-- WHR Display -->
+                    <div class="text-center mb-4">
+                        <div class="text-3xl font-bold mb-2" id="whrScore">0.00</div>
+                        <div class="text-sm font-semibold mb-3" id="whrCategory">Category</div>
+
+                        <!-- Risk Level Progress Bar -->
+                        <div class="w-full bg-gray-200 rounded-full h-4 mb-3">
+                            <div id="whrProgress" class="h-4 rounded-full transition-all duration-500"
+                                style="width: 0%"></div>
+                        </div>
+
+                        <!-- Risk Level Labels -->
+                        <div class="grid grid-cols-3 text-xs text-gray-600 gap-1">
+                            <span>Low Risk</span>
+                            <span>Moderate Risk</span>
+                            <span>High Risk</span>
+                        </div>
+                    </div>
+
+                    <!-- Health Risk Assessment -->
+                    <div class="bg-blue-50 rounded-lg p-3 mb-4">
+                        <div class="flex items-center space-x-2 mb-2">
+                            <i data-lucide="heart" class="h-4 w-4 text-blue-600"></i>
+                            <h4 class="font-medium text-blue-900 text-sm">Health Risk Assessment</h4>
+                        </div>
+                        <p id="healthRisk" class="text-blue-800 text-sm leading-relaxed"></p>
+                    </div>
+
+                    <!-- Body Shape -->
+                    <div class="bg-green-50 rounded-lg p-3 mb-4">
+                        <div class="flex items-center space-x-2 mb-2">
+                            <i data-lucide="circle" class="h-4 w-4 text-green-600"></i>
+                            <h4 class="font-medium text-green-900 text-sm">Body Shape Analysis</h4>
+                        </div>
+                        <p id="bodyShape" class="text-green-800 text-sm leading-relaxed"></p>
+                    </div>
+
+                    <!-- Action Buttons -->
+                    <div class="grid grid-cols-2 gap-2">
+                        <button id="copyResultBtn"
+                            class="flex items-center justify-center space-x-1 bg-gray-100 hover:bg-gray-200 text-gray-700 font-medium py-2 px-2 rounded-lg transition-all duration-200 text-xs">
+                            <i data-lucide="copy" class="h-3 w-3"></i>
+                            <span>Copy</span>
+                        </button>
+                        <button id="shareResultBtn"
+                            class="flex items-center justify-center space-x-1 bg-blue-100 hover:bg-blue-200 text-blue-700 font-medium py-2 px-2 rounded-lg transition-all duration-200 text-xs">
+                            <i data-lucide="share-2" class="h-3 w-3"></i>
+                            <span>Share</span>
+                        </button>
+                    </div>
+                </div>
+
+                <!-- WHO Guidelines Reference -->
+                <div class="bg-white rounded-xl shadow-lg p-6 border border-blue-200">
+                    <div class="flex items-center space-x-2 mb-4">
+                        <i data-lucide="shield-check" class="h-5 w-5 text-blue-600"></i>
+                        <h3 class="text-lg font-semibold">WHO Risk Guidelines</h3>
+                    </div>
+
+                    <div class="space-y-3">
+                        <div>
+                            <h4 class="font-medium text-gray-900 mb-2">Men</h4>
+                            <div class="space-y-1 text-sm">
+                                <div class="flex justify-between items-center p-2 bg-green-50 rounded">
+                                    <span class="font-medium text-green-900">Low Risk</span>
+                                    <span class="text-green-700">≤ 0.95</span>
+                                </div>
+                                <div class="flex justify-between items-center p-2 bg-yellow-50 rounded">
+                                    <span class="font-medium text-yellow-900">Moderate Risk</span>
+                                    <span class="text-yellow-700">0.96 - 1.0</span>
+                                </div>
+                                <div class="flex justify-between items-center p-2 bg-red-50 rounded">
+                                    <span class="font-medium text-red-900">High Risk</span>
+                                    <span class="text-red-700">> 1.0</span>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div>
+                            <h4 class="font-medium text-gray-900 mb-2">Women</h4>
+                            <div class="space-y-1 text-sm">
+                                <div class="flex justify-between items-center p-2 bg-green-50 rounded">
+                                    <span class="font-medium text-green-900">Low Risk</span>
+                                    <span class="text-green-700">≤ 0.80</span>
+                                </div>
+                                <div class="flex justify-between items-center p-2 bg-yellow-50 rounded">
+                                    <span class="font-medium text-yellow-900">Moderate Risk</span>
+                                    <span class="text-yellow-700">0.81 - 0.85</span>
+                                </div>
+                                <div class="flex justify-between items-center p-2 bg-red-50 rounded">
+                                    <span class="font-medium text-red-900">High Risk</span>
+                                    <span class="text-red-700">> 0.85</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Health Risks Info -->
+                <div class="bg-white rounded-xl shadow-lg p-6 border border-blue-200">
+                    <div class="flex items-center space-x-2 mb-4">
+                        <i data-lucide="alert-triangle" class="h-5 w-5 text-blue-600"></i>
+                        <h3 class="text-lg font-semibold">Health Risks</h3>
+                    </div>
+
+                    <div class="text-sm space-y-3">
+                        <div class="p-3 bg-red-50 rounded">
+                            <h4 class="font-medium text-red-900 mb-1">High WHR Associated With:</h4>
+                            <ul class="text-red-800 space-y-1">
+                                <li>• Cardiovascular disease</li>
+                                <li>• Type 2 diabetes</li>
+                                <li>• High blood pressure</li>
+                                <li>• Metabolic syndrome</li>
+                            </ul>
+                        </div>
+                        <div class="p-3 bg-green-50 rounded">
+                            <h4 class="font-medium text-green-900 mb-1">Benefits of Lower WHR:</h4>
+                            <ul class="text-green-800 space-y-1">
+                                <li>• Better insulin sensitivity</li>
+                                <li>• Lower inflammation levels</li>
+                                <li>• Improved heart health</li>
+                                <li>• Better hormonal balance</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Unit Converter -->
+                <div class="bg-white rounded-xl shadow-lg p-6 border border-blue-200">
+                    <div class="flex items-center space-x-2 mb-4">
+                        <i data-lucide="repeat" class="h-5 w-5 text-blue-600"></i>
+                        <h3 class="text-lg font-semibold">Unit Converter</h3>
+                    </div>
+
+                    <div class="space-y-3 text-sm">
+                        <div class="grid grid-cols-2 gap-2">
+                            <input type="number" id="cmInput" placeholder="cm" class="px-2 py-1 border rounded text-xs">
+                            <input type="number" id="inInput" placeholder="inches"
+                                class="px-2 py-1 border rounded text-xs">
+                        </div>
+                        <p class="text-gray-600 text-xs">Enter a value in either field for instant conversion</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <!-- Footer -->
+    <footer class="bg-white border-t border-gray-200 mt-12">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-8">
+            <div class="text-center">
+                <div class="flex items-center justify-center space-x-2 mb-4">
+                    <i data-lucide="activity" class="h-6 w-6 text-green-600"></i>
+                    <span class="text-xl font-bold text-gray-900">Health Calculator Pro</span>
+                </div>
+                <p class="text-gray-600 text-sm max-w-md mx-auto">
+                    Professional health calculator suite for comprehensive wellness assessment.
+                </p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- JavaScript -->
+    <script>
+        // Waist-to-Hip Ratio Calculator JavaScript
+        document.addEventListener('DOMContentLoaded', function () {
+            // Initialize Lucide icons
+            if (typeof lucide !== 'undefined') {
+                lucide.createIcons();
+            }
+
+            // Form elements
+            const form = document.getElementById('whrForm');
+            const calculateBtn = document.getElementById('calculateBtn');
+            const resetBtn = document.getElementById('resetBtn');
+            const resultsCard = document.getElementById('resultsCard');
+
+            // Gender buttons
+            const genderMaleBtn = document.getElementById('genderMaleBtn');
+            const genderFemaleBtn = document.getElementById('genderFemaleBtn');
+            const genderInput = document.getElementById('genderInput');
+
+            // Unit converters
+            const cmInput = document.getElementById('cmInput');
+            const inInput = document.getElementById('inInput');
+
+            let currentGender = '';
+
+            // Gender selection
+            function selectGender(gender) {
+                currentGender = gender;
+                genderInput.value = gender;
+
+                // Update button styles
+                document.querySelectorAll('.gender-btn').forEach(btn => {
+                    btn.classList.remove('selected');
+                    btn.style.backgroundColor = '';
+                    btn.style.color = '';
+                });
+
+                const selectedBtn = document.querySelector(`[data-gender="${gender}"]`);
+                selectedBtn.classList.add('selected');
+                selectedBtn.style.backgroundColor = '#0ea5e9';
+                selectedBtn.style.color = 'white';
+            }
+
+            // Event listeners for gender selection
+            genderMaleBtn.addEventListener('click', () => selectGender('male'));
+            genderFemaleBtn.addEventListener('click', () => selectGender('female'));
+
+            // Unit conversion functions
+            function convertCmToInches(cm) {
+                return cm / 2.54;
+            }
+
+            function convertInchesToCm(inches) {
+                return inches * 2.54;
+            }
+
+            // Unit converter event listeners
+            cmInput.addEventListener('input', function () {
+                const cm = parseFloat(this.value);
+                if (!isNaN(cm)) {
+                    inInput.value = convertCmToInches(cm).toFixed(1);
+                } else {
+                    inInput.value = '';
+                }
+            });
+
+            inInput.addEventListener('input', function () {
+                const inches = parseFloat(this.value);
+                if (!isNaN(inches)) {
+                    cmInput.value = convertInchesToCm(inches).toFixed(1);
+                } else {
+                    cmInput.value = '';
+                }
+            });
+
+            // Convert measurements to cm
+            function convertToCm(value, unit) {
+                return unit === 'in' ? convertInchesToCm(value) : value;
+            }
+
+            // Calculate WHR
+            function calculateWHR(waistCm, hipCm) {
+                return waistCm / hipCm;
+            }
+
+            // Get risk category based on WHO guidelines
+            function getRiskCategory(whr, gender) {
+                if (gender === 'male') {
+                    if (whr <= 0.95) return { category: 'Low Risk', class: 'risk-low', progress: 25 };
+                    if (whr <= 1.0) return { category: 'Moderate Risk', class: 'risk-moderate', progress: 50 };
+                    return { category: 'High Risk', class: 'risk-high', progress: 85 };
+                } else {
+                    if (whr <= 0.80) return { category: 'Low Risk', class: 'risk-low', progress: 25 };
+                    if (whr <= 0.85) return { category: 'Moderate Risk', class: 'risk-moderate', progress: 50 };
+                    return { category: 'High Risk', class: 'risk-high', progress: 85 };
+                }
+            }
+
+            // Get health risk assessment
+            function getHealthRiskAssessment(whr, gender, age) {
+                const risk = getRiskCategory(whr, gender);
+                let assessment = '';
+
+                switch (risk.category) {
+                    case 'Low Risk':
+                        assessment = 'Excellent! Your waist-to-hip ratio indicates a low risk for cardiovascular disease and metabolic disorders. This suggests good fat distribution and overall health.';
+                        break;
+                    case 'Moderate Risk':
+                        assessment = 'Your WHR indicates moderate health risks. Consider lifestyle modifications including regular exercise and a balanced diet to improve your ratio.';
+                        break;
+                    case 'High Risk':
+                        assessment = 'Your WHR suggests higher health risks including cardiovascular disease and diabetes. We recommend consulting with a healthcare provider and implementing lifestyle changes.';
+                        break;
+                }
+
+                if (age && age > 50) {
+                    assessment += ' Age-related factors may also influence your health risk profile.';
+                }
+
+                return assessment;
+            }
+
+            // Get body shape analysis
+            function getBodyShapeAnalysis(whr, gender) {
+                if (gender === 'male') {
+                    if (whr > 1.0) {
+                        return 'Apple shape: Higher abdominal fat storage. Focus on reducing visceral fat through cardio exercise and core strengthening.';
+                    } else {
+                        return 'Good fat distribution: Your body shows a healthy fat distribution pattern with lower health risks.';
+                    }
+                } else {
+                    if (whr > 0.85) {
+                        return 'Apple shape: More weight carried around the waist. Consider exercises targeting core strength and overall cardio fitness.';
+                    } else if (whr < 0.75) {
+                        return 'Pear shape: More weight in hips/thighs. This is generally associated with lower health risks than apple shape.';
+                    } else {
+                        return 'Balanced distribution: Your body shows a healthy fat distribution pattern with moderate health risks.';
+                    }
+                }
+            }
+
+            // Form submission
+            form.addEventListener('submit', function (e) {
+                e.preventDefault();
+
+                if (!currentGender) {
+                    alert('Please select your gender.');
+                    return;
+                }
+
+                const waistValue = parseFloat(document.getElementById('waist').value);
+                const hipValue = parseFloat(document.getElementById('hip').value);
+                const waistUnit = document.getElementById('waistUnit').value;
+                const hipUnit = document.getElementById('hipUnit').value;
+                const age = parseInt(document.getElementById('age').value) || null;
+
+                if (!waistValue || !hipValue) {
+                    alert('Please enter both waist and hip measurements.');
+                    return;
+                }
+
+                // Convert to cm
+                const waistCm = convertToCm(waistValue, waistUnit);
+                const hipCm = convertToCm(hipValue, hipUnit);
+
+                // Calculate WHR
+                const whr = calculateWHR(waistCm, hipCm);
+
+                // Get risk assessment
+                const risk = getRiskCategory(whr, currentGender);
+                const healthAssessment = getHealthRiskAssessment(whr, currentGender, age);
+                const bodyShapeAnalysis = getBodyShapeAnalysis(whr, currentGender);
+
+                // Display results
+                document.getElementById('whrScore').textContent = whr.toFixed(2);
+                document.getElementById('whrCategory').textContent = risk.category;
+                document.getElementById('healthRisk').textContent = healthAssessment;
+                document.getElementById('bodyShape').textContent = bodyShapeAnalysis;
+
+                // Update progress bar
+                const progressBar = document.getElementById('whrProgress');
+                progressBar.style.width = risk.progress + '%';
+                progressBar.className = 'h-4 rounded-full transition-all duration-500 ' + risk.class;
+
+                // Show results
+                resultsCard.classList.remove('hidden');
+                resultsCard.classList.add('show');
+                resultsCard.scrollIntoView({ behavior: 'smooth', block: 'nearest' });
+            });
+
+            // Reset form
+            resetBtn.addEventListener('click', function () {
+                form.reset();
+                resultsCard.classList.add('hidden');
+                resultsCard.classList.remove('show');
+                genderInput.value = '';
+                currentGender = '';
+
+                // Reset gender buttons
+                document.querySelectorAll('.gender-btn').forEach(btn => {
+                    btn.classList.remove('selected');
+                    btn.style.backgroundColor = '';
+                    btn.style.color = '';
+                });
+
+                // Reset unit converters
+                cmInput.value = '';
+                inInput.value = '';
+            });
+
+            // Copy and share functionality
+            document.getElementById('copyResultBtn').addEventListener('click', function () {
+                const whr = document.getElementById('whrScore').textContent;
+                const category = document.getElementById('whrCategory').textContent;
+                const text = `My Waist-to-Hip Ratio: ${whr} (${category}) - Calculated with Health Calculator Pro`;
+
+                navigator.clipboard.writeText(text).then(() => {
+                    this.innerHTML = '<i data-lucide="check" class="h-3 w-3"></i><span>Copied!</span>';
+                    setTimeout(() => {
+                        this.innerHTML = '<i data-lucide="copy" class="h-3 w-3"></i><span>Copy</span>';
+                        lucide.createIcons();
+                    }, 2000);
+                });
+            });
+
+            document.getElementById('shareResultBtn').addEventListener('click', function () {
+                const whr = document.getElementById('whrScore').textContent;
+                const category = document.getElementById('whrCategory').textContent;
+                const url = window.location.href;
+
+                if (navigator.share) {
+                    navigator.share({
+                        title: 'Health Calculator Pro - WHR Results',
+                        text: `My Waist-to-Hip Ratio: ${whr} (${category})`,
+                        url: url
+                    });
+                } else {
+                    const text = `My Waist-to-Hip Ratio: ${whr} (${category}) - Check yours at ${url}`;
+                    navigator.clipboard.writeText(text);
+                    alert('Results copied to clipboard!');
+                }
+            });
+        });
+    </script>
+</body>
+
+</html>

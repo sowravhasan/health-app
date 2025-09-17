@@ -1,24 +1,31 @@
 # 🏥 Health Calculator Pro
 
-> A modern, comprehensive, and user-friendly health calculator suite built with vanilla JavaScript, HTML5, and CSS3. Features include BMI calculations, unit conversions, ideal weight calculations, calorie needs estimation, PWA support, and complete SEO optimization.
+> A modern, comprehensive, and user-friendly health calculator suite built with vanilla JavaScript, HTML5, and CSS3. Features include BMI calculations, body fat percentage, waist-to-hip ratio assessment, macronutrient planning, unit conversions, ideal weight calculations, calorie needs estimation, PWA support, and complete SEO optimization.
 
-![BMI Calculator Preview](assets/images/og-image.jpg)
+![Health Calculator Pro Preview](assets/images/og-image.jpg)
 
 ## ✨ Features
 
-### 🧮 Core Functionality
-- **Instant BMI Calculation** - Real-time BMI calculation as you type
+### 🧮 Core Calculator Suite
+- **BMI Calculator** - Real-time BMI calculation with comprehensive health assessment
+- **Body Fat Calculator** - Multiple measurement methods (Navy, Circumference, Skinfold)
+- **Waist-to-Hip Ratio Calculator** - WHO guidelines-based health risk assessment
+- **Macro Calculator** - Complete macronutrient and TDEE planning with fitness goals
+- **Ideal Weight Calculator** - Multiple scientific formulas (Robinson, Devine, Miller, Hamwi)
+- **Calorie Calculator** - BMR and TDEE calculations with activity levels and goals
+
+### 🔄 Advanced Unit Support
 - **Multiple Unit Support** - Supports metric (kg/cm), imperial (lbs/ft/in), and mixed units
 - **Comprehensive Unit Converter** - Built-in converters for height and weight
 - **Interactive Unit Converters** - Dedicated height and weight converters with real-time results
-- **Age and Gender Consideration** - Personalized calculations based on demographics
+- **Smart Unit Detection** - Automatic unit recognition and conversion
 
-### 📊 Advanced Features
-- **Ideal Weight Formulas** - Multiple scientific formulas (Robinson, Devine, Miller, Hamwi)
+### 📊 Health Assessment Features
+- **Body Composition Analysis** - Navy Method, Circumference Method, and Skinfold measurements
+- **Health Risk Assessment** - WHO guidelines for waist-to-hip ratio evaluation
+- **Macronutrient Distribution** - Goal-based macro calculations (weight loss, maintenance, gain)
 - **BMI Category Classification** - Underweight, Normal, Overweight, Obese with color coding
-- **Calorie Needs Calculator** - BMR and TDEE calculations with activity levels
-- **Health Tips & Recommendations** - Personalized advice based on BMI category
-- **BMI History Tracking** - Save and view your BMI history (localStorage)
+- **Personalized Recommendations** - Health tips and advice based on calculations
 
 ### 🎨 User Experience
 - **Responsive Design** - Mobile-first, works on all devices
@@ -30,38 +37,59 @@
 - **Complete SEO Optimization** - Meta tags, Open Graph, Twitter Cards
 - **Search Engine Ready** - Structured data, sitemap, robots.txt
 - **Social Media Sharing** - Share results on Twitter, WhatsApp
-- **Copy to Clipboard** - Easy sharing of BMI results
+- **Copy to Clipboard** - Easy sharing of calculation results
 - **Performance Optimized** - Fast loading, efficient caching
+- **Health Content Blog** - Comprehensive health and fitness articles
 
 ## 🏗️ Project Structure
 
 ```
-📦 BMI Calculator
-├── 📄 index.html                  # Main application file
+📦 Health Calculator Pro
+├── 📄 index.html                  # Main homepage
 ├── 📄 README.md                   # Project documentation
 ├── 📂 assets/                     # Organized asset files
 │   ├── 📂 css/                    # Stylesheets
-│   │   └── 📄 styles.css          # Main CSS with green theme
+│   │   ├── 📄 styles.css          # Main CSS with green theme
+│   │   ├── 📄 optimized-styles.css # Optimized styles
+│   │   ├── 📄 mobile-responsive.css # Mobile optimizations
+│   │   └── 📄 accessibility.css   # Accessibility enhancements
 │   ├── 📂 js/                     # JavaScript files
-│   │   ├── 📄 script.js           # Main application logic (1115 lines)
+│   │   ├── 📄 script.js           # Main application logic
+│   │   ├── 📄 bmi-optimized.js    # BMI calculator logic
+│   │   ├── 📄 precise-converter.js # Unit conversion utilities
 │   │   └── 📄 sw.js               # Service Worker for PWA
 │   ├── 📂 icons/                  # Favicon and app icons
 │   │   ├── 📄 favicon.ico         # Browser favicon
 │   │   ├── 📄 favicon.png         # PNG favicon (32x32)
 │   │   └── 📄 favicon.svg         # Scalable vector icon
 │   └── 📂 images/                 # Images and graphics
-│       └── 📄 og-image.jpg        # Open Graph social media image
-├── 📂 public/                     # SEO and configuration files
-│   ├── 📄 _headers                # Netlify headers configuration
-│   ├── 📄 _redirects              # Netlify redirects configuration
-│   ├── 📄 humans.txt              # Human-readable project info
-│   ├── 📄 manifest.json           # PWA manifest
-│   ├── 📄 netlify.toml            # Netlify deployment config
-│   ├── 📄 robots.txt              # Search engine crawler instructions
-│   ├── 📄 rss.xml                 # RSS feed for updates
-│   └── 📄 sitemap.xml             # XML sitemap for SEO
-├── 📂 docs/                       # Documentation folder (reserved)
-└── 📂 .well-known/               # Web standards directory
+│       ├── 📄 og-image.jpg        # Open Graph social media image
+│       ├── 📂 blog-images/        # Blog article images
+│       └── 📂 tools-images/       # Calculator tool images
+├── 📂 tools/                      # Calculator tools directory
+│   ├── 📄 index.html              # Tools overview page
+│   ├── 📄 ideal-weight-calculator.html # Ideal weight calculator
+│   ├── 📄 calorie-calculator.html # Calorie needs calculator
+│   ├── 📄 body-fat-calculator.html # Body fat percentage calculator
+│   ├── 📄 waist-hip-ratio-calculator.html # WHR calculator
+│   └── 📄 macro-calculator.html   # Macronutrient calculator
+├── 📂 blog/                       # Health and fitness blog
+│   ├── 📄 index.html              # Blog homepage
+│   ├── 📄 bmi-calculator-guide-beginners.html
+│   ├── 📄 understanding-bmi-body-composition-guide.html
+│   ├── 📄 healthy-diet-plans-bmi-categories.html
+│   ├── 📄 bmi-fitness-exercise-effects-body-mass-index.html
+│   ├── 📄 ideal-weight-vs-bmi-comprehensive-comparison.html
+│   ├── 📄 safe-weight-loss-strategies.html
+│   └── 📄 bmi-accuracy-limitations-health-assessment.html
+├── 📄 _headers                    # Netlify headers configuration
+├── 📄 _redirects                  # Netlify redirects configuration
+├── 📄 humans.txt                  # Human-readable project info
+├── 📄 manifest.json               # PWA manifest
+├── 📄 netlify.toml                # Netlify deployment config
+├── 📄 robots.txt                  # Search engine crawler instructions
+├── 📄 rss.xml                     # RSS feed for updates
+└── 📄 sitemap.xml                 # XML sitemap for SEO
 ```
 
 ## 🚀 Quick Start
@@ -74,8 +102,8 @@
 
 1. **Clone or Download**
    ```bash
-   git clone https://github.com/your-username/bmi-calculator.git
-   cd bmi-calculator
+   git clone https://github.com/your-username/health-calculator-pro.git
+   cd health-calculator-pro
    ```
 
 2. **Open in Browser**
@@ -99,31 +127,52 @@
 
 ## 💻 Usage Guide
 
-### 🧮 Basic BMI Calculation
+### 🧮 Health Calculator Suite
 
-1. **Enter Your Details:**
-   - Height (supports cm, m, mm, ft/in, inches)
-   - Weight (supports kg, g, lbs, oz, stones)
-   - Age (15-120 years)
-   - Gender (Male/Female)
-   - Activity Level
+**1. BMI Calculator:**
+   - Calculate Body Mass Index with comprehensive health assessment
+   - Supports multiple units (metric, imperial, mixed)
+   - Provides BMI category classification and health recommendations
+   - Real-time calculation as you type
 
-2. **View Results:**
-   - BMI score with color-coded category
-   - Health tips and recommendations
-   - Ideal weight ranges using multiple formulas
-   - Daily calorie needs (BMR, TDEE, weight loss/gain)
+**2. Body Fat Calculator:**
+   - **Navy Method:** Uses waist, neck, and hip measurements
+   - **Circumference Method:** Multiple body site measurements
+   - **Skinfold Method:** 3-site skinfold density calculations
+   - Gender-specific formulas for accurate results
+   - Health risk assessment based on body fat percentage
 
-3. **Additional Features:**
-   - Save BMI to history
-   - Copy results to clipboard
-   - Share on social media
+**3. Waist-to-Hip Ratio Calculator:**
+   - WHO guidelines-based health risk assessment
+   - Cardiovascular disease risk evaluation
+   - Body shape analysis (apple vs pear shape)
+   - Gender-specific risk categories
+
+**4. Macro Calculator:**
+   - Complete macronutrient planning tool
+   - TDEE (Total Daily Energy Expenditure) calculation
+   - Goal-based adjustments (weight loss, maintenance, muscle gain)
+   - Macro distribution for carbs, protein, and fats
+   - Activity level and fitness goal integration
+
+**5. Ideal Weight Calculator:**
+   - Multiple scientific formulas (Robinson, Devine, Miller, Hamwi)
+   - Height and gender-based calculations
+   - Healthy weight range recommendations
+
+**6. Calorie Calculator:**
+   - BMR calculation using Mifflin-St Jeor equation
+   - TDEE with activity level multipliers
+   - Weight loss, maintenance, and weight gain calories
+   - Personalized recommendations based on goals
 
 ### ⌨️ Keyboard Shortcuts
 
 - `Ctrl/Cmd + K` - Focus height input
-- `Ctrl/Cmd + Enter` - Calculate BMI
+- `Ctrl/Cmd + Enter` - Calculate results
 - `Ctrl/Cmd + R` - Reset form
+- `Tab` - Navigate between calculator tools
+- `Enter` - Submit form data
 
 ### 📱 Unit Conversions
 
@@ -145,6 +194,14 @@ The calculator features interactive converters for both height and weight:
 - Selective display of conversion results
 - Clear visual distinction between input and output values
 
+### 🎯 Navigation
+
+**Tools Navigation:**
+- Access all six calculators from the main homepage
+- Dedicated tools overview page with descriptions
+- Breadcrumb navigation for easy orientation
+- Quick links between related calculators
+
 ## 🔬 Technical Implementation
 
 ### 🏗️ Architecture
@@ -155,11 +212,18 @@ The calculator features interactive converters for both height and weight:
 - **PWA:** Service Worker for offline functionality and caching
 - **Storage:** LocalStorage for history and preferences
 
-### 📊 BMI Calculation Formulas
+### 📊 Health Calculation Formulas
 
 ```javascript
 // BMI Formula
 BMI = weight (kg) / height (m)²
+
+// Body Fat Percentage Formulas:
+// Navy Method (Male): 495 / (1.0324 - 0.19077×log₁₀(waist-neck) + 0.15456×log₁₀(height)) - 450
+// Navy Method (Female): 495 / (1.29579 - 0.35004×log₁₀(waist+hip-neck) + 0.22100×log₁₀(height)) - 450
+
+// Waist-to-Hip Ratio
+WHR = waist circumference / hip circumference
 
 // Ideal Weight Formulas:
 // Robinson: Male: 52 + 1.9×(height_in - 60) | Female: 49 + 1.7×(height_in - 60)
@@ -170,6 +234,12 @@ BMI = weight (kg) / height (m)²
 // Calorie Calculations (Mifflin-St Jeor Equation)
 // Male BMR = 10×weight + 6.25×height - 5×age + 5
 // Female BMR = 10×weight + 6.25×height - 5×age - 161
+
+// TDEE = BMR × Activity Factor
+// Sedentary: 1.2 | Light: 1.375 | Moderate: 1.55 | Very Active: 1.725 | Extremely Active: 1.9
+
+// Macronutrient Distribution
+// Protein: 4 cal/g | Carbohydrates: 4 cal/g | Fats: 9 cal/g
 ```
 
 ### 🎨 Design System
@@ -293,31 +363,43 @@ Permissions-Policy: geolocation=(), microphone=(), camera=()
 
 ### ✅ Manual Testing Checklist
 
-- [ ] BMI calculation accuracy
+- [ ] BMI calculation accuracy across all units
+- [ ] Body Fat Calculator - All three methods (Navy, Circumference, Skinfold)
+- [ ] Waist-to-Hip Ratio - WHO guidelines compliance
+- [ ] Macro Calculator - TDEE and macronutrient distribution
+- [ ] Ideal Weight Calculator - All formula accuracy
+- [ ] Calorie Calculator - BMR and activity level calculations
 - [ ] Interactive unit converters functionality
 - [ ] Real-time conversion updates
 - [ ] Responsive design on all devices
 - [ ] PWA installation and offline usage
 - [ ] Form validation and error handling
-- [ ] Keyboard navigation
+- [ ] Keyboard navigation across all tools
 - [ ] Screen reader compatibility
+- [ ] Cross-calculator navigation
 
 ### 🔬 Test Scenarios
 
 1. **Input Validation:**
-   - Invalid height/weight values
-   - Age boundaries (15-120)
+   - Invalid height/weight values across all calculators
+   - Age boundaries (15-120) where applicable
    - Unit conversion accuracy
+   - Body measurement validation (waist, hip, neck circumferences)
 
 2. **Calculation Tests:**
    - Known BMI values verification
+   - Body fat percentage accuracy using standard test cases
+   - WHR health risk categorization
+   - Macro distribution totaling 100%
    - Ideal weight formula accuracy
    - Calorie calculation validation
 
 3. **User Experience:**
    - Form persistence between sessions
    - Unit converters usability and accuracy
-   - History saving and retrieval
+   - Navigation between calculators
+   - Results sharing and copying functionality
+   - Health recommendations appropriateness
 
 ## 🤝 Contributing
 
@@ -343,10 +425,10 @@ Permissions-Policy: geolocation=(), microphone=(), camera=()
 
 ```bash
 # Clone repository
-git clone https://github.com/your-username/bmi-calculator.git
+git clone https://github.com/your-username/health-calculator-pro.git
 
 # Navigate to project
-cd bmi-calculator
+cd health-calculator-pro
 
 # Start development server
 python -m http.server 8000
@@ -386,22 +468,24 @@ SOFTWARE.
 ## 👨‍💻 Author
 
 **Sowrav Hasan**
+
 - 🌐 Portfolio: [sowravhasan.vercel.app](https://sowravhasan.vercel.app)
 - 💼 LinkedIn: [Sowrav Hasan](https://www.linkedin.com/in/sowrav-hasan/)
-- 📧 Email: contact@sowravhasan.dev
+- 📧 Email: [contact@sowravhasan.dev](mailto:contact@sowravhasan.dev)
 - 🐦 Twitter: [@sowravhasan](https://twitter.com/sowravhasan)
 
 ## 🔗 Links
 
-- 🌐 **Live Demo:** [free-bmi-calculator.netlify.app](https://free-bmi-calculator.netlify.app/)
+- 🌐 **Live Demo:** [health-calculator-pro.netlify.app](https://health-calculator-pro.netlify.app/)
 - 📱 **PWA Install:** Available directly from the website
 - 📊 **Source Code:** Available on GitHub
 - 📋 **Documentation:** This README.md file
 
 ## 🎯 Project Stats
 
-- **Lines of Code:** ~2,600+ (JavaScript: ~1,200 lines)
-- **File Size:** < 500KB total (optimized)
+- **Lines of Code:** ~4,500+ (JavaScript: ~2,800 lines)
+- **Calculator Tools:** 6 comprehensive health calculators
+- **File Size:** < 800KB total (optimized)
 - **Load Time:** < 2 seconds on 3G
 - **PWA Score:** 100/100
 - **Accessibility Score:** 100/100
@@ -413,13 +497,15 @@ SOFTWARE.
 ### 🔮 Future Features
 
 - [ ] **Multi-language Support** - Internationalization (i18n)
-- [ ] **BMI Charts** - Visual BMI progression charts
+- [ ] **Health Charts** - Visual health progression charts
 - [ ] **Goal Setting** - Weight loss/gain goal tracking
-- [ ] **Export Data** - Export BMI history to CSV/PDF
-- [ ] **Body Fat Calculator** - Additional body composition metrics
+- [ ] **Export Data** - Export health data to CSV/PDF
+- [ ] **Additional Calculators** - Heart rate zones, metabolic age
 - [ ] **Medical Integration** - Connect with health apps
 - [ ] **Voice Input** - Speech recognition for hands-free use
-- [ ] **Comparison Tool** - Compare BMI with averages by demographics
+- [ ] **Comparison Tool** - Compare results with averages by demographics
+- [ ] **Meal Planning** - Integration with macro calculator
+- [ ] **Workout Recommendations** - Exercise suggestions based on goals
 
 ### 🎨 Design Improvements
 
@@ -427,6 +513,7 @@ SOFTWARE.
 - [ ] **Theme Customization** - Multiple color themes
 - [ ] **Component Library** - Reusable UI components
 - [ ] **Advanced Charts** - Interactive data visualizations
+- [ ] **Mobile App** - Native mobile applications
 
 ## 📞 Support
 
@@ -439,12 +526,10 @@ If you encounter any issues or have questions:
 
 ---
 
-<div align="center">
+---
 
 **⭐ Star this repository if you find it helpful!**
 
-[🏠 Homepage](https://free-bmi-calculator.netlify.app/) • [📘 Documentation](README.md) • [🐛 Report Bug](https://github.com/your-username/bmi-calculator/issues) • [💡 Request Feature](https://github.com/your-username/bmi-calculator/issues)
+[🏠 Homepage](https://health-calculator-pro.netlify.app/) • [📘 Documentation](README.md) • [🐛 Report Bug](https://github.com/your-username/health-calculator-pro/issues) • [💡 Request Feature](https://github.com/your-username/health-calculator-pro/issues)
 
 *Built with ❤️ by [Sowrav Hasan](https://sowravhasan.vercel.app)*
-
-</div>
