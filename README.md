@@ -1,6 +1,6 @@
-# 🏥 Free BMI Calculator
+# 🏥 Health Calculator Pro
 
-> A modern, comprehensive, and user-friendly BMI (Body Mass Index) calculator built with vanilla JavaScript, HTML5, and CSS3. Features include unit conversions, ideal weight calculations, calorie needs estimation, dark mode, PWA support, and complete SEO optimization.
+> A modern, comprehensive, and user-friendly health calculator suite built with vanilla JavaScript, HTML5, and CSS3. Features include BMI calculations, unit conversions, ideal weight calculations, calorie needs estimation, PWA support, and complete SEO optimization.
 
 ![BMI Calculator Preview](assets/images/og-image.jpg)
 
@@ -21,7 +21,6 @@
 - **BMI History Tracking** - Save and view your BMI history (localStorage)
 
 ### 🎨 User Experience
-- **Dark/Light Mode Toggle** - Automatic system preference detection
 - **Responsive Design** - Mobile-first, works on all devices
 - **Accessibility Features** - WCAG compliant, keyboard navigation, screen reader friendly
 - **Progressive Web App (PWA)** - Install on device, offline functionality
@@ -119,14 +118,12 @@
    - Save BMI to history
    - Copy results to clipboard
    - Share on social media
-   - Toggle dark/light mode
 
 ### ⌨️ Keyboard Shortcuts
 
 - `Ctrl/Cmd + K` - Focus height input
 - `Ctrl/Cmd + Enter` - Calculate BMI
 - `Ctrl/Cmd + R` - Reset form
-- `Ctrl/Cmd + D` - Toggle dark mode
 
 ### 📱 Unit Conversions
 
@@ -180,8 +177,8 @@ BMI = weight (kg) / height (m)²
 **Color Scheme (Green Health Theme):**
 - Primary: `#059669` (Emerald 600)
 - Secondary: `#10b981` (Emerald 500)
-- Background: `#f9fafb` (Gray 50) / `#111827` (Gray 900 - Dark)
-- Text: `#374151` (Gray 700) / `#e5e7eb` (Gray 200 - Dark)
+- Background: `#f9fafb` (Gray 50)
+- Text: `#374151` (Gray 700)
 
 **Typography:**
 - Font Family: Inter (Google Fonts)
@@ -300,7 +297,6 @@ Permissions-Policy: geolocation=(), microphone=(), camera=()
 - [ ] Interactive unit converters functionality
 - [ ] Real-time conversion updates
 - [ ] Responsive design on all devices
-- [ ] Dark/light mode functionality
 - [ ] PWA installation and offline usage
 - [ ] Form validation and error handling
 - [ ] Keyboard navigation
@@ -321,7 +317,6 @@ Permissions-Policy: geolocation=(), microphone=(), camera=()
 3. **User Experience:**
    - Form persistence between sessions
    - Unit converters usability and accuracy
-   - Dark mode toggle functionality
    - History saving and retrieval
 
 ## 🤝 Contributing

@@ -1,0 +1,775 @@
+﻿
+assets\css\styles.css:1:/* Reset and base styles */
+assets\css\styles.css:2:*,
+assets\css\styles.css:3:*::before,
+assets\css\styles.css:4:*::after {
+assets\css\styles.css:5:    box-sizing: border-box;
+assets\css\styles.css:6:}
+assets\css\styles.css:7:
+assets\css\styles.css:8:* {
+assets\css\styles.css:9:    margin: 0;
+assets\css\styles.css:10:    padding: 0;
+assets\css\styles.css:11:}
+assets\css\styles.css:12:
+assets\css\styles.css:13:html {
+assets\css\styles.css:14:    scroll-behavior: smooth;
+assets\css\styles.css:15:}
+assets\css\styles.css:16:
+assets\css\styles.css:17:body {
+assets\css\styles.css:18:    font-family: "Inter", system-ui, -apple-system, 
+BlinkMacSystemFont, "Segoe UI",
+assets\css\styles.css:19:        Roboto, sans-serif;
+assets\css\styles.css:20:    line-height: 1.6;
+assets\css\styles.css:21:    color: #374151;
+assets\css\styles.css:22:    background-color: #f9fafb;
+assets\css\styles.css:23:    transition: background-color 0.3s ease, color 0.3s 
+ease;
+assets\css\styles.css:24:}
+assets\css\styles.css:25:
+assets\css\styles.css:26:/* BMI category colors */
+assets\css\styles.css:27:.bmi-underweight {
+assets\css\styles.css:28:    background: linear-gradient(90deg, #3b82f6 0%, #60a5fa 
+100%);
+assets\css\styles.css:29:}
+assets\css\styles.css:30:
+assets\css\styles.css:31:.bmi-normal {
+assets\css\styles.css:32:    background: linear-gradient(90deg, #059669 0%, #10b981 
+100%);
+assets\css\styles.css:33:}
+assets\css\styles.css:34:
+assets\css\styles.css:35:.bmi-overweight {
+assets\css\styles.css:36:    background: linear-gradient(90deg, #f59e0b 0%, #fbbf24 
+100%);
+assets\css\styles.css:37:}
+assets\css\styles.css:38:
+assets\css\styles.css:39:.bmi-obese {
+assets\css\styles.css:40:    background: linear-gradient(90deg, #ef4444 0%, #f87171 
+100%);
+assets\css\styles.css:41:}
+assets\css\styles.css:42:
+assets\css\styles.css:43:/* Loading animation */
+assets\css\styles.css:44:.loading {
+assets\css\styles.css:45:    position: relative;
+assets\css\styles.css:46:    overflow: hidden;
+assets\css\styles.css:47:}
+assets\css\styles.css:48:
+assets\css\styles.css:49:.loading::after {
+assets\css\styles.css:50:    content: "";
+assets\css\styles.css:51:    position: absolute;
+assets\css\styles.css:52:    top: 0;
+assets\css\styles.css:53:    left: -100%;
+assets\css\styles.css:54:    width: 100%;
+assets\css\styles.css:55:    height: 100%;
+assets\css\styles.css:56:    background: linear-gradient(90deg,
+assets\css\styles.css:57:            transparent,
+assets\css\styles.css:58:            rgba(255, 255, 255, 0.2),
+assets\css\styles.css:59:            transparent);
+assets\css\styles.css:60:    animation: loading 1.5s infinite;
+assets\css\styles.css:61:}
+assets\css\styles.css:62:
+assets\css\styles.css:63:@keyframes loading {
+assets\css\styles.css:64:    0% {
+assets\css\styles.css:65:        left: -100%;
+assets\css\styles.css:66:    }
+assets\css\styles.css:67:
+assets\css\styles.css:68:    100% {
+assets\css\styles.css:69:        left: 100%;
+assets\css\styles.css:70:    }
+assets\css\styles.css:71:}
+assets\css\styles.css:72:
+assets\css\styles.css:73:/* Results animation */
+assets\css\styles.css:74:.results-enter {
+assets\css\styles.css:75:    animation: slideInUp 0.5s ease-out;
+assets\css\styles.css:76:}
+assets\css\styles.css:77:
+assets\css\styles.css:78:@keyframes slideInUp {
+assets\css\styles.css:79:    from {
+assets\css\styles.css:80:        opacity: 0;
+assets\css\styles.css:81:        transform: translateY(20px);
+assets\css\styles.css:82:    }
+assets\css\styles.css:83:
+assets\css\styles.css:84:    to {
+assets\css\styles.css:85:        opacity: 1;
+assets\css\styles.css:86:        transform: translateY(0);
+assets\css\styles.css:87:    }
+assets\css\styles.css:88:}
+assets\css\styles.css:89:
+assets\css\styles.css:90:/* Focus styles with green theme */
+assets\css\styles.css:91:input:focus,
+assets\css\styles.css:92:select:focus,
+assets\css\styles.css:93:button:focus {
+assets\css\styles.css:94:    outline: 2px solid #059669;
+assets\css\styles.css:95:    outline-offset: 2px;
+assets\css\styles.css:96:}
+assets\css\styles.css:97:
+assets\css\styles.css:98:/* Button styles with green theme */
+assets\css\styles.css:99:.btn-primary {
+assets\css\styles.css:100:    background: linear-gradient(135deg, #059669 0%, 
+#10b981 100%);
+assets\css\styles.css:101:    color: white;
+assets\css\styles.css:102:    border: none;
+assets\css\styles.css:103:    padding: 0.75rem 1.5rem;
+assets\css\styles.css:104:    border-radius: 0.5rem;
+assets\css\styles.css:105:    font-weight: 600;
+assets\css\styles.css:106:    cursor: pointer;
+assets\css\styles.css:107:    transition: all 0.3s ease;
+assets\css\styles.css:108:    box-shadow: 0 4px 6px -1px rgba(5, 150, 105, 0.1),
+assets\css\styles.css:109:        0 2px 4px -1px rgba(5, 150, 105, 0.06);
+assets\css\styles.css:110:}
+assets\css\styles.css:111:
+assets\css\styles.css:112:.btn-primary:hover {
+assets\css\styles.css:113:    background: linear-gradient(135deg, #047857 0%, 
+#059669 100%);
+assets\css\styles.css:114:    transform: translateY(-1px);
+assets\css\styles.css:115:    box-shadow: 0 10px 15px -3px rgba(5, 150, 105, 0.1),
+assets\css\styles.css:116:        0 4px 6px -2px rgba(5, 150, 105, 0.05);
+assets\css\styles.css:117:}
+assets\css\styles.css:118:
+assets\css\styles.css:119:.btn-primary:active {
+assets\css\styles.css:120:    transform: translateY(0);
+assets\css\styles.css:121:}
+assets\css\styles.css:122:
+assets\css\styles.css:123:.btn-secondary {
+assets\css\styles.css:124:    background: white;
+assets\css\styles.css:125:    color: #059669;
+assets\css\styles.css:126:    border: 2px solid #059669;
+assets\css\styles.css:127:    padding: 0.75rem 1.5rem;
+assets\css\styles.css:128:    border-radius: 0.5rem;
+assets\css\styles.css:129:    font-weight: 600;
+assets\css\styles.css:130:    cursor: pointer;
+assets\css\styles.css:131:    transition: all 0.3s ease;
+assets\css\styles.css:132:}
+assets\css\styles.css:133:
+assets\css\styles.css:134:.btn-secondary:hover {
+assets\css\styles.css:135:    background: #059669;
+assets\css\styles.css:136:    color: white;
+assets\css\styles.css:137:}
+assets\css\styles.css:138:
+assets\css\styles.css:139:/* Input styles with green theme */
+assets\css\styles.css:140:input,
+assets\css\styles.css:141:select {
+assets\css\styles.css:142:    border: 2px solid #e5e7eb;
+assets\css\styles.css:143:    border-radius: 0.5rem;
+assets\css\styles.css:144:    padding: 0.75rem;
+assets\css\styles.css:145:    transition: all 0.3s ease;
+assets\css\styles.css:146:    background: white;
+assets\css\styles.css:147:}
+assets\css\styles.css:148:
+assets\css\styles.css:149:input:focus,
+assets\css\styles.css:150:select:focus {
+assets\css\styles.css:151:    border-color: #059669;
+assets\css\styles.css:152:    box-shadow: 0 0 0 3px rgba(5, 150, 105, 0.1);
+assets\css\styles.css:153:}
+assets\css\styles.css:154:
+assets\css\styles.css:155:/* Card styles */
+assets\css\styles.css:156:.card {
+assets\css\styles.css:157:    background: white;
+assets\css\styles.css:158:    border-radius: 1rem;
+assets\css\styles.css:159:    padding: 2rem;
+assets\css\styles.css:160:    box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1),
+assets\css\styles.css:161:        0 4px 6px -2px rgba(0, 0, 0, 0.05);
+assets\css\styles.css:162:    border: 1px solid #e5e7eb;
+assets\css\styles.css:163:    transition: all 0.3s ease;
+assets\css\styles.css:164:}
+assets\css\styles.css:165:
+assets\css\styles.css:166:.card:hover {
+assets\css\styles.css:167:    box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.1),
+assets\css\styles.css:168:        0 10px 10px -5px rgba(0, 0, 0, 0.04);
+assets\css\styles.css:169:}
+assets\css\styles.css:170:
+assets\css\styles.css:172:    background: #1f2937;
+assets\css\styles.css:173:    border-color: #374151;
+assets\css\styles.css:174:    box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.3),
+assets\css\styles.css:175:        0 4px 6px -2px rgba(0, 0, 0, 0.2);
+assets\css\styles.css:176:}
+assets\css\styles.css:177:
+assets\css\styles.css:178:/* FAQ styles */
+assets\css\styles.css:179:.faq-question {
+assets\css\styles.css:180:    transition: all 0.3s ease;
+assets\css\styles.css:181:    cursor: pointer;
+assets\css\styles.css:182:    border-radius: 0.5rem;
+assets\css\styles.css:183:    padding: 1rem;
+assets\css\styles.css:184:}
+assets\css\styles.css:185:
+assets\css\styles.css:186:.faq-question:hover {
+assets\css\styles.css:187:    background: #f3f4f6;
+assets\css\styles.css:188:}
+assets\css\styles.css:189:
+assets\css\styles.css:190:.faq-question.active {
+assets\css\styles.css:191:    background: #ecfdf5;
+assets\css\styles.css:192:    color: #059669;
+assets\css\styles.css:193:}
+assets\css\styles.css:194:
+assets\css\styles.css:195:.faq-question i {
+assets\css\styles.css:196:    transition: transform 0.3s ease;
+assets\css\styles.css:197:}
+assets\css\styles.css:198:
+assets\css\styles.css:199:/* Green theme utilities */
+assets\css\styles.css:200:.text-green-600 {
+assets\css\styles.css:201:    color: #059669;
+assets\css\styles.css:202:}
+assets\css\styles.css:203:
+assets\css\styles.css:204:.text-green-500 {
+assets\css\styles.css:205:    color: #10b981;
+assets\css\styles.css:206:}
+assets\css\styles.css:207:
+assets\css\styles.css:208:.bg-green-50 {
+assets\css\styles.css:209:    background-color: #ecfdf5;
+assets\css\styles.css:210:}
+assets\css\styles.css:211:
+assets\css\styles.css:212:.bg-green-100 {
+assets\css\styles.css:213:    background-color: #d1fae5;
+assets\css\styles.css:214:}
+assets\css\styles.css:215:
+assets\css\styles.css:216:.border-green-500 {
+assets\css\styles.css:217:    border-color: #10b981;
+assets\css\styles.css:218:}
+assets\css\styles.css:219:
+assets\css\styles.css:220:.border-green-600 {
+assets\css\styles.css:221:    border-color: #059669;
+assets\css\styles.css:222:}
+assets\css\styles.css:223:
+assets\css\styles.css:225:    color: #10b981;
+assets\css\styles.css:226:}
+assets\css\styles.css:227:
+assets\css\styles.css:229:    color: #34d399;
+assets\css\styles.css:230:}
+assets\css\styles.css:231:
+assets\css\styles.css:233:    background-color: #064e3b;
+assets\css\styles.css:234:}
+assets\css\styles.css:235:
+assets\css\styles.css:237:    background-color: #065f46;
+assets\css\styles.css:238:}
+assets\css\styles.css:239:
+assets\css\styles.css:240:/* Responsive utilities */
+assets\css\styles.css:241:@media (max-width: 768px) {
+assets\css\styles.css:242:    .card {
+assets\css\styles.css:243:        padding: 1.5rem;
+assets\css\styles.css:244:        margin: 1rem;
+assets\css\styles.css:245:    }
+assets\css\styles.css:246:
+assets\css\styles.css:247:    .btn-primary,
+assets\css\styles.css:248:    .btn-secondary {
+assets\css\styles.css:249:        padding: 0.625rem 1.25rem;
+assets\css\styles.css:250:        font-size: 0.875rem;
+assets\css\styles.css:251:    }
+assets\css\styles.css:252:
+assets\css\styles.css:253:    input,
+assets\css\styles.css:254:    select {
+assets\css\styles.css:255:        padding: 0.625rem;
+assets\css\styles.css:256:    }
+assets\css\styles.css:257:}
+assets\css\styles.css:258:
+assets\css\styles.css:259:/* Progress bar styles */
+assets\css\styles.css:260:.progress-container {
+assets\css\styles.css:261:    background: #e5e7eb;
+assets\css\styles.css:262:    border-radius: 9999px;
+assets\css\styles.css:263:    height: 0.5rem;
+assets\css\styles.css:264:    overflow: hidden;
+assets\css\styles.css:265:}
+assets\css\styles.css:266:
+assets\css\styles.css:268:    background: #4b5563;
+assets\css\styles.css:269:}
+assets\css\styles.css:270:
+assets\css\styles.css:271:/* Accessibility improvements */
+assets\css\styles.css:272:@media (prefers-reduced-motion: reduce) {
+assets\css\styles.css:273:
+assets\css\styles.css:274:    *,
+assets\css\styles.css:275:    *::before,
+assets\css\styles.css:276:    *::after {
+assets\css\styles.css:277:        animation-duration: 0.01ms !important;
+assets\css\styles.css:278:        animation-iteration-count: 1 !important;
+assets\css\styles.css:279:        transition-duration: 0.01ms !important;
+assets\css\styles.css:280:    }
+assets\css\styles.css:281:
+assets\css\styles.css:282:    html {
+assets\css\styles.css:283:        scroll-behavior: auto;
+assets\css\styles.css:284:    }
+assets\css\styles.css:285:}
+assets\css\styles.css:286:
+assets\css\styles.css:287:/* Print styles */
+assets\css\styles.css:288:@media print {
+assets\css\styles.css:289:    body {
+assets\css\styles.css:290:        background: white !important;
+assets\css\styles.css:291:        color: black !important;
+assets\css\styles.css:292:    }
+assets\css\styles.css:293:
+assets\css\styles.css:294:    .card {
+assets\css\styles.css:295:        box-shadow: none !important;
+assets\css\styles.css:296:        border: 1px solid #ccc !important;
+assets\css\styles.css:297:    }
+assets\css\styles.css:298:
+assets\css\styles.css:299:    button {
+assets\css\styles.css:300:        display: none !important;
+assets\css\styles.css:301:    }
+assets\css\styles.css:302:
+assets\css\styles.css:303:    .no-print {
+assets\css\styles.css:304:        display: none !important;
+assets\css\styles.css:305:    }
+assets\css\styles.css:306:}
+assets\css\styles.css:307:
+assets\css\styles.css:308:/* Custom scrollbar */
+assets\css\styles.css:309:::-webkit-scrollbar {
+assets\css\styles.css:310:    width: 8px;
+assets\css\styles.css:311:}
+assets\css\styles.css:312:
+assets\css\styles.css:313:::-webkit-scrollbar-track {
+assets\css\styles.css:314:    background: #f1f1f1;
+assets\css\styles.css:315:}
+assets\css\styles.css:316:
+assets\css\styles.css:317:::-webkit-scrollbar-thumb {
+assets\css\styles.css:318:    background: #059669;
+assets\css\styles.css:319:    border-radius: 4px;
+assets\css\styles.css:320:}
+assets\css\styles.css:321:
+assets\css\styles.css:322:::-webkit-scrollbar-thumb:hover {
+assets\css\styles.css:323:    background: #047857;
+assets\css\styles.css:324:}
+assets\css\styles.css:325:
+assets\css\styles.css:327:    background: #374151;
+assets\css\styles.css:328:}
+assets\css\styles.css:329:
+assets\css\styles.css:331:    background: #10b981;
+assets\css\styles.css:332:}
+assets\css\styles.css:333:
+assets\css\styles.css:335:    background: #059669;
+assets\css\styles.css:336:}
+assets\css\styles.css:337:
+assets\css\styles.css:338:/* Tooltip styles */
+assets\css\styles.css:339:.tooltip {
+assets\css\styles.css:340:    position: relative;
+assets\css\styles.css:341:}
+assets\css\styles.css:342:
+assets\css\styles.css:343:.tooltip::after {
+assets\css\styles.css:344:    content: attr(data-tooltip);
+assets\css\styles.css:345:    position: absolute;
+assets\css\styles.css:346:    bottom: 100%;
+assets\css\styles.css:347:    left: 50%;
+assets\css\styles.css:348:    transform: translateX(-50%);
+assets\css\styles.css:349:    background: #1f2937;
+assets\css\styles.css:350:    color: white;
+assets\css\styles.css:351:    padding: 0.5rem;
+assets\css\styles.css:352:    border-radius: 0.25rem;
+assets\css\styles.css:353:    font-size: 0.75rem;
+assets\css\styles.css:354:    white-space: nowrap;
+assets\css\styles.css:355:    opacity: 0;
+assets\css\styles.css:356:    pointer-events: none;
+assets\css\styles.css:357:    transition: opacity 0.3s ease;
+assets\css\styles.css:358:    z-index: 1000;
+assets\css\styles.css:359:}
+assets\css\styles.css:360:
+assets\css\styles.css:361:.tooltip:hover::after {
+assets\css\styles.css:362:    opacity: 1;
+assets\css\styles.css:363:}
+assets\css\styles.css:364:
+assets\css\styles.css:365:/* Animation for form elements */
+assets\css\styles.css:366:.form-group {
+assets\css\styles.css:367:    position: relative;
+assets\css\styles.css:368:}
+assets\css\styles.css:369:
+assets\css\styles.css:370:.form-label {
+assets\css\styles.css:371:    transition: all 0.3s ease;
+assets\css\styles.css:372:}
+assets\css\styles.css:373:
+assets\css\styles.css:374:.form-input:focus+.form-label,
+assets\css\styles.css:375:.form-input:not(:placeholder-shown)+.form-label {
+assets\css\styles.css:376:    transform: translateY(-1.5rem);
+assets\css\styles.css:377:    font-size: 0.75rem;
+assets\css\styles.css:378:    color: #059669;
+assets\css\styles.css:379:}
+assets\css\styles.css:380:
+assets\css\styles.css:381:/* Skeleton loading for better UX */
+assets\css\styles.css:382:.skeleton {
+assets\css\styles.css:383:    background: linear-gradient(90deg, #f0f0f0 25%, 
+#e0e0e0 50%, #f0f0f0 75%);
+assets\css\styles.css:384:    background-size: 200% 100%;
+assets\css\styles.css:385:    animation: loading 1.5s infinite;
+assets\css\styles.css:386:}
+assets\css\styles.css:387:
+assets\css\styles.css:389:    background: linear-gradient(90deg, #374151 25%, 
+#4b5563 50%, #374151 75%);
+assets\css\styles.css:390:    background-size: 200% 100%;
+assets\css\styles.css:391:}
+assets\css\styles.css:392:
+assets\css\styles.css:393:/* Bounce animation for notifications */
+assets\css\styles.css:394:@keyframes bounce {
+assets\css\styles.css:395:
+assets\css\styles.css:396:    0%,
+assets\css\styles.css:397:    20%,
+assets\css\styles.css:398:    53%,
+assets\css\styles.css:399:    80%,
+assets\css\styles.css:400:    to {
+assets\css\styles.css:401:        transform: translate3d(0, 0, 0);
+assets\css\styles.css:402:    }
+assets\css\styles.css:403:
+assets\css\styles.css:404:    40%,
+assets\css\styles.css:405:    43% {
+assets\css\styles.css:406:        transform: translate3d(0, -30px, 0);
+assets\css\styles.css:407:    }
+assets\css\styles.css:408:
+assets\css\styles.css:409:    70% {
+assets\css\styles.css:410:        transform: translate3d(0, -15px, 0);
+assets\css\styles.css:411:    }
+assets\css\styles.css:412:
+assets\css\styles.css:413:    90% {
+assets\css\styles.css:414:        transform: translate3d(0, -4px, 0);
+assets\css\styles.css:415:    }
+assets\css\styles.css:416:}
+assets\css\styles.css:417:
+assets\css\styles.css:418:.bounce {
+assets\css\styles.css:419:    animation: bounce 1s ease-in-out;
+assets\css\styles.css:420:}
+assets\css\styles.css:421:
+assets\css\styles.css:422:/* Fade in animation */
+assets\css\styles.css:423:@keyframes fadeIn {
+assets\css\styles.css:424:    from {
+assets\css\styles.css:425:        opacity: 0;
+assets\css\styles.css:426:    }
+assets\css\styles.css:427:
+assets\css\styles.css:428:    to {
+assets\css\styles.css:429:        opacity: 1;
+assets\css\styles.css:430:    }
+assets\css\styles.css:431:}
+assets\css\styles.css:432:
+assets\css\styles.css:433:.fade-in {
+assets\css\styles.css:434:    animation: fadeIn 0.5s ease-in;
+assets\css\styles.css:435:}
+assets\css\styles.css:436:
+assets\css\styles.css:437:/* Scale animation for buttons */
+assets\css\styles.css:438:@keyframes scaleIn {
+assets\css\styles.css:439:    from {
+assets\css\styles.css:440:        transform: scale(0.9);
+assets\css\styles.css:441:        opacity: 0;
+assets\css\styles.css:442:    }
+assets\css\styles.css:443:
+assets\css\styles.css:444:    to {
+assets\css\styles.css:445:        transform: scale(1);
+assets\css\styles.css:446:        opacity: 1;
+assets\css\styles.css:447:    }
+assets\css\styles.css:448:}
+assets\css\styles.css:449:
+assets\css\styles.css:450:.scale-in {
+assets\css\styles.css:451:    animation: scaleIn 0.3s ease-out;
+assets\css\styles.css:452:}
+assets\css\styles.css:453:
+assets\css\styles.css:454:/* Gradient text */
+assets\css\styles.css:455:.gradient-text {
+assets\css\styles.css:456:    background: linear-gradient(135deg, #059669 0%, 
+#10b981 100%);
+assets\css\styles.css:457:    -webkit-background-clip: text;
+assets\css\styles.css:458:    -webkit-text-fill-color: transparent;
+assets\css\styles.css:459:    background-clip: text;
+assets\css\styles.css:460:}
+assets\css\styles.css:461:
+assets\css\styles.css:462:/* Glassmorphism effect */
+assets\css\styles.css:463:.glass {
+assets\css\styles.css:464:    background: rgba(255, 255, 255, 0.25);
+assets\css\styles.css:465:    backdrop-filter: blur(10px);
+assets\css\styles.css:466:    border: 1px solid rgba(255, 255, 255, 0.18);
+assets\css\styles.css:467:}
+assets\css\styles.css:468:
+assets\css\styles.css:470:    background: rgba(31, 41, 55, 0.25);
+assets\css\styles.css:471:    border: 1px solid rgba(75, 85, 99, 0.18);
+assets\css\styles.css:472:}
+assets\css\styles.css:473:
+assets\css\styles.css:474:/* Pulse animation for loading states */
+assets\css\styles.css:475:@keyframes pulse {
+assets\css\styles.css:476:    0% {
+assets\css\styles.css:477:        opacity: 1;
+assets\css\styles.css:478:    }
+assets\css\styles.css:479:
+assets\css\styles.css:480:    50% {
+assets\css\styles.css:481:        opacity: 0.5;
+assets\css\styles.css:482:    }
+assets\css\styles.css:483:
+assets\css\styles.css:484:    100% {
+assets\css\styles.css:485:        opacity: 1;
+assets\css\styles.css:486:    }
+assets\css\styles.css:487:}
+assets\css\styles.css:488:
+assets\css\styles.css:489:.pulse {
+assets\css\styles.css:490:    animation: pulse 2s cubic-bezier(0.4, 0, 0.6, 1) 
+infinite;
+assets\css\styles.css:491:}
+assets\css\styles.css:492:
+assets\css\styles.css:493:/* Pulse animation for result changes */
+assets\css\styles.css:494:@keyframes pulse-animation {
+assets\css\styles.css:495:    0% {
+assets\css\styles.css:496:        box-shadow: 0 0 0 0 rgba(16, 185, 129, 0.4);
+assets\css\styles.css:497:    }
+assets\css\styles.css:498:
+assets\css\styles.css:499:    70% {
+assets\css\styles.css:500:        box-shadow: 0 0 0 5px rgba(16, 185, 129, 0);
+assets\css\styles.css:501:    }
+assets\css\styles.css:502:
+assets\css\styles.css:503:    100% {
+assets\css\styles.css:504:        box-shadow: 0 0 0 0 rgba(16, 185, 129, 0);
+assets\css\styles.css:505:    }
+assets\css\styles.css:506:}
+assets\css\styles.css:507:
+assets\css\styles.css:508:.pulse-animation {
+assets\css\styles.css:509:    animation: pulse-animation 0.8s ease-out;
+assets\css\styles.css:510:}
+assets\css\styles.css:511:
+assets\css\styles.css:512:/* Improved form validation styles */
+assets\css\styles.css:513:.form-invalid {
+assets\css\styles.css:514:    border-color: #ef4444 !important;
+assets\css\styles.css:515:    box-shadow: 0 0 0 3px rgba(239, 68, 68, 0.1) 
+!important;
+assets\css\styles.css:516:}
+assets\css\styles.css:517:
+assets\css\styles.css:518:.form-valid {
+assets\css\styles.css:519:    border-color: #10b981 !important;
+assets\css\styles.css:520:    box-shadow: 0 0 0 3px rgba(16, 185, 129, 0.1) 
+!important;
+assets\css\styles.css:521:}
+assets\css\styles.css:522:
+assets\css\styles.css:523:/* Improved contrast for better accessibility */
+assets\css\styles.css:524:.high-contrast {
+assets\css\styles.css:525:    filter: contrast(1.2);
+assets\css\styles.css:526:}
+assets\css\styles.css:527:
+assets\css\styles.css:528:/* Focus visible for better keyboard navigation */
+assets\css\styles.css:529:.focus-visible:focus {
+assets\css\styles.css:530:    outline: 2px solid #059669;
+assets\css\styles.css:531:    outline-offset: 2px;
+assets\css\styles.css:532:}
+assets\css\styles.css:533:
+assets\css\styles.css:534:/* Modern container styles */
+assets\css\styles.css:535:.container {
+assets\css\styles.css:536:    max-width: 1200px;
+assets\css\styles.css:537:    margin: 0 auto;
+assets\css\styles.css:538:    padding: 0 1rem;
+assets\css\styles.css:539:}
+assets\css\styles.css:540:
+assets\css\styles.css:541:@media (min-width: 640px) {
+assets\css\styles.css:542:    .container {
+assets\css\styles.css:543:        padding: 0 2rem;
+assets\css\styles.css:544:    }
+assets\css\styles.css:545:}
+assets\css\styles.css:546:
+assets\css\styles.css:547:/* Grid system */
+assets\css\styles.css:548:.grid {
+assets\css\styles.css:549:    display: grid;
+assets\css\styles.css:550:    gap: 1rem;
+assets\css\styles.css:551:}
+assets\css\styles.css:552:
+assets\css\styles.css:553:.grid-cols-1 {
+assets\css\styles.css:554:    grid-template-columns: repeat(1, minmax(0, 1fr));
+assets\css\styles.css:555:}
+assets\css\styles.css:556:
+assets\css\styles.css:557:.grid-cols-2 {
+assets\css\styles.css:558:    grid-template-columns: repeat(2, minmax(0, 1fr));
+assets\css\styles.css:559:}
+assets\css\styles.css:560:
+assets\css\styles.css:561:.grid-cols-3 {
+assets\css\styles.css:562:    grid-template-columns: repeat(3, minmax(0, 1fr));
+assets\css\styles.css:563:}
+assets\css\styles.css:564:
+assets\css\styles.css:565:@media (max-width: 768px) {
+assets\css\styles.css:566:
+assets\css\styles.css:567:    .grid-cols-2,
+assets\css\styles.css:568:    .grid-cols-3 {
+assets\css\styles.css:569:        grid-template-columns: repeat(1, minmax(0, 1fr));
+assets\css\styles.css:570:    }
+assets\css\styles.css:571:}
+assets\css\styles.css:572:
+assets\css\styles.css:573:/* Flexbox utilities */
+assets\css\styles.css:574:.flex {
+assets\css\styles.css:575:    display: flex;
+assets\css\styles.css:576:}
+assets\css\styles.css:577:
+assets\css\styles.css:578:.flex-col {
+assets\css\styles.css:579:    flex-direction: column;
+assets\css\styles.css:580:}
+assets\css\styles.css:581:
+assets\css\styles.css:582:.items-center {
+assets\css\styles.css:583:    align-items: center;
+assets\css\styles.css:584:}
+assets\css\styles.css:585:
+assets\css\styles.css:586:.justify-center {
+assets\css\styles.css:587:    justify-content: center;
+assets\css\styles.css:588:}
+assets\css\styles.css:589:
+assets\css\styles.css:590:.justify-between {
+assets\css\styles.css:591:    justify-content: space-between;
+assets\css\styles.css:592:}
+assets\css\styles.css:593:
+assets\css\styles.css:594:.space-y-4>*+* {
+assets\css\styles.css:595:    margin-top: 1rem;
+assets\css\styles.css:596:}
+assets\css\styles.css:597:
+assets\css\styles.css:598:.space-y-6>*+* {
+assets\css\styles.css:599:    margin-top: 1.5rem;
+assets\css\styles.css:600:}
+assets\css\styles.css:601:
+assets\css\styles.css:602:/* Text utilities */
+assets\css\styles.css:603:.text-center {
+assets\css\styles.css:604:    text-align: center;
+assets\css\styles.css:605:}
+assets\css\styles.css:606:
+assets\css\styles.css:607:.text-left {
+assets\css\styles.css:608:    text-align: left;
+assets\css\styles.css:609:}
+assets\css\styles.css:610:
+assets\css\styles.css:611:.text-right {
+assets\css\styles.css:612:    text-align: right;
+assets\css\styles.css:613:}
+assets\css\styles.css:614:
+assets\css\styles.css:615:.font-bold {
+assets\css\styles.css:616:    font-weight: 700;
+assets\css\styles.css:617:}
+assets\css\styles.css:618:
+assets\css\styles.css:619:.font-semibold {
+assets\css\styles.css:620:    font-weight: 600;
+assets\css\styles.css:621:}
+assets\css\styles.css:622:
+assets\css\styles.css:623:.font-medium {
+assets\css\styles.css:624:    font-weight: 500;
+assets\css\styles.css:625:}
+assets\css\styles.css:626:
+assets\css\styles.css:627:/* Spacing utilities */
+assets\css\styles.css:628:.p-4 {
+assets\css\styles.css:629:    padding: 1rem;
+assets\css\styles.css:630:}
+assets\css\styles.css:631:
+assets\css\styles.css:632:.p-6 {
+assets\css\styles.css:633:    padding: 1.5rem;
+assets\css\styles.css:634:}
+assets\css\styles.css:635:
+assets\css\styles.css:636:.p-8 {
+assets\css\styles.css:637:    padding: 2rem;
+assets\css\styles.css:638:}
+assets\css\styles.css:639:
+assets\css\styles.css:640:.m-4 {
+assets\css\styles.css:641:    margin: 1rem;
+assets\css\styles.css:642:}
+assets\css\styles.css:643:
+assets\css\styles.css:644:.m-6 {
+assets\css\styles.css:645:    margin: 1.5rem;
+assets\css\styles.css:646:}
+assets\css\styles.css:647:
+assets\css\styles.css:648:.m-8 {
+assets\css\styles.css:649:    margin: 2rem;
+assets\css\styles.css:650:}
+assets\css\styles.css:651:
+assets\css\styles.css:652:.mt-4 {
+assets\css\styles.css:653:    margin-top: 1rem;
+assets\css\styles.css:654:}
+assets\css\styles.css:655:
+assets\css\styles.css:656:.mt-6 {
+assets\css\styles.css:657:    margin-top: 1.5rem;
+assets\css\styles.css:658:}
+assets\css\styles.css:659:
+assets\css\styles.css:660:.mb-4 {
+assets\css\styles.css:661:    margin-bottom: 1rem;
+assets\css\styles.css:662:}
+assets\css\styles.css:663:
+assets\css\styles.css:664:.mb-6 {
+assets\css\styles.css:665:    margin-bottom: 1.5rem;
+assets\css\styles.css:666:}
+assets\css\styles.css:667:
+assets\css\styles.css:668:/* Border utilities */
+assets\css\styles.css:669:.rounded {
+assets\css\styles.css:670:    border-radius: 0.25rem;
+assets\css\styles.css:671:}
+assets\css\styles.css:672:
+assets\css\styles.css:673:.rounded-lg {
+assets\css\styles.css:674:    border-radius: 0.5rem;
+assets\css\styles.css:675:}
+assets\css\styles.css:676:
+assets\css\styles.css:677:.rounded-xl {
+assets\css\styles.css:678:    border-radius: 0.75rem;
+assets\css\styles.css:679:}
+assets\css\styles.css:680:
+assets\css\styles.css:681:.rounded-full {
+assets\css\styles.css:682:    border-radius: 9999px;
+assets\css\styles.css:683:}
+assets\css\styles.css:684:
+assets\css\styles.css:685:/* Shadow utilities */
+assets\css\styles.css:686:.shadow {
+assets\css\styles.css:687:    box-shadow: 0 1px 3px 0 rgba(0, 0, 0, 0.1), 0 1px 2px 
+0 rgba(0, 0, 0, 0.06);
+assets\css\styles.css:688:}
+assets\css\styles.css:689:
+assets\css\styles.css:690:.shadow-lg {
+assets\css\styles.css:691:    box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1),
+assets\css\styles.css:692:        0 4px 6px -2px rgba(0, 0, 0, 0.05);
+assets\css\styles.css:693:}
+assets\css\styles.css:694:
+assets\css\styles.css:695:.shadow-xl {
+assets\css\styles.css:696:    box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.1),
+assets\css\styles.css:697:        0 10px 10px -5px rgba(0, 0, 0, 0.04);
+assets\css\styles.css:698:}
+assets\css\styles.css:699:
+assets\css\styles.css:700:/* Hidden utility */
+assets\css\styles.css:701:.hidden {
+assets\css\styles.css:702:    display: none;
+assets\css\styles.css:703:}
+assets\css\styles.css:704:
+assets\css\styles.css:705:/* Screen reader only */
+assets\css\styles.css:706:.sr-only {
+assets\css\styles.css:707:    position: absolute;
+assets\css\styles.css:708:    width: 1px;
+assets\css\styles.css:709:    height: 1px;
+assets\css\styles.css:710:    padding: 0;
+assets\css\styles.css:711:    margin: -1px;
+assets\css\styles.css:712:    overflow: hidden;
+assets\css\styles.css:713:    clip: rect(0, 0, 0, 0);
+assets\css\styles.css:714:    white-space: nowrap;
+assets\css\styles.css:715:    border: 0;
+assets\css\styles.css:716:}
+assets\css\styles.css:717:
+assets\css\styles.css:718:/* Custom checkbox and radio styles */
+assets\css\styles.css:719:input[type="checkbox"],
+assets\css\styles.css:720:input[type="radio"] {
+assets\css\styles.css:721:    appearance: none;
+assets\css\styles.css:722:    width: 1.25rem;
+assets\css\styles.css:723:    height: 1.25rem;
+assets\css\styles.css:724:    border: 2px solid #d1d5db;
+assets\css\styles.css:725:    border-radius: 0.25rem;
+assets\css\styles.css:726:    position: relative;
+assets\css\styles.css:727:    cursor: pointer;
+assets\css\styles.css:728:}
+assets\css\styles.css:729:
+assets\css\styles.css:730:input[type="radio"] {
+assets\css\styles.css:731:    border-radius: 50%;
+assets\css\styles.css:732:}
+assets\css\styles.css:733:
+assets\css\styles.css:734:input[type="checkbox"]:checked,
+assets\css\styles.css:735:input[type="radio"]:checked {
+assets\css\styles.css:736:    background-color: #059669;
+assets\css\styles.css:737:    border-color: #059669;
+assets\css\styles.css:738:}
+assets\css\styles.css:739:
+assets\css\styles.css:740:input[type="checkbox"]:checked::after {
+assets\css\styles.css:741:    content: "✓";
+assets\css\styles.css:742:    position: absolute;
+assets\css\styles.css:743:    top: 50%;
+assets\css\styles.css:744:    left: 50%;
+assets\css\styles.css:745:    transform: translate(-50%, -50%);
+assets\css\styles.css:746:    color: white;
+assets\css\styles.css:747:    font-size: 0.75rem;
+assets\css\styles.css:748:    font-weight: bold;
+assets\css\styles.css:749:}
+assets\css\styles.css:750:
+assets\css\styles.css:751:input[type="radio"]:checked::after {
+assets\css\styles.css:752:    content: "";
+assets\css\styles.css:753:    position: absolute;
+assets\css\styles.css:754:    top: 50%;
+assets\css\styles.css:755:    left: 50%;
+assets\css\styles.css:756:    transform: translate(-50%, -50%);
+assets\css\styles.css:757:    width: 0.5rem;
+assets\css\styles.css:758:    height: 0.5rem;
+assets\css\styles.css:759:    background-color: white;
+assets\css\styles.css:760:    border-radius: 50%;
+assets\css\styles.css:761:}
+assets\css\styles.css:762:
+assets\css\styles.css:765:    border-color: #4b5563;
+assets\css\styles.css:766:}
+assets\css\styles.css:767:
+assets\css\styles.css:770:    background-color: #10b981;
+assets\css\styles.css:771:    border-color: #10b981;
+assets\css\styles.css:772:}
+
+

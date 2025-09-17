@@ -18,7 +18,7 @@ document.addEventListener("DOMContentLoaded", function () {
       genderFemaleBtn.style.backgroundColor = "";
       genderFemaleBtn.style.color = "";
 
-      // Explicitly set text color for the deselected female button in both light and dark modes
+      // Explicitly set text color for the deselected female button
       const femaleIcon = genderFemaleBtn.querySelector("i");
       const femaleText = genderFemaleBtn.querySelector("span");
 
@@ -48,7 +48,7 @@ document.addEventListener("DOMContentLoaded", function () {
       genderMaleBtn.style.backgroundColor = "";
       genderMaleBtn.style.color = "";
 
-      // Explicitly set text color for the deselected male button in both light and dark modes
+      // Explicitly set text color for the deselected male button
       const maleIcon = genderMaleBtn.querySelector("i");
       const maleText = genderMaleBtn.querySelector("span");
 

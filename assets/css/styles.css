@@ -23,48 +23,6 @@ body {
     transition: background-color 0.3s ease, color 0.3s ease;
 }
 
-/* Dark mode styles */
-.dark body {
-    color: #e5e7eb;
-    background-color: #111827;
-}
-
-.dark .bg-white {
-    background-color: #1f2937 !important;
-}
-
-.dark .bg-gray-50 {
-    background-color: #374151 !important;
-}
-
-.dark .bg-gray-100 {
-    background-color: #4b5563 !important;
-}
-
-.dark .text-gray-600 {
-    color: #d1d5db !important;
-}
-
-.dark .text-gray-700 {
-    color: #e5e7eb !important;
-}
-
-.dark .text-gray-800 {
-    color: #f3f4f6 !important;
-}
-
-.dark .text-gray-900 {
-    color: #f9fafb !important;
-}
-
-.dark .border-gray-300 {
-    border-color: #4b5563 !important;
-}
-
-.dark .border-gray-200 {
-    border-color: #374151 !important;
-}
-
 /* BMI category colors */
 .bmi-underweight {
     background: linear-gradient(90deg, #3b82f6 0%, #60a5fa 100%);
@@ -178,17 +136,6 @@ button:focus {
     color: white;
 }
 
-.dark .btn-secondary {
-    background: #1f2937;
-    color: #10b981;
-    border-color: #10b981;
-}
-
-.dark .btn-secondary:hover {
-    background: #10b981;
-    color: #1f2937;
-}
-
 /* Input styles with green theme */
 input,
 select {
@@ -203,19 +150,6 @@ input:focus,
 select:focus {
     border-color: #059669;
     box-shadow: 0 0 0 3px rgba(5, 150, 105, 0.1);
-}
-
-.dark input,
-.dark select {
-    background: #374151;
-    border-color: #4b5563;
-    color: #e5e7eb;
-}
-
-.dark input:focus,
-.dark select:focus {
-    border-color: #10b981;
-    box-shadow: 0 0 0 3px rgba(16, 185, 129, 0.1);
 }
 
 /* Card styles */
@@ -234,13 +168,6 @@ select:focus {
         0 10px 10px -5px rgba(0, 0, 0, 0.04);
 }
 
-.dark .card {
-    background: #1f2937;
-    border-color: #374151;
-    box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.3),
-        0 4px 6px -2px rgba(0, 0, 0, 0.2);
-}
-
 /* FAQ styles */
 .faq-question {
     transition: all 0.3s ease;
@@ -256,15 +183,6 @@ select:focus {
 .faq-question.active {
     background: #ecfdf5;
     color: #059669;
-}
-
-.dark .faq-question:hover {
-    background: #374151;
-}
-
-.dark .faq-question.active {
-    background: #064e3b;
-    color: #10b981;
 }
 
 .faq-question i {
@@ -296,21 +214,13 @@ select:focus {
     border-color: #059669;
 }
 
-.dark .text-green-600 {
-    color: #10b981;
-}
 
-.dark .text-green-500 {
-    color: #34d399;
-}
 
-.dark .bg-green-50 {
-    background-color: #064e3b;
-}
 
-.dark .bg-green-100 {
-    background-color: #065f46;
-}
+
+
+
+
 
 /* Responsive utilities */
 @media (max-width: 768px) {
@@ -339,9 +249,7 @@ select:focus {
     overflow: hidden;
 }
 
-.dark .progress-container {
-    background: #4b5563;
-}
+
 
 /* Accessibility improvements */
 @media (prefers-reduced-motion: reduce) {
@@ -398,17 +306,11 @@ select:focus {
     background: #047857;
 }
 
-.dark ::-webkit-scrollbar-track {
-    background: #374151;
-}
 
-.dark ::-webkit-scrollbar-thumb {
-    background: #10b981;
-}
 
-.dark ::-webkit-scrollbar-thumb:hover {
-    background: #059669;
-}
+
+
+
 
 /* Tooltip styles */
 .tooltip {
@@ -460,10 +362,7 @@ select:focus {
     animation: loading 1.5s infinite;
 }
 
-.dark .skeleton {
-    background: linear-gradient(90deg, #374151 25%, #4b5563 50%, #374151 75%);
-    background-size: 200% 100%;
-}
+
 
 /* Bounce animation for notifications */
 @keyframes bounce {
@@ -541,10 +440,7 @@ select:focus {
     border: 1px solid rgba(255, 255, 255, 0.18);
 }
 
-.dark .glass {
-    background: rgba(31, 41, 55, 0.25);
-    border: 1px solid rgba(75, 85, 99, 0.18);
-}
+
 
 /* Pulse animation for loading states */
 @keyframes pulse {
@@ -835,13 +731,5 @@ input[type="radio"]:checked::after {
     border-radius: 50%;
 }
 
-.dark input[type="checkbox"],
-.dark input[type="radio"] {
-    border-color: #4b5563;
-}
 
-.dark input[type="checkbox"]:checked,
-.dark input[type="radio"]:checked {
-    background-color: #10b981;
-    border-color: #10b981;
-}
+

@@ -1736,7 +1736,7 @@ document.addEventListener("DOMContentLoaded", () => {
     console.warn('Development environment detected. Consider using a local Tailwind installation for production.');
   }
 
-  // Initialize the main BMI Calculator (this includes dark mode toggle)
+  // Initialize the main BMI Calculator
   console.log("Initializing BMI Calculator...");
   const bmiCalculator = new BMICalculator();
 
@@ -1772,11 +1772,6 @@ document.addEventListener("DOMContentLoaded", () => {
       e.preventDefault();
       const resetBtn = document.getElementById("resetBtn");
       if (resetBtn) resetBtn.click();
-    }
-    if ((e.ctrlKey || e.metaKey) && e.key === "d") {
-      e.preventDefault();
-      const darkModeToggle = document.getElementById("darkModeToggle");
-      if (darkModeToggle) darkModeToggle.click();
     }
   });
 

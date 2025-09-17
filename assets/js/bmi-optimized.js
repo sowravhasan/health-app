@@ -890,42 +890,6 @@ class BMICalculator {
   }
 }
 
-// Dark mode functionality
-function initDarkMode() {
-  const darkModeToggle = document.getElementById("darkModeToggle");
-  const darkModeIcon = document.getElementById("darkModeIcon");
-
-  const isDark =
-    localStorage.getItem("darkMode") === "true" ||
-    (!localStorage.getItem("darkMode") &&
-      window.matchMedia("(prefers-color-scheme: dark)").matches);
-
-  if (isDark) {
-    document.documentElement.classList.add("dark");
-    darkModeIcon.setAttribute("data-lucide", "sun");
-    darkModeToggle.setAttribute("aria-pressed", "true");
-  } else {
-    darkModeIcon.setAttribute("data-lucide", "moon");
-    darkModeToggle.setAttribute("aria-pressed", "false");
-  }
-
-  darkModeToggle?.addEventListener("click", () => {
-    // Add changing animation class
-    darkModeIcon.classList.add("changing");
-
-    const isDark = document.documentElement.classList.toggle("dark");
-    localStorage.setItem("darkMode", isDark);
-    darkModeIcon.setAttribute("data-lucide", isDark ? "sun" : "moon");
-    darkModeToggle.setAttribute("aria-pressed", isDark ? "true" : "false");
-    lucide.createIcons();
-
-    // Remove animation class after animation completes
-    setTimeout(() => {
-      darkModeIcon.classList.remove("changing");
-    }, 600);
-  });
-}
-
 // FAQ functionality
 function initFAQ() {
   document.querySelectorAll(".faq-question").forEach((question) => {
@@ -945,9 +909,6 @@ function initFAQ() {
 document.addEventListener("DOMContentLoaded", () => {
   // Initialize BMI Calculator
   window.bmiCalculator = new BMICalculator();
-
-  // Initialize dark mode
-  initDarkMode();
 
   // Initialize FAQ
   initFAQ();

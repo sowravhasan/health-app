@@ -1,7 +1,7 @@
 /* TEAM */
 Developer: Sowrav Hasan
 Contact: sowravhasan101@gmail.com
-Website: https://sowravhasan.vercel.app
+Website: https://sowravhasan.github.io
 Location: Global
 
 /* SITE */

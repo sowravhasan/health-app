@@ -306,12 +306,6 @@
     select {
         min-height: 44px !important;
     }
-
-    /* Dark mode toggle */
-    #darkModeToggle {
-        min-height: 44px !important;
-        min-width: 44px !important;
-    }
 }
 
 /* Performance optimizations for mobile */
@@ -354,16 +348,8 @@
         color: #4b5563 !important;
     }
 
-    .dark .text-gray-600 {
-        color: #d1d5db !important;
-    }
-
     .text-gray-500 {
         color: #374151 !important;
-    }
-
-    .dark .text-gray-500 {
-        color: #e5e7eb !important;
     }
 }
 
@@ -377,9 +363,6 @@
         background-color: rgba(255, 255, 255, 0.95) !important;
     }
 
-    .dark header {
-        background-color: rgba(31, 41, 55, 0.95) !important;
-    }
 }
 
 /* Safe area handling for modern phones */

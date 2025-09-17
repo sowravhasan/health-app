@@ -1,7 +1,7 @@
 {
     "name": "Health Calculator Pro",
     "short_name": "Health Calc",
-    "description": "Complete health calculator suite including BMI, ideal weight, and calorie calculators. Fast, accurate, and mobile-friendly.",
+    "description": "Health Calculator Pro - Complete health assessment suite with free BMI calculator, ideal weight calculator, calorie calculator, and comprehensive wellness tools. Fast, accurate, mobile-friendly health calculators with expert recommendations.",
     "start_url": "/",
     "display": "standalone",
     "background_color": "#f0fdf4",

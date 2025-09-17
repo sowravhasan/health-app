@@ -29,11 +29,6 @@ button[type="button"].gender-btn.selected.p-3 {
     /* Force background color for selected state */
 }
 
-.dark button[type="button"].gender-btn.selected.p-3 {
-    background-color: rgba(16, 185, 129, 0.85) !important;
-    /* Force background color for dark mode selected state */
-}
-
 .gender-btn.selected i {
     color: #ffffff !important;
     /* White icon color when selected */
@@ -48,18 +43,6 @@ button[type="button"].gender-btn.selected.p-3 {
     /* White text color */
 }
 
-.dark .gender-btn.selected i {
-    color: #ffffff !important;
-    /* White icon in dark mode */
-}
-
-.dark .gender-btn.selected span {
-    font-weight: 700 !important;
-    /* Bolder text in dark mode */
-    color: #ffffff !important;
-    /* White text in dark mode */
-}
-
 .gender-btn.selected,
 button.gender-btn.selected {
     border-color: #047857 !important;
@@ -72,19 +55,6 @@ button.gender-btn.selected {
     /* Enhanced outline glow effect */
     font-weight: 700 !important;
     /* Make text bolder */
-    transform: scale(1.02) !important;
-    /* Slightly enlarge the button */
-}
-
-.dark .gender-btn.selected,
-.dark button.gender-btn.selected {
-    border-color: #10b981 !important;
-    background-color: rgba(16, 185, 129, 0.85) !important;
-    /* Even more visible in dark mode (greatly increased opacity) */
-    color: #ffffff !important;
-    /* White text for dark mode too */
-    box-shadow: 0 0 0 3px rgba(16, 185, 129, 0.75) !important;
-    /* Enhanced outline glow effect */
     transform: scale(1.02) !important;
     /* Slightly enlarge the button */
 }
@@ -144,8 +114,7 @@ button.gender-btn.selected {
     }
 
     /* Fix unit converter sections */
-    #unit-conversion .bg-white,
-    #unit-conversion .bg-white.dark\:bg-gray-800 {
+    #unit-conversion .bg-white {
         padding-left: 0.5rem !important;
         padding-right: 0.5rem !important;
         padding-top: 0.75rem !important;
@@ -161,9 +130,7 @@ button.gender-btn.selected {
 
     /* Fix result sections */
     .bg-green-50,
-    .bg-blue-50,
-    .dark\:bg-green-900\/20,
-    .dark\:bg-blue-900\/20 {
+    .bg-blue-50 {
         padding-left: 0.5rem !important;
         padding-right: 0.5rem !important;
     }
