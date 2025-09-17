@@ -38,6 +38,28 @@ Allow: /tools/
 Allow: /tools/ideal-weight-calculator.html
 Allow: /tools/calorie-calculator.html
 
+# Blog Articles - Priority content for SEO
+# Trending Health & Fitness Articles
+Allow: /blog/intermittent-fasting-weight-loss-guide.html
+Allow: /blog/high-protein-diet-muscle-building.html
+Allow: /blog/cardio-vs-strength-training-comparison.html
+Allow: /blog/keto-diet-complete-beginners-guide.html
+Allow: /blog/mental-health-fitness-connection-guide.html
+Allow: /blog/hiit-workouts-complete-guide.html
+Allow: /blog/healthy-sleep-habits-fitness-recovery.html
+Allow: /blog/home-workouts-no-equipment-guide.html
+Allow: /blog/hydration-guide-daily-water-intake.html
+Allow: /blog/yoga-beginners-flexibility-guide.html
+
+# BMI & Health Articles
+Allow: /blog/understanding-bmi-body-composition-guide.html
+Allow: /blog/safe-weight-loss-strategies.html
+Allow: /blog/healthy-diet-plans-bmi-categories.html
+Allow: /blog/bmi-calculator-guide-beginners.html
+Allow: /blog/ideal-weight-vs-bmi-comprehensive-comparison.html
+Allow: /blog/bmi-accuracy-limitations-health-assessment.html
+Allow: /blog/bmi-fitness-exercise-effects-body-mass-index.html
+
 # Fragment URLs for main page sections
 Allow: /#bmiForm
 Allow: /#frequently-asked-questions
